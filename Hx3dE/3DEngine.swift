@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct _3DCoord {
+public struct _3DCoord {
     var x: Double
     var y: Double
     var z: Double
@@ -47,7 +47,7 @@ struct _3DCoord {
 }
 
 infix operator +*=
-struct _3DTrans {
+public struct _3DTrans {
     var pos: _3DCoord
     var rot: _3DCoord
     var scl: _3DCoord
@@ -66,7 +66,7 @@ struct _3DTrans {
     }
 }
 
-protocol _3DObj {
+public protocol _3DObj {
     
     var id: UUID { get }
     
@@ -92,7 +92,7 @@ protocol _3DObj {
     
 }
 
-protocol _3DRoot: _3DObj {
+public protocol _3DRoot: _3DObj {
     
     var id: UUID { get }
     
@@ -107,13 +107,13 @@ protocol _3DRoot: _3DObj {
     
 }
 
-enum _3DObjKind {
+public enum _3DObjKind {
     case node
     case sphere
     case box
 }
 
-protocol _3DEngine {
+public protocol _3DEngine {
     
     var roots: [_3DRoot] { get set }
     
