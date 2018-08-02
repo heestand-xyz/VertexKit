@@ -10,6 +10,6 @@ import Foundation
 
 public class Hx3dE {
     
-    public static let main: _3DEngine = _3DScnEngine()
+    public static let engine: _3DEngine = _3DScnEngine()
     
 }

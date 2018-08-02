@@ -96,8 +96,8 @@ public protocol _3DRoot: _3DObj {
     
     var id: UUID { get }
     
-    /// if no objParent, add to root
-    func add(_ obj: _3DObj, to objParent: _3DObj?)
+    func add(_ obj: _3DObj)
+    func add(_ obj: _3DObj, to objParent: _3DObj)
     
     func remove(_ obj: _3DObj)
     
@@ -123,6 +123,8 @@ public protocol _3DEngine {
     
     var globalWorldScale: Double { get set }
     
-    func create(_ _3dObjKind: _3DObjKind) -> _3DObj
+    func createRoot() -> _3DRoot
+    
+    func create(obj _3dObjKind: _3DObjKind) -> _3DObj
     
 }

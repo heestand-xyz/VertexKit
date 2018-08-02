@@ -26,16 +26,16 @@ private extension SCNVector3 {
     }
 }
 
-public class _3DScnObj: _3DObj {
+class _3DScnObj: _3DObj {
     
-    public let id = UUID()
+    let id = UUID()
     
     let node: SCNNode
     
-    public var pos: _3DCoord { get { return node.position._3dCoord } set { node.position = newValue.vec } }
-    public var rot: _3DCoord { get { return node.eulerAngles._3dCoord } set { node.eulerAngles = newValue.vec } }
-    public var scl: _3DCoord { get { return node.scale._3dCoord } set { node.scale = newValue.vec } }
-    public var trans: _3DTrans {
+    var pos: _3DCoord { get { return node.position._3dCoord } set { node.position = newValue.vec } }
+    var rot: _3DCoord { get { return node.eulerAngles._3dCoord } set { node.eulerAngles = newValue.vec } }
+    var scl: _3DCoord { get { return node.scale._3dCoord } set { node.scale = newValue.vec } }
+    var trans: _3DTrans {
         get { return _3DTrans(pos: pos, rot: rot, scl: scl) }
         set { pos = newValue.pos; rot = newValue.rot; scl = newValue.scl }
     }
@@ -47,32 +47,32 @@ public class _3DScnObj: _3DObj {
         self.node = node
     }
     
-    public func transform(to _3dTrans: _3DTrans) { trans = _3dTrans }
-    public func transform(by _3dTrans: _3DTrans) { trans +*= _3dTrans }
+    func transform(to _3dTrans: _3DTrans) { trans = _3dTrans }
+    func transform(by _3dTrans: _3DTrans) { trans +*= _3dTrans }
     
-    public func position(to _3dCoord: _3DCoord) { pos = _3dCoord }
-    public func position(by _3dCoord: _3DCoord) { pos += _3dCoord }
+    func position(to _3dCoord: _3DCoord) { pos = _3dCoord }
+    func position(by _3dCoord: _3DCoord) { pos += _3dCoord }
     
-    public func rotate(to _3dCoord: _3DCoord) { rot = _3dCoord }
-    public func rotate(by _3dCoord: _3DCoord) { rot += _3dCoord }
+    func rotate(to _3dCoord: _3DCoord) { rot = _3dCoord }
+    func rotate(by _3dCoord: _3DCoord) { rot += _3dCoord }
     
-    public func scale(to _3dCoord: _3DCoord) { scl = _3dCoord }
-    public func scale(by _3dCoord: _3DCoord) { scl *= _3dCoord }
-    public func scale(to val: Double) { scl = _3DCoord(x: val, y: val, z: val) }
-    public func scale(by val: Double) { scl *= _3DCoord(x: val, y: val, z: val) }
+    func scale(to _3dCoord: _3DCoord) { scl = _3dCoord }
+    func scale(by _3dCoord: _3DCoord) { scl *= _3dCoord }
+    func scale(to val: Double) { scl = _3DCoord(x: val, y: val, z: val) }
+    func scale(by val: Double) { scl *= _3DCoord(x: val, y: val, z: val) }
     
 }
 
 // MARK: Root
 
-public class _3DScnRoot: _3DScnObj, _3DRoot {
+class _3DScnRoot: _3DScnObj, _3DRoot {
     
-    public var worldScale: Double {
+    var worldScale: Double {
         get { return scn.rootNode.scale._3dCoord.x }
         set { scn.rootNode.scale = SCNVector3(x: Float(newValue), y: Float(newValue), z: Float(newValue)) }
     }
     
-    public let view: UIView
+    let view: UIView
     let scn = SCNScene()
 
     init() {
@@ -88,17 +88,18 @@ public class _3DScnRoot: _3DScnObj, _3DRoot {
         
     }
     
-    public func add(_ obj: _3DObj, to objParent: _3DObj?) {
+    func add(_ obj: _3DObj) {
         let scnGeo3DObj = obj as! _3DScnObj
-        if objParent != nil {
-            let scnGeo3DObjParent = objParent as! _3DScnObj
-            scnGeo3DObjParent.node.addChildNode(scnGeo3DObj.node)
-        } else {
-            scn.rootNode.addChildNode(scnGeo3DObj.node)
-        }
+        scn.rootNode.addChildNode(scnGeo3DObj.node)
     }
     
-    public func remove(_ obj: _3DObj) {
+    func add(_ obj: _3DObj, to objParent: _3DObj) {
+        let scnGeo3DObj = obj as! _3DScnObj
+        let scnGeo3DObjParent = objParent as! _3DScnObj
+        scnGeo3DObjParent.node.addChildNode(scnGeo3DObj.node)
+    }
+    
+    func remove(_ obj: _3DObj) {
         let scnGeo3DObj = obj as! _3DScnObj
         scnGeo3DObj.node.removeFromParentNode()
     }
@@ -107,11 +108,11 @@ public class _3DScnRoot: _3DScnObj, _3DRoot {
 
 // MARK: Engine
 
-public class _3DScnEngine: _3DEngine {
+class _3DScnEngine: _3DEngine {
         
-    public var roots: [_3DRoot] = []
+    var roots: [_3DRoot] = []
     
-    public var globalWorldScale: Double = 1 {
+    var globalWorldScale: Double = 1 {
         didSet {
             for root in roots as! [_3DScnRoot] {
                 root.worldScale = globalWorldScale
@@ -119,7 +120,11 @@ public class _3DScnEngine: _3DEngine {
         }
     }
     
-    public func create(_ _3dObjKind: _3DObjKind) -> _3DObj {
+    func createRoot() -> _3DRoot {
+        return _3DScnRoot()
+    }
+    
+    func create(obj _3dObjKind: _3DObjKind) -> _3DObj {
         
         let scnGeoPrim: _3DScnObj
         switch _3dObjKind {
@@ -135,13 +140,13 @@ public class _3DScnEngine: _3DEngine {
         
     }
     
-    public func addRoot(_ root: _3DRoot) {
+    func addRoot(_ root: _3DRoot) {
         var root = root
         root.worldScale = globalWorldScale
         roots.append(root)
     }
     
-    public func removeRoot(_ root: _3DRoot) {
+    func removeRoot(_ root: _3DRoot) {
         for (i, i_root) in roots.enumerated() {
             if i_root.id == root.id {
                 roots.remove(at: i)
