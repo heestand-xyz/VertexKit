@@ -10,6 +10,9 @@
 		749ACA7921138DFF00737173 /* Hx3dE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749ACA6F21138DFF00737173 /* Hx3dE.framework */; };
 		749ACA7E21138DFF00737173 /* Hx3dETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACA7D21138DFF00737173 /* Hx3dETests.swift */; };
 		749ACA8021138DFF00737173 /* Hx3dE.h in Headers */ = {isa = PBXBuildFile; fileRef = 749ACA7221138DFF00737173 /* Hx3dE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
+		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
+		74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Hx3dE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		749ACA7821138DFF00737173 /* Hx3dETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hx3dETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7D21138DFF00737173 /* Hx3dETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hx3dETests.swift; sourceTree = "<group>"; };
 		749ACA7F21138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
+		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
+		74FA7B15211392BF00E9C112 /* Hx3dE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hx3dE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				749ACA7221138DFF00737173 /* Hx3dE.h */,
 				749ACA7321138DFF00737173 /* Info.plist */,
+				74FA7B0E2113903D00E9C112 /* 3DEngine.swift */,
+				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
+				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
 			);
 			path = Hx3dE;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					749ACA6E21138DFF00737173 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					749ACA7721138DFF00737173 = {
 						CreatedOnToolsVersion = 10.0;
@@ -194,6 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */,
+				74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */,
+				74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +352,7 @@
 		749ACA8421138DFF00737173 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -353,9 +367,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.Hx3dE;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.hx3de;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +379,7 @@
 		749ACA8521138DFF00737173 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -378,7 +394,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.Hx3dE;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.hx3de;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -389,6 +405,7 @@
 		749ACA8721138DFF00737173 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QHTY6FMW2;
 				INFOPLIST_FILE = Hx3dETests/Info.plist;
@@ -407,6 +424,7 @@
 		749ACA8821138DFF00737173 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QHTY6FMW2;
 				INFOPLIST_FILE = Hx3dETests/Info.plist;
