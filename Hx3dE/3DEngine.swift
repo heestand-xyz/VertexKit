@@ -109,8 +109,15 @@ public protocol _3DRoot: _3DObj {
 
 public enum _3DObjKind {
     case node
-    case sphere
+    case plane
     case box
+    case sphere
+    case pyramid
+    case cone
+    case cylinder
+    case capsule
+    case tube
+    case torus
 }
 
 public protocol _3DEngine {

@@ -130,12 +130,26 @@ class _3DScnEngine: _3DEngine {
         switch _3dObjKind {
         case .node:
             scnGeoPrim = _3DScnObj(node: SCNNode())
-        case .sphere:
-            scnGeoPrim = _3DScnObj(geometry: SCNSphere(radius: 0.5))
+        case .plane:
+            scnGeoPrim = _3DScnObj(geometry: SCNPlane(width: 1, height: 1))
         case .box:
             scnGeoPrim = _3DScnObj(geometry: SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0))
+        case .sphere:
+            scnGeoPrim = _3DScnObj(geometry: SCNSphere(radius: 0.5)) // .isGeodesic
+        case .pyramid:
+            scnGeoPrim = _3DScnObj(geometry: SCNPyramid(width: 1.5, height: 1, length: 1.5)) // 146.5 230.4
+        case .cone:
+            scnGeoPrim = _3DScnObj(geometry: SCNCone(topRadius: 0, bottomRadius: 1, height: 1))
+        case .cylinder:
+            scnGeoPrim = _3DScnObj(geometry: SCNCylinder(radius: 1, height: 1))
+        case .capsule:
+            scnGeoPrim = _3DScnObj(geometry: SCNCapsule(capRadius: 0.5, height: 1))
+        case .tube:
+            scnGeoPrim = _3DScnObj(geometry: SCNTube(innerRadius: 0.5, outerRadius: 1, height: 1))
+        case .torus:
+            scnGeoPrim = _3DScnObj(geometry: SCNTorus(ringRadius: 1, pipeRadius: 0.5))
         }
-        
+                
         return scnGeoPrim
         
     }
