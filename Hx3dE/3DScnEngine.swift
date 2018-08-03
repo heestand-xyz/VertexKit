@@ -40,6 +40,11 @@ class _3DScnObj: _3DObj {
         set { pos = newValue.pos; rot = newValue.rot; scl = newValue.scl }
     }
     
+    var color: UIColor? {
+        get { return node.geometry?.firstMaterial?.diffuse.contents as? UIColor }
+        set { node.geometry?.firstMaterial?.diffuse.contents = newValue }
+    }
+    
     init(geometry: SCNGeometry) {
         node = SCNNode(geometry: geometry)
     }
