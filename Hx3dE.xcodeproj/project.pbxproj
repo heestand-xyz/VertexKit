@@ -59,8 +59,8 @@
 		749ACA6521138DFF00737173 = {
 			isa = PBXGroup;
 			children = (
-				749ACA7121138DFF00737173 /* Hx3dE */,
-				749ACA7C21138DFF00737173 /* Hx3dETests */,
+				749ACA7121138DFF00737173 /* Source */,
+				749ACA7C21138DFF00737173 /* Tests */,
 				749ACA7021138DFF00737173 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		749ACA7121138DFF00737173 /* Hx3dE */ = {
+		749ACA7121138DFF00737173 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				749ACA7221138DFF00737173 /* Hx3dE.h */,
@@ -83,16 +83,16 @@
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
 				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
 			);
-			path = Hx3dE;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		749ACA7C21138DFF00737173 /* Hx3dETests */ = {
+		749ACA7C21138DFF00737173 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				749ACA7D21138DFF00737173 /* Hx3dETests.swift */,
 				749ACA7F21138DFF00737173 /* Info.plist */,
 			);
-			path = Hx3dETests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +360,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Hx3dE/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +387,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Hx3dE/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
