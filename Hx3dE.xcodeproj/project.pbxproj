@@ -79,9 +79,9 @@
 			children = (
 				749ACA7221138DFF00737173 /* Hx3dE.h */,
 				749ACA7321138DFF00737173 /* Info.plist */,
+				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
 				74FA7B0E2113903D00E9C112 /* 3DEngine.swift */,
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
-				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.hx3de;
+				PRODUCT_BUNDLE_IDENTIFIER = house.hexagon.hx3de;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -394,7 +394,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.hx3de;
+				PRODUCT_BUNDLE_IDENTIFIER = house.hexagon.hx3de;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
