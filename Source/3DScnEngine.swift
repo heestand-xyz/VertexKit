@@ -79,8 +79,11 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
     
     let view: UIView
     let scn = SCNScene()
+    
+    let cam: SCNCamera
+    let camNode: SCNNode
 
-    init() {
+    init(ortho: Bool = false) {
         
         let scnView = SCNView()
         scnView.backgroundColor = .clear
@@ -88,6 +91,20 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
 //        scnView.allowsCameraControl = true
         scnView.scene = scn
         view = scnView
+        
+        cam = SCNCamera()
+        cam.automaticallyAdjustsZRange = true
+        if #available(iOS 11.0, *) {
+            cam.fieldOfView = 53.1301023542
+        }
+        if ortho {
+            cam.usesOrthographicProjection = true
+//            cam.orthographicScale = 1
+        }
+        camNode = SCNNode()
+        camNode.position = SCNVector3(x: 0, y: 0, z: 1)
+        camNode.camera = cam
+        scn.rootNode.addChildNode(camNode)
         
         super.init(node: scn.rootNode)
         
