@@ -80,6 +80,10 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
     let view: UIView
     let scn = SCNScene()
     
+    var snapshot: UIImage {
+        return (view as! SCNView).snapshot()
+    }
+    
     let cam: SCNCamera
     let camNode: SCNNode
 

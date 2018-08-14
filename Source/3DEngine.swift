@@ -48,6 +48,7 @@ public protocol _3DRoot: _3DObj {
     var worldScale: Double { get set }
     
     var view: UIView { get }
+    var snapshot: UIImage { get }
     
 }
 
