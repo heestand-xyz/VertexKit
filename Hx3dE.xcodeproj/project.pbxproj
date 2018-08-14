@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		749256532121A2FC003A27B1 /* 3DCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DCoord.swift */; };
+		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
 		749ACA7921138DFF00737173 /* Hx3dE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749ACA6F21138DFF00737173 /* Hx3dE.framework */; };
 		749ACA7E21138DFF00737173 /* Hx3dETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACA7D21138DFF00737173 /* Hx3dETests.swift */; };
 		749ACA8021138DFF00737173 /* Hx3dE.h in Headers */ = {isa = PBXBuildFile; fileRef = 749ACA7221138DFF00737173 /* Hx3dE.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		749256522121A2FC003A27B1 /* 3DCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DCoord.swift; sourceTree = "<group>"; };
+		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
 		749ACA6F21138DFF00737173 /* Hx3dE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hx3dE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7221138DFF00737173 /* Hx3dE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hx3dE.h; sourceTree = "<group>"; };
 		749ACA7321138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
 				74FA7B0E2113903D00E9C112 /* 3DEngine.swift */,
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
-				749256522121A2FC003A27B1 /* 3DCoord.swift */,
+				749256522121A2FC003A27B1 /* 3DTypes.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			files = (
 				74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */,
 				74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */,
-				749256532121A2FC003A27B1 /* 3DCoord.swift in Sources */,
+				749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */,
 				74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

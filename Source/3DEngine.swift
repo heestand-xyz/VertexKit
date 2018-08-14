@@ -17,20 +17,20 @@ public protocol _3DObj {
     func transform(to _3dTrans: _3DTrans)
     func transform(by _3dTrans: _3DTrans)
     
-    var pos: _3DCoord { get set }
-    var rot: _3DCoord { get set }
-    var scl: _3DCoord { get set }
+    var pos: _3DVec { get set }
+    var rot: _3DVec { get set }
+    var scl: _3DVec { get set }
     
     var color: UIColor? { get set }
     
-    func position(to _3dCoord: _3DCoord)
-    func position(by _3dCoord: _3DCoord)
+    func position(to _3dCoord: _3DVec)
+    func position(by _3dCoord: _3DVec)
     
-    func rotate(to _3dCoord: _3DCoord)
-    func rotate(by _3dCoord: _3DCoord)
+    func rotate(to _3dCoord: _3DVec)
+    func rotate(by _3dCoord: _3DVec)
     
-    func scale(to _3dCoord: _3DCoord)
-    func scale(by _3dCoord: _3DCoord)
+    func scale(to _3dCoord: _3DVec)
+    func scale(by _3dCoord: _3DVec)
     func scale(to val: Double)
     func scale(by val: Double)
     
@@ -67,6 +67,9 @@ public enum _3DObjKind {
 
 public protocol _3DEngine {
     
+    var debugMode: Bool { get set }
+    func debug()
+    
     var roots: [_3DRoot] { get set }
     
     func addRoot(_ objRoot: _3DRoot)
@@ -77,6 +80,7 @@ public protocol _3DEngine {
     
     func createRoot() -> _3DRoot
     
-    func create(obj _3dObjKind: _3DObjKind) -> _3DObj
+    func create(_ _3dObjKind: _3DObjKind) -> _3DObj
+    func create(from polys: [_3DPoly]) -> _3DObj
     
 }
