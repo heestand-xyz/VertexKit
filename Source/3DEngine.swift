@@ -31,8 +31,8 @@ public protocol _3DObj {
     
     func scale(to _3dCoord: _3DVec)
     func scale(by _3dCoord: _3DVec)
-    func scale(to val: Double)
-    func scale(by val: Double)
+    func scale(to val: CGFloat)
+    func scale(by val: CGFloat)
     
 }
 
@@ -45,7 +45,7 @@ public protocol _3DRoot: _3DObj {
     
     func remove(_ obj: _3DObj)
     
-    var worldScale: Double { get set }
+    var worldScale: CGFloat { get set }
     
     var view: UIView { get }
     var snapshot: UIImage { get }
@@ -76,11 +76,12 @@ public protocol _3DEngine {
     
     func removeRoot(_ objRoot: _3DRoot)
     
-    var globalWorldScale: Double { get set }
+    var globalWorldScale: CGFloat { get set }
     
     func createRoot() -> _3DRoot
     
     func create(_ _3dObjKind: _3DObjKind) -> _3DObj
-    func create(from polys: [_3DPoly]) -> _3DObj
+    func create(triangle: _3DTriangle) -> _3DObj
+    func create(line: _3DLine) -> _3DObj
     
 }

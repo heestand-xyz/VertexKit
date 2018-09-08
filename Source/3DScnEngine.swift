@@ -15,7 +15,7 @@ extension _3DVec {
 }
 
 private extension SCNVector3 {
-    var vec: _3DVec { get { return _3DVec(x: Double(x), y: Double(y), z: Double(z)) } }
+    var vec: _3DVec { get { return _3DVec(x: CGFloat(x), y: CGFloat(y), z: CGFloat(z)) } }
 }
 
 class _3DScnObj: _3DObj {
@@ -55,8 +55,8 @@ class _3DScnObj: _3DObj {
     
     func scale(to _3dCoord: _3DVec) { scl = _3dCoord }
     func scale(by _3dCoord: _3DVec) { scl *= _3dCoord }
-    func scale(to val: Double) { scl = _3DVec(x: val, y: val, z: val) }
-    func scale(by val: Double) { scl *= _3DVec(x: val, y: val, z: val) }
+    func scale(to val: CGFloat) { scl = _3DVec(x: val, y: val, z: val) }
+    func scale(by val: CGFloat) { scl *= _3DVec(x: val, y: val, z: val) }
     
 }
 
@@ -64,7 +64,7 @@ class _3DScnObj: _3DObj {
 
 class _3DScnRoot: _3DScnObj, _3DRoot {
     
-    var worldScale: Double {
+    var worldScale: CGFloat {
         get { return scn.rootNode.scale.vec.x }
         set { scn.rootNode.scale = SCNVector3(x: Float(newValue), y: Float(newValue), z: Float(newValue)) }
     }
@@ -87,10 +87,10 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
 //        scnView.allowsCameraControl = true
         scnView.scene = scn
         if debug {
-//            scnView.debugOptions.insert(.showWireframe)
-            if #available(iOS 11.0, *) { scnView.debugOptions.insert(.renderAsWireframe) }
-//            scnView.debugOptions.insert(.showBoundingBoxes)
             scnView.showsStatistics = true
+            if #available(iOS 11.0, *) { scnView.debugOptions.insert(.renderAsWireframe) }
+//            scnView.debugOptions.insert(.showWireframe)
+//            scnView.debugOptions.insert(.showBoundingBoxes)
 //            glLineWidth(20)
         }
         view = scnView
@@ -141,7 +141,7 @@ class _3DScnEngine: _3DEngine {
         
     var roots: [_3DRoot] = []
     
-    var globalWorldScale: Double = 1 {
+    var globalWorldScale: CGFloat = 1 {
         didSet {
             for root in roots as! [_3DScnRoot] {
                 root.worldScale = globalWorldScale
@@ -183,28 +183,106 @@ class _3DScnEngine: _3DEngine {
         
     }
     
-    func create(from polys: [_3DPoly]) -> _3DObj {
+    func create(triangle: _3DTriangle) -> _3DObj {
         
-        var posArr: [_3DVec] = []
-        var iArr: [Int] = []
-        var i = 0
-        for poly in polys {
-            for vert in poly.verts {
-                posArr.append(vert.pos)
-                iArr.append(i)
-                i += 1
-            }
-        }
+//        var posArr: [_3DVec] = []
+//        var iArr: [Int] = []
+//        var i = 0
+//        for poly in polys {
+//            for vert in poly.verts {
+//                posArr.append(vert.pos)
+//                iArr.append(i)
+//                i += 1
+//            }
+//        }
         
-        let vecArr = posArr.map { coord -> SCNVector3 in return coord.scnVec }
+        print(">>>")
         
-        let source = SCNGeometrySource(vertices: vecArr)
-        let element = SCNGeometryElement(indices: iArr, primitiveType: .triangles) // .polygon
+        let iArr = triangle.verts.enumerated().map { i, _ -> Int in return i }
+//        let element = SCNGeometryElement(indices: iArr, primitiveType: .triangles)
+        let dat = Data(bytes: iArr, count: MemoryLayout<Int>.size * iArr.count)
+        let element = SCNGeometryElement(data: dat, primitiveType: .triangles, primitiveCount: 1, bytesPerIndex: MemoryLayout<Int>.size)
         
-        let geo = SCNGeometry(sources: [source], elements: [element])
+//        let posArr = triangle.verts.map { vert -> SCNVector3 in return vert.pos.scnVec }
+//        let normArr = triangle.verts.map { vert -> SCNVector3 in return vert.norm.scnVec }
+//        let sourceVerts = SCNGeometrySource(vertices: posArr)
+//        let sourceNorms = SCNGeometrySource(normals: normArr)
+//        let sources = [sourceVerts, sourceNorms]
+        let sources = createSources(from: triangle.verts)
+
+        let geo = SCNGeometry(sources: sources, elements: [element])
+        
         let obj = _3DScnObj(geometry: geo)
         
         return obj
+    }
+    
+    func create(line: _3DLine) -> _3DObj {
+
+//        var posArr: [_3DVec] = []
+//        var iArr: [Int] = []
+//        var i = 0
+//        for poly in polys {
+//            for vert in poly.verts {
+//                posArr.append(vert.pos)
+//                iArr.append(i)
+//                i += 1
+//            }
+//        }
+
+//        let vertArr = line.verts.map { vert -> SCNVector3 in return vert.pos.scnVec }
+//        let normArr = line.verts.map { vert -> SCNVector3 in return vert.norm.scnVec }
+//        let iArr = [0, 1]
+//
+//        let sourceVerts = SCNGeometrySource(vertices: vertArr)
+//        let sourceNorms = SCNGeometrySource(normals: normArr)
+//        let element = SCNGeometryElement(indices: iArr, primitiveType: .line)
+//
+//        let geo = SCNGeometry(sources: [sourceVerts, sourceNorms], elements: [element])
+
+        let pln = SCNPlane(width: 0.5, height: 2)
+        pln.heightSegmentCount = 4
+        let cpy = pln.copy() as! SCNGeometry
+        print("A", cpy.sources[0])
+        print("B", cpy.sources[1])
+        print("C", cpy.elements[0])
+        let geo = SCNGeometry(sources: [cpy.sources.first!, cpy.sources[1]], elements: [cpy.elements.first!])
+
+        let obj = _3DScnObj(geometry: geo)
+        
+        return obj
+    }
+    
+    func createSources(from verts: [_3DVert]) -> [SCNGeometrySource] {
+        
+        struct FloatVert {
+            let px, py, pz: Float
+            let nx, ny, nz: Float
+            let u, v: Float
+        }
+        let floatVerts = verts.map { vert -> FloatVert in
+            return FloatVert(
+                px: Float(vert.pos.x),
+                py: Float(vert.pos.y),
+                pz: Float(vert.pos.z),
+                nx: Float(vert.norm.x),
+                ny: Float(vert.norm.y),
+                nz: Float(vert.norm.z),
+                u: Float(vert.uv.u),
+                v: Float(vert.uv.v)
+            )
+        }
+
+        let vertSize = MemoryLayout<FloatVert>.size
+        let valSize = MemoryLayout<Float>.size
+
+        let data = Data(bytes: floatVerts, count: floatVerts.count)
+        let vertexSource = SCNGeometrySource(data: data, semantic: .vertex, vectorCount: floatVerts.count, usesFloatComponents: true, componentsPerVector: 3, bytesPerComponent: valSize, dataOffset: 0, dataStride: vertSize)
+        let normalSource = SCNGeometrySource(data: data, semantic: .normal, vectorCount: floatVerts.count, usesFloatComponents: true, componentsPerVector: 3, bytesPerComponent: valSize, dataOffset: valSize * 3, dataStride: vertSize)
+        let tcoordSource = SCNGeometrySource(data: data, semantic: .texcoord, vectorCount: floatVerts.count, usesFloatComponents: true, componentsPerVector: 2, bytesPerComponent: valSize, dataOffset: valSize * 6, dataStride: vertSize)
+        
+        return [vertexSource, normalSource, tcoordSource]
+
     }
     
     func addRoot(_ root: _3DRoot) {

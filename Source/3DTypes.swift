@@ -9,13 +9,13 @@
 import Foundation
 
 public struct _3DVec {
-    public var x: Double
-    public var y: Double
-    public var z: Double
-    public init(x: Double, y: Double, z: Double) {
+    public var x: CGFloat
+    public var y: CGFloat
+    public var z: CGFloat
+    public init(x: CGFloat, y: CGFloat, z: CGFloat) {
         self.x = x; self.y = y; self.z = z
     }
-    public init(xyz: Double) {
+    public init(xyz: CGFloat) {
         x = xyz; y = xyz; z = xyz
     }
     public static let zero = _3DVec(x: 0, y: 0, z: 0)
@@ -35,20 +35,20 @@ public struct _3DVec {
     public static func * (lhs: _3DVec, rhs: _3DVec) -> _3DVec {
         return _3DVec(x: lhs.x * rhs.x, y: lhs.y * rhs.y, z: lhs.z * rhs.z)
     }
-    public static func * (lhs: _3DVec, rhs: Double) -> _3DVec {
+    public static func * (lhs: _3DVec, rhs: CGFloat) -> _3DVec {
         return _3DVec(x: lhs.x * rhs, y: lhs.y * rhs, z: lhs.z * rhs)
     }
-    public static func * (lhs: Double, rhs: _3DVec) -> _3DVec { return rhs * lhs }
+    public static func * (lhs: CGFloat, rhs: _3DVec) -> _3DVec { return rhs * lhs }
     public static func / (lhs: _3DVec, rhs: _3DVec) -> _3DVec {
         return _3DVec(x: lhs.x / rhs.x, y: lhs.y / rhs.y, z: lhs.z / rhs.z)
     }
-    public static func / (lhs: _3DVec, rhs: Double) -> _3DVec {
+    public static func / (lhs: _3DVec, rhs: CGFloat) -> _3DVec {
         return _3DVec(x: lhs.x / rhs, y: lhs.y / rhs, z: lhs.z / rhs)
     }
     public static func += (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs + rhs }
     public static func -= (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs - rhs }
     public static func *= (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs * rhs }
-    public static func *= (lhs: inout _3DVec, rhs: Double) { lhs = lhs * rhs }
+    public static func *= (lhs: inout _3DVec, rhs: CGFloat) { lhs = lhs * rhs }
     public static func /= (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs / rhs }
 }
 
@@ -72,21 +72,54 @@ public struct _3DTrans {
     }
 }
 
+public struct UV {
+    public var u: CGFloat
+    public var v: CGFloat
+}
+
 public struct _3DVert {
     public let pos: _3DVec
+    public let norm: _3DVec
+    public let uv: UV
     public init(_ pos: _3DVec) {
         self.pos = pos
+        norm = _3DVec(x: 0, y: 0, z: 1)
+        uv = UV(u: 0.5, v: 0.5)
     }
 }
 
-public struct _3DPoly {
-    public let verts: [_3DVert]
-    public init(verts: [_3DVert]) {
-        self.verts = verts
+public struct _3DLine {
+    public let vertA: _3DVert
+    public let vertB: _3DVert
+    public var verts: [_3DVert] {
+        return [vertA, vertB]
+    }
+    public init(_ vertA: _3DVert, _ vertB: _3DVert) {
+        self.vertA = vertA
+        self.vertB = vertB
     }
 }
+
+public struct _3DTriangle {
+    public let vertA: _3DVert
+    public let vertB: _3DVert
+    public let vertC: _3DVert
+    public var verts: [_3DVert] {
+        return [vertA, vertB, vertC]
+    }
+    public init(_ vertA: _3DVert, _ vertB: _3DVert, _ vertC: _3DVert) {
+        self.vertA = vertA
+        self.vertB = vertB
+        self.vertC = vertC
+    }
+}
+
+//public struct _3DPoly {
+//    public let verts: [_3DVert]
+//    public init(verts: [_3DVert]) {
+//        self.verts = verts
+//    }
+//}
 
 //public struct _3DQuad {
-//    public var polyA: _3DPoly
-//    public var polyB: _3DPoly
 //}
