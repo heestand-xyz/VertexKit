@@ -78,7 +78,7 @@ public protocol _3DEngine {
     
     var globalWorldScale: CGFloat { get set }
     
-    func createRoot() -> _3DRoot
+    func createRoot(at size: CGSize?) -> _3DRoot
     
     func create(_ _3dObjKind: _3DObjKind) -> _3DObj
     func create(triangle: _3DTriangle) -> _3DObj

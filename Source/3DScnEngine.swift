@@ -79,9 +79,15 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
 //    let cam: SCNCamera
 //    let camNode: SCNNode
 
-    init(ortho: Bool = false, debug: Bool) {
+    init(ortho: Bool = false, debug: Bool, size: CGSize? = nil) {
         
-        let scnView = SCNView()
+        let scnView: SCNView
+        if let size = size {
+            let bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            scnView = SCNView(frame: bounds)
+        } else {
+            scnView = SCNView()
+        }
         scnView.backgroundColor = .clear
         scnView.autoenablesDefaultLighting = true
 //        scnView.allowsCameraControl = true
@@ -149,8 +155,8 @@ class _3DScnEngine: _3DEngine {
         }
     }
     
-    func createRoot() -> _3DRoot {
-        return _3DScnRoot(debug: debugMode)
+    func createRoot(at size: CGSize? = nil) -> _3DRoot {
+        return _3DScnRoot(debug: debugMode, size: size)
     }
     
     func create(_ _3dObjKind: _3DObjKind) -> _3DObj {
