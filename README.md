@@ -1,4 +1,5 @@
-<img src="https://github.com/anton-hexagons/Hx3dE/raw/master/Assets/Hx3dE_logo_1k_bg.png" width="128"/>
+<img src="https://github.com/hexagons/pixels-3d/raw/master/Assets/Pixels-3D_logo_1k_bg.png" width="128"/>
 
-# Hexagon 3D Engine
-a 3D Framework for iOS, written in Swift
+# Pixels 3D
+a 3D Framework for iOS<br>
+powered by [Pixels](https://github.com/hexagons/pixels)

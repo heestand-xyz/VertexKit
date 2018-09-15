@@ -1,12 +1,12 @@
 //
 //  3DCoord.swift
-//  Hx3dE
+//  Pixels3D
 //
 //  Created by Hexagons on 2018-08-13.
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 public struct _3DVec {
     public var x: CGFloat

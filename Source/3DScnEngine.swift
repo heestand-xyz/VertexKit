@@ -1,6 +1,6 @@
 //
 //  3DScnEngine.swift
-//  Pixel Nodes
+//  Pixels3D
 //
 //  Created by Hexagons on 2018-06-30.
 //  Copyright © 2018 Hexagons. All rights reserved.

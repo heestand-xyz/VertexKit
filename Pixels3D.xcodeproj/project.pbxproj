@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
-		749ACA8021138DFF00737173 /* Hx3dE.h in Headers */ = {isa = PBXBuildFile; fileRef = 749ACA7221138DFF00737173 /* Hx3dE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74B00253214D503F00A9281D /* Pixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B00251214D502D00A9281D /* Pixels.framework */; };
+		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
-		74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Hx3dE.swift */; };
+		74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74B00250214D502D00A9281D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74B0024B214D502D00A9281D /* Pixels.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 74BC39D721011E3A004E9AA0;
+			remoteInfo = Pixels;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
-		749ACA6F21138DFF00737173 /* Hx3dE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hx3dE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		749ACA7221138DFF00737173 /* Hx3dE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hx3dE.h; sourceTree = "<group>"; };
+		749ACA6F21138DFF00737173 /* Pixels3D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixels3D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7321138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74B0024B214D502D00A9281D /* Pixels.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels.xcodeproj; path = ../../Pixels/Pixels.xcodeproj; sourceTree = "<group>"; };
+		74B00254214D509700A9281D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
-		74FA7B15211392BF00E9C112 /* Hx3dE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hx3dE.swift; sourceTree = "<group>"; };
+		74FA7B15211392BF00E9C112 /* Pixels3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels3D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B00253214D503F00A9281D /* Pixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,15 +51,18 @@
 		749ACA6521138DFF00737173 = {
 			isa = PBXGroup;
 			children = (
+				74B00254214D509700A9281D /* README.md */,
 				749ACA7121138DFF00737173 /* Source */,
 				749ACA7021138DFF00737173 /* Products */,
+				74B0024B214D502D00A9281D /* Pixels.xcodeproj */,
+				74B00252214D503F00A9281D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		749ACA7021138DFF00737173 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				749ACA6F21138DFF00737173 /* Hx3dE.framework */,
+				749ACA6F21138DFF00737173 /* Pixels3D.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +70,28 @@
 		749ACA7121138DFF00737173 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				749ACA7221138DFF00737173 /* Hx3dE.h */,
 				749ACA7321138DFF00737173 /* Info.plist */,
-				74FA7B15211392BF00E9C112 /* Hx3dE.swift */,
+				74FA7B15211392BF00E9C112 /* Pixels3D.swift */,
 				74FA7B0E2113903D00E9C112 /* 3DEngine.swift */,
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
 				749256522121A2FC003A27B1 /* 3DTypes.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		74B0024C214D502D00A9281D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74B00251214D502D00A9281D /* Pixels.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74B00252214D503F00A9281D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,16 +101,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				749ACA8021138DFF00737173 /* Hx3dE.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		749ACA6E21138DFF00737173 /* Hx3dE */ = {
+		749ACA6E21138DFF00737173 /* Pixels3D */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Hx3dE" */;
+			buildConfigurationList = 749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Pixels3D" */;
 			buildPhases = (
 				749ACA6A21138DFF00737173 /* Headers */,
 				749ACA6B21138DFF00737173 /* Sources */,
@@ -91,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = Hx3dE;
+			name = Pixels3D;
 			productName = Hx3dE;
-			productReference = 749ACA6F21138DFF00737173 /* Hx3dE.framework */;
+			productReference = 749ACA6F21138DFF00737173 /* Pixels3D.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Hx3dE" */;
+			buildConfigurationList = 749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Pixels3D" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,18 +151,35 @@
 			mainGroup = 749ACA6521138DFF00737173;
 			productRefGroup = 749ACA7021138DFF00737173 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 74B0024C214D502D00A9281D /* Products */;
+					ProjectRef = 74B0024B214D502D00A9281D /* Pixels.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				749ACA6E21138DFF00737173 /* Hx3dE */,
+				749ACA6E21138DFF00737173 /* Pixels3D */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		74B00251214D502D00A9281D /* Pixels.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pixels.framework;
+			remoteRef = 74B00250214D502D00A9281D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		749ACA6D21138DFF00737173 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B00255214D509700A9281D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +193,7 @@
 				74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */,
 				74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */,
 				749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */,
-				74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */,
+				74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +338,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = house.hexagon.hx3de;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixels.3d;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -319,7 +365,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = house.hexagon.hx3de;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixels.3d;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -330,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Hx3dE" */ = {
+		749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Pixels3D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				749ACA8121138DFF00737173 /* Debug */,
@@ -339,7 +385,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Hx3dE" */ = {
+		749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Pixels3D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				749ACA8421138DFF00737173 /* Debug */,
