@@ -8,32 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
-		749ACA7921138DFF00737173 /* Hx3dE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 749ACA6F21138DFF00737173 /* Hx3dE.framework */; };
-		749ACA7E21138DFF00737173 /* Hx3dETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ACA7D21138DFF00737173 /* Hx3dETests.swift */; };
 		749ACA8021138DFF00737173 /* Hx3dE.h in Headers */ = {isa = PBXBuildFile; fileRef = 749ACA7221138DFF00737173 /* Hx3dE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
 		74FA7B16211392BF00E9C112 /* Hx3dE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Hx3dE.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		749ACA7A21138DFF00737173 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 749ACA6621138DFF00737173 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 749ACA6E21138DFF00737173;
-			remoteInfo = Hx3dE;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
 		749ACA6F21138DFF00737173 /* Hx3dE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hx3dE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7221138DFF00737173 /* Hx3dE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hx3dE.h; sourceTree = "<group>"; };
 		749ACA7321138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		749ACA7821138DFF00737173 /* Hx3dETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hx3dETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		749ACA7D21138DFF00737173 /* Hx3dETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hx3dETests.swift; sourceTree = "<group>"; };
-		749ACA7F21138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
 		74FA7B15211392BF00E9C112 /* Hx3dE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hx3dE.swift; sourceTree = "<group>"; };
@@ -47,14 +32,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		749ACA7521138DFF00737173 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				749ACA7921138DFF00737173 /* Hx3dE.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -62,7 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				749ACA7121138DFF00737173 /* Source */,
-				749ACA7C21138DFF00737173 /* Tests */,
 				749ACA7021138DFF00737173 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				749ACA6F21138DFF00737173 /* Hx3dE.framework */,
-				749ACA7821138DFF00737173 /* Hx3dETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,15 +62,6 @@
 				749256522121A2FC003A27B1 /* 3DTypes.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		749ACA7C21138DFF00737173 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				749ACA7D21138DFF00737173 /* Hx3dETests.swift */,
-				749ACA7F21138DFF00737173 /* Info.plist */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,24 +96,6 @@
 			productReference = 749ACA6F21138DFF00737173 /* Hx3dE.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		749ACA7721138DFF00737173 /* Hx3dETests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 749ACA8621138DFF00737173 /* Build configuration list for PBXNativeTarget "Hx3dETests" */;
-			buildPhases = (
-				749ACA7421138DFF00737173 /* Sources */,
-				749ACA7521138DFF00737173 /* Frameworks */,
-				749ACA7621138DFF00737173 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				749ACA7B21138DFF00737173 /* PBXTargetDependency */,
-			);
-			name = Hx3dETests;
-			productName = Hx3dETests;
-			productReference = 749ACA7821138DFF00737173 /* Hx3dETests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,9 +109,6 @@
 					749ACA6E21138DFF00737173 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
-					};
-					749ACA7721138DFF00737173 = {
-						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
@@ -180,20 +125,12 @@
 			projectRoot = "";
 			targets = (
 				749ACA6E21138DFF00737173 /* Hx3dE */,
-				749ACA7721138DFF00737173 /* Hx3dETests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		749ACA6D21138DFF00737173 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		749ACA7621138DFF00737173 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,23 +151,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		749ACA7421138DFF00737173 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				749ACA7E21138DFF00737173 /* Hx3dETests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		749ACA7B21138DFF00737173 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 749ACA6E21138DFF00737173 /* Hx3dE */;
-			targetProxy = 749ACA7A21138DFF00737173 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		749ACA8121138DFF00737173 /* Debug */ = {
@@ -406,44 +327,6 @@
 			};
 			name = Release;
 		};
-		749ACA8721138DFF00737173 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QHTY6FMW2;
-				INFOPLIST_FILE = Hx3dETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.Hx3dETests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		749ACA8821138DFF00737173 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QHTY6FMW2;
-				INFOPLIST_FILE = Hx3dETests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.Hx3dETests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,15 +344,6 @@
 			buildConfigurations = (
 				749ACA8421138DFF00737173 /* Debug */,
 				749ACA8521138DFF00737173 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		749ACA8621138DFF00737173 /* Build configuration list for PBXNativeTarget "Hx3dETests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				749ACA8721138DFF00737173 /* Debug */,
-				749ACA8821138DFF00737173 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
