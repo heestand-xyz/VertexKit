@@ -12,14 +12,10 @@ public protocol _3DObj {
     
     var id: UUID { get }
     
-    var trans: _3DTrans { get set }
-    
-    func transform(to _3dTrans: _3DTrans)
-    func transform(by _3dTrans: _3DTrans)
-    
     var pos: _3DVec { get set }
     var rot: _3DVec { get set }
     var scl: _3DVec { get set }
+    var trans: _3DTrans { get set }
     
     var color: UIColor? { get set }
     
@@ -34,21 +30,24 @@ public protocol _3DObj {
     func scale(to val: CGFloat)
     func scale(by val: CGFloat)
     
+    func transform(to _3dTrans: _3DTrans)
+    func transform(by _3dTrans: _3DTrans)
+    
 }
 
 public protocol _3DRoot: _3DObj {
     
     var id: UUID { get }
     
+    var view: UIView { get }
+    var snapshot: UIImage { get }
+    
+    var worldScale: CGFloat { get set }
+
     func add(_ obj: _3DObj)
     func add(_ obj: _3DObj, to objParent: _3DObj)
     
     func remove(_ obj: _3DObj)
-    
-    var worldScale: CGFloat { get set }
-    
-    var view: UIView { get }
-    var snapshot: UIImage { get }
     
 }
 
@@ -68,20 +67,19 @@ public enum _3DObjKind {
 public protocol _3DEngine {
     
     var debugMode: Bool { get set }
-    func debug()
-    
-    var roots: [_3DRoot] { get set }
-    
-    func addRoot(_ objRoot: _3DRoot)
-    
-    func removeRoot(_ objRoot: _3DRoot)
-    
     var globalWorldScale: CGFloat { get set }
     
+    var roots: [_3DRoot] { get set }
+
+    
     func createRoot(at size: CGSize?) -> _3DRoot
+    func addRoot(_ objRoot: _3DRoot)
+    func removeRoot(_ objRoot: _3DRoot)
     
     func create(_ _3dObjKind: _3DObjKind) -> _3DObj
     func create(triangle: _3DTriangle) -> _3DObj
     func create(line: _3DLine) -> _3DObj
+
+    func debug()
     
 }
