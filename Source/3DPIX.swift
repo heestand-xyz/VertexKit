@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
-import CoreGraphics
+import UIKit
 import Pixels
 
 public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
@@ -15,20 +15,20 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     var root: _3DRoot
 
-//    public var color: UIColor = .white { didSet { setNeedsRender() } }
-//    enum CodingKeys: String, CodingKey {
-//        case color
-//    }
-//    override var uniforms: [CGFloat] {
-//        var vals: [CGFloat] = []
-//        vals.append(contentsOf: PIX.Color(color).list)
-//        return vals
-//    }
+    public var color: UIColor = .white { didSet { setNeedsRender() } }
+    enum CodingKeys: String, CodingKey {
+        case color
+    }
+    override public var uniforms: [CGFloat] {
+        var vals: [CGFloat] = []
+        vals.append(contentsOf: PIX.Color(color).list)
+        return vals
+    }
 
     public override init(res: PIX.Res) {
         root = Pixels3D.main.engine.createRoot(at: res.size)
         super.init(res: res)
-        Pixels.main.wireframeMode = true
+//        Pixels.main.wireframeMode = true
         customGeometryActive = true
         customGeometryDelegate = self
     }
