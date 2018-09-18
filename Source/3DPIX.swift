@@ -14,8 +14,10 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     override open var shader: String { return "contentGeneratorColorPIX" }
     
     var root: _3DRoot
+    
+    public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
 
-    public var color: UIColor = .white { didSet { setNeedsRender() } }
+    public var color: UIColor = .green { didSet { setNeedsRender() } }
     enum CodingKeys: String, CodingKey {
         case color
     }
@@ -50,7 +52,8 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     // MAKR: Corenr Pin
     
     public func customVertecies() -> Pixels.Vertecies? {
-        return gridVerts(res: .fullScreen / 128)
+//        return gridVerts(res: .fullScreen / 128)
+        return circVerts(res: .custom(w: 64, h: 16))
     }
     
     func gridVerts(res: Res) -> Pixels.Vertecies? {
@@ -71,22 +74,22 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     }
     
-//    func testVerts() -> Pixels.Vertecies? {
-//
-//        let vertecies = grid(res: ._128)
-//        var vertexBuffers: [Float] = []
-//        for vertex in vertecies {
-//            vertexBuffers += vertex.buffer
-//        }
-//
-//        let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-//        let verteciesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
-//
-//        let instanceCount = vertecies.count / 3
-//
-//        return Pixels.Vertecies(buffer: verteciesBuffer, vertexCount: vertecies.count, instanceCount: instanceCount)
-//
-//    }
+    func circVerts(res: Res) -> Pixels.Vertecies? {
+
+        let vertecies = circ(res: res)
+        var vertexBuffers: [Float] = []
+        for vertex in vertecies {
+            vertexBuffers += vertex.buffer
+        }
+
+        let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
+        let verteciesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+
+        let instanceCount = vertecies.count / 2
+
+        return Pixels.Vertecies(buffer: verteciesBuffer, vertexCount: vertecies.count, instanceCount: instanceCount, type: .line)
+
+    }
     
     func scale(_ point: CGPoint, by scale: CGFloat) -> CGPoint {
         return CGPoint(x: point.x * scale, y: point.y * scale)
@@ -96,16 +99,19 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         return CGPoint(x: pointA.x + pointB.x, y: pointA.y + pointB.y)
     }
     
-//    func test() -> [Pixels.Vertex] {
-//
-//        let a = Pixels.Vertex(x: 0, y: 1.0, z: 0.0, s: 0.5, t: 1.0)
-//        let b = Pixels.Vertex(x: -1.0, y: -1.0, z: 0.0, s: 0.0, t: 0.0)
-//        let c = Pixels.Vertex(x: 1.0, y: -1.0, z: 0.0, s: 1.0, t: 0.0)
-//        let verts = [a,b,c]
-//
-//        return verts
-//
-//    }
+    func circ(res: Res) -> [Pixels.Vertex] {
+        var verts: [Pixels.Vertex] = []
+        for j in 0..<res.h {
+            let fj = Float(j) / Float(res.h - 1)
+            for i in 0..<res.w {
+                let fi = Float(i) / Float(res.w - 1)
+                let pi = fi * .pi * 2
+                let vert = Pixels.Vertex(x: (cos(pi) / Float(Res.fullScreen.aspect)) * Float(radius) * 2 * fj, y: sin(pi) * Float(radius) * 2 * fj, z: 0.0, s: 0.0, t: 0.0)
+                verts.append(vert)
+            }
+        }
+        return verts
+    }
     
     func grid(res: Res) -> [[Pixels.Vertex]] {
         
