@@ -11,8 +11,9 @@ import Pixels
 
 public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
 
-    override open var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
-    override open var shader: String { return "color3DPIX" }
+    open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
+    open override var customVertexShaderName: String? { return "nil3DVTX" }
+    open override var shader: String { return "color3DPIX" }
     
 //    var root: _3DRoot
     
@@ -21,7 +22,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
-    public var color: UIColor = .blue { didSet { setNeedsRender() } }
+    public var color: UIColor = .white { didSet { setNeedsRender() } }
     public override var uniforms: [CGFloat] {
         return PIX.Color(color).list
     }

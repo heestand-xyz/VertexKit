@@ -12,6 +12,8 @@ import Pixels
 
 public class LineGrid3DPIX: Grid3DPIX {
     
+    open override var customVertexShaderName: String? { return "distort3DVTX" }
+    
     public var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0) { didSet { setNeedsRender() } }
     
     public override var vertecies: [Pixels.Vertex] {

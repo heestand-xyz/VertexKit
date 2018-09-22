@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */; };
+		3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */; };
 		3A3D4CED21567C7C0071FAC7 /* Color3DPIX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Nil3DVTX.metal; sourceTree = "<group>"; };
+		3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Distort3DVTX.metal; sourceTree = "<group>"; };
 		3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = Pixels3DShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Color3DPIX.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +40,8 @@
 			isa = PBXGroup;
 			children = (
 				3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */,
+				3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */,
+				3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */,
 			);
 			name = Shaders;
 			path = ../Shaders;
@@ -95,6 +101,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */,
+				3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */,
 				3A3D4CED21567C7C0071FAC7 /* Color3DPIX.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
