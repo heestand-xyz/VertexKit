@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4933462156574800F29DF6 /* Grid3DPIX.swift */; };
+		3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334821565D3000F29DF6 /* Circle3DPIX.swift */; };
+		3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
 		741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
-		74B00253214D503F00A9281D /* Pixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B00251214D502D00A9281D /* Pixels.framework */; };
 		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
 		74B00257214D56F600A9281D /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
@@ -18,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		74B00250214D502D00A9281D /* PBXContainerItemProxy */ = {
+		3A09018D21564EF500EB49C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 74B0024B214D502D00A9281D /* Pixels.xcodeproj */;
+			containerPortal = 3A09018821564EF500EB49C6 /* Pixels.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 74BC39D721011E3A004E9AA0;
 			remoteInfo = Pixels;
@@ -28,11 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A09018821564EF500EB49C6 /* Pixels.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels.xcodeproj; path = ../pixels/Pixels.xcodeproj; sourceTree = "<group>"; };
+		3A4933462156574800F29DF6 /* Grid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid3DPIX.swift; sourceTree = "<group>"; };
+		3A49334821565D3000F29DF6 /* Circle3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle3DPIX.swift; sourceTree = "<group>"; };
+		3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGrid3DPIX.swift; sourceTree = "<group>"; };
 		741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DRawEngine.swift; sourceTree = "<group>"; };
 		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
 		749ACA6F21138DFF00737173 /* Pixels3D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixels3D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7321138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74B0024B214D502D00A9281D /* Pixels.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels.xcodeproj; path = ../../Pixels/Pixels.xcodeproj; sourceTree = "<group>"; };
 		74B00254214D509700A9281D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74B00256214D56F600A9281D /* 3DPIX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DPIX.swift; sourceTree = "<group>"; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
@@ -45,21 +50,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B00253214D503F00A9281D /* Pixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A09018921564EF500EB49C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A09018E21564EF500EB49C6 /* Pixels.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A4933442156571D00F29DF6 /* 3DPIX */ = {
+			isa = PBXGroup;
+			children = (
+				74B00256214D56F600A9281D /* 3DPIX.swift */,
+				3A4933462156574800F29DF6 /* Grid3DPIX.swift */,
+				3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */,
+				3A49334821565D3000F29DF6 /* Circle3DPIX.swift */,
+			);
+			path = 3DPIX;
+			sourceTree = "<group>";
+		};
 		749ACA6521138DFF00737173 = {
 			isa = PBXGroup;
 			children = (
 				74B00254214D509700A9281D /* README.md */,
 				749ACA7121138DFF00737173 /* Source */,
 				749ACA7021138DFF00737173 /* Products */,
-				74B0024B214D502D00A9281D /* Pixels.xcodeproj */,
 				74B00252214D503F00A9281D /* Frameworks */,
+				3A09018821564EF500EB49C6 /* Pixels.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,17 +103,9 @@
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
 				741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */,
 				749256522121A2FC003A27B1 /* 3DTypes.swift */,
-				74B00256214D56F600A9281D /* 3DPIX.swift */,
+				3A4933442156571D00F29DF6 /* 3DPIX */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		74B0024C214D502D00A9281D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				74B00251214D502D00A9281D /* Pixels.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		74B00252214D503F00A9281D /* Frameworks */ = {
@@ -159,8 +174,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 74B0024C214D502D00A9281D /* Products */;
-					ProjectRef = 74B0024B214D502D00A9281D /* Pixels.xcodeproj */;
+					ProductGroup = 3A09018921564EF500EB49C6 /* Products */;
+					ProjectRef = 3A09018821564EF500EB49C6 /* Pixels.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -171,11 +186,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		74B00251214D502D00A9281D /* Pixels.framework */ = {
+		3A09018E21564EF500EB49C6 /* Pixels.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pixels.framework;
-			remoteRef = 74B00250214D502D00A9281D /* PBXContainerItemProxy */;
+			remoteRef = 3A09018D21564EF500EB49C6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -197,10 +212,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */,
+				3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */,
 				74B00257214D56F600A9281D /* 3DPIX.swift in Sources */,
 				74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */,
+				3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */,
 				749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */,
 				74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */,
+				3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */,
 				741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
