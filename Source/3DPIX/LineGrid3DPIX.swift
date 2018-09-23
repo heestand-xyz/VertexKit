@@ -13,16 +13,26 @@ import Pixels
 public class LineGrid3DPIX: Grid3DPIX {
     
     open override var customVertexShaderName: String? { return "distort3DVTX" }
+    open override var customVertexTextureActive: Bool { return true }
+    open override var customVertexPixIn: (PIX & PIXOut)? { return gridPixIn }
     
-    public var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0) { didSet { setNeedsRender() } }
+    public var gridPixIn: (PIX & PIXOut)? = nil
+    /*public*/ var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0)// { didSet { setNeedsRender() } }
     
-    public override var vertecies: [Pixels.Vertex] {
-        return gridLines()
-    }
+    public override var vertecies: [Pixels.Vertex] { return gridLines }
     public override var instanceCount: Int { return gridRes.count }
     public override var primativeType: MTLPrimitiveType { return .line }
-
-    func gridLines() -> [Pixels.Vertex] {
+    
+    var gridLines: [Pixels.Vertex]!
+    
+    public init(res: Res, gridRes: Res, gridSize: CGSize) {
+        super.init(res: res)
+        self.gridRes = gridRes
+        self.gridSize = gridSize
+        self.gridLines = makeGridLines()
+    }
+    
+    func makeGridLines() -> [Pixels.Vertex] {
         let gridA = vecGrid()
         let gridB = offset(grid: gridA, by: offset)
         var gridLines: [Pixels.Vertex] = []
@@ -37,6 +47,10 @@ public class LineGrid3DPIX: Grid3DPIX {
             }
         }
         return gridLines
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
     }
     
 }
