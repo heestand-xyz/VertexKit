@@ -50,11 +50,16 @@ public class Pixels3D {
         do {
             metalLibrary = try loadMetalShaderLibrary()
         } catch {
-            Pixels.main.log(prefix: "Pixels 3D", .fatal, .pixels, "Metal Library failed to load.", e: error)
+            Pixels3D.log(.fatal, .pixels, "Metal Library failed to load.", e: error)
         }
         
     }
     
+    // MARK: - Log
+    
+    public static func log(pix: PIX? = nil, _ level: Pixels.LogLevel, _ category: Pixels.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        Pixels.main.log(prefix: "Pixels 3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
+    }
     
     // MARK: - Setup
     
@@ -68,9 +73,7 @@ public class Pixels3D {
         guard let libraryFile = Bundle(identifier: kBundleId)!.path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("Pixels 3D Shaders: Metal Library not found.")
         }
-        do {
-            return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
-        } catch { throw error }
+        return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
     }
     
 }

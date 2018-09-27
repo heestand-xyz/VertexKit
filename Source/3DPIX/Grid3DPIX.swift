@@ -11,28 +11,32 @@ import Pixels
 
 public class Grid3DPIX: _3DPIX {
     
-    public var gridRes: Res = .custom(w: 4, h: 4) { didSet { setNeedsRender() } }
-    public var gridSize: CGSize = CGSize(width: 1.0, height: 1.0) { didSet { setNeedsRender() } }
+    public var gridRes: Res { didSet { setNeedsRender() } }
+    public var gridSize: CGSize { didSet { setNeedsRender() } }
     
     public override var instanceCount: Int {
         return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
     }
     public override var vertecies: [Pixels.Vertex] {
-        return mapGrid(vtxGrid(vecGrid()))
+        return mapGrid(vtxGrid(vecGrid(plusOne: true)))
     }
     public override var wireframe: Bool { return true }
     
-    public override init(res: PIX.Res) {
+    public init(res: Res, gridRes: Res) {
+        self.gridRes = gridRes
+        gridSize = CGSize(width: res.aspect, height: 1.0)
         super.init(res: res)
     }
     
-    func vecGrid() -> [[_3DVec]] {
+    func vecGrid(plusOne: Bool = false) -> [[_3DVec]] {
+        
+        let plus = plusOne ? 1 : 0
         
         var vecs: [[_3DVec]] = []
-        for y in 0...gridRes.h {
+        for y in 0..<gridRes.h + plus {
             let v = CGFloat(y) / gridRes.height
             var vecRow: [_3DVec] = []
-            for x in 0...gridRes.w {
+            for x in 0..<gridRes.w + plus {
                 let u = CGFloat(x) / gridRes.width
                 let vec = _3DVec(
                     x: (u - 0.5) * gridSize.width,
@@ -75,16 +79,20 @@ public class Grid3DPIX: _3DPIX {
         return verteciesMap
     }
     
-    func offset(grid: [[_3DVec]], by offest: _3DVec) -> [[_3DVec]] {
-        return grid.map({ row -> [_3DVec] in
-            return row.map({ vtx -> _3DVec in
-                var vtx = vtx
-                vtx.x += offest.x
-                vtx.y += offest.y
-                vtx.z += offest.z
-                return vtx
-            })
-        })
+//    func offset(grid: [[_3DVec]], by offest: _3DVec) -> [[_3DVec]] {
+//        return grid.map({ row -> [_3DVec] in
+//            return row.map({ vtx -> _3DVec in
+//                var vtx = vtx
+//                vtx.x += offest.x
+//                vtx.y += offest.y
+//                vtx.z += offest.z
+//                return vtx
+//            })
+//        })
+//    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
     }
     
 }

@@ -50,6 +50,22 @@ public struct _3DVec {
     public static func *= (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs * rhs }
     public static func *= (lhs: inout _3DVec, rhs: CGFloat) { lhs = lhs * rhs }
     public static func /= (lhs: inout _3DVec, rhs: _3DVec) { lhs = lhs / rhs }
+    public mutating func zRotate(by ang: CGFloat, at origin: _3DVec = .zero) {
+        let tx = (x - origin.x)
+        let ty = (y - origin.y)
+        var rot = atan2(ty, tx)
+        rot += ang
+        let rad = sqrt(pow(tx, 2) + pow(ty, 2))
+        x = origin.x + cos(rot) * rad
+        y = origin.y + sin(rot) * rad
+    }
+    public mutating func scale(by s: CGFloat, at origin: _3DVec = .zero) {
+        scale(by: _3DVec(xyz: s), at: origin)
+    }
+    public mutating func scale(by s: _3DVec, at origin: _3DVec = .zero) {
+        let vec = self - origin
+        self = origin + vec * s
+    }
 }
 
 infix operator +*=

@@ -38,6 +38,11 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     public func customVertecies() -> Pixels.Vertecies? {
         
+        guard !vertecies.isEmpty else {
+            Pixels3D.log(pix: self, .warning, nil, "No vertecies found.")
+            return nil
+        }
+        
         let scaledVertecies = vertecies.map { vtx -> Pixels.Vertex in
             return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z, s: vtx.s, t: vtx.t)
         }
