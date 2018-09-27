@@ -10,6 +10,11 @@
 		3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */; };
 		3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */; };
 		3A3D4CED21567C7C0071FAC7 /* Color3DPIX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */; };
+		74B40E9C215D565600518DFD /* Particle3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E9B215D565600518DFD /* Particle3DVTX.metal */; };
+		74B40EA1215D5B2000518DFD /* noise_header.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E9F215D5B2000518DFD /* noise_header.metal */; };
+		74B40EA2215D5B2000518DFD /* random_header.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA0215D5B2000518DFD /* random_header.metal */; };
+		74B40EA5215D5DA600518DFD /* random.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA3215D5DA600518DFD /* random.metal */; };
+		74B40EA6215D5DA600518DFD /* noise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA4215D5DA600518DFD /* noise.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +22,11 @@
 		3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Distort3DVTX.metal; sourceTree = "<group>"; };
 		3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = Pixels3DShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Color3DPIX.metal; sourceTree = "<group>"; };
+		74B40E9B215D565600518DFD /* Particle3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Particle3DVTX.metal; sourceTree = "<group>"; };
+		74B40E9F215D5B2000518DFD /* noise_header.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = noise_header.metal; sourceTree = "<group>"; };
+		74B40EA0215D5B2000518DFD /* random_header.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = random_header.metal; sourceTree = "<group>"; };
+		74B40EA3215D5DA600518DFD /* random.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = random.metal; sourceTree = "<group>"; };
+		74B40EA4215D5DA600518DFD /* noise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = noise.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -42,6 +52,11 @@
 				3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */,
 				3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */,
 				3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */,
+				74B40E9B215D565600518DFD /* Particle3DVTX.metal */,
+				74B40E9F215D5B2000518DFD /* noise_header.metal */,
+				74B40EA0215D5B2000518DFD /* random_header.metal */,
+				74B40EA4215D5DA600518DFD /* noise.metal */,
+				74B40EA3215D5DA600518DFD /* random.metal */,
 			);
 			name = Shaders;
 			path = ../Shaders;
@@ -101,8 +116,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B40EA1215D5B2000518DFD /* noise_header.metal in Sources */,
 				3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */,
+				74B40EA6215D5DA600518DFD /* noise.metal in Sources */,
 				3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */,
+				74B40EA2215D5B2000518DFD /* random_header.metal in Sources */,
+				74B40E9C215D565600518DFD /* Particle3DVTX.metal in Sources */,
+				74B40EA5215D5DA600518DFD /* random.metal in Sources */,
 				3A3D4CED21567C7C0071FAC7 /* Color3DPIX.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
