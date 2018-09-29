@@ -6,7 +6,7 @@
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 import Metal
 import Pixels
 
@@ -74,6 +74,21 @@ public class Pixels3D {
             throw MetalLibraryError.runtimeERROR("Pixels 3D Shaders: Metal Library not found.")
         }
         return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
+    }
+    
+    // MARK: UV
+    
+    static func uvVecMap(res: PIX.Res) -> [_3DVec] {
+        var map: [_3DVec] = []
+        for y in 0..<res.h {
+            let v = (CGFloat(y) + 0.5) / CGFloat(res.h)
+            for x in 0..<res.w {
+                let u = (CGFloat(x) + 0.5) / CGFloat(res.w)
+                let vec = _3DVec(x: u, y: v, z: 0.0)
+                map.append(vec)
+            }
+        }
+        return map
     }
     
 }

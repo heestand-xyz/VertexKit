@@ -12,7 +12,7 @@ import Pixels
 
 public protocol LineGrid3DPIXDelegate {
     
-    func lineGrid3dPixLine(_ vec: _3DVec, _ pixel: PIX.Color) -> (a: _3DVec, b: _3DVec)
+    func lineGrid3dPixLine(_ vec: _3DVec, _ pixel: Pixels.Pixel) -> (a: _3DVec, b: _3DVec)
     
 }
 
@@ -39,6 +39,7 @@ public class LineGrid3DPIX: Grid3DPIX {
     }
     
     func makeGridLines() -> [Pixels.Vertex] {
+        return [Pixels.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), Pixels.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
         guard customDelegate != nil else {
             Pixels3D.log(.warning, nil, "`customDelegate` not implemented.")
             return []

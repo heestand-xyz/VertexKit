@@ -16,7 +16,6 @@ public class Circle3DPIX: _3DPIX {
     public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
 
     public override var instanceCount: Int {
-        print("COUNT >>>>>>>>>>", vertecies.count / 2, (circRes.w * circRes.h) / 2)
         return (circRes.w * circRes.h) / 2
     }
     public override var vertecies: [Pixels.Vertex] {

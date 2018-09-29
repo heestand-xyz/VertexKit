@@ -80,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				74B00256214D56F600A9281D /* 3DPIX.swift */,
+				3A49334821565D3000F29DF6 /* Circle3DPIX.swift */,
 				3A4933462156574800F29DF6 /* Grid3DPIX.swift */,
 				3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */,
-				3A49334821565D3000F29DF6 /* Circle3DPIX.swift */,
 				74B40E98215D51F200518DFD /* Particles3DPIX.swift */,
 			);
 			path = 3DPIX;
