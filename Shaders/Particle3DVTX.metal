@@ -42,11 +42,11 @@ vertex VertexOut particle3DVTX(const device VertexIn* vertecies [[ buffer(0) ]],
     float2 uv = float2(u, v);
     float4 c = inTex.sample(s, uv);
     
-    float x = 0;//(c.r / in.aspect) * 2;
-    float y = 0;//(c.g) * 2;
-    float z = 0;//c.b;
+    float x = (c.r / in.aspect) * 2;
+    float y = c.g * 2;
+    float z = c.b * 2;
     
-    float p = 100;//c.a;
+    float p = 1;//c.a;
     
 //    float t = in.time * 4;
 //
