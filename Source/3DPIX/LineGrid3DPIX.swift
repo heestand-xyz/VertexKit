@@ -27,9 +27,11 @@ public class LineGrid3DPIX: Grid3DPIX {
     public var gridPixIn: (PIX & PIXOut)? = nil { didSet { setNeedsRender() } }
 //    /*public*/ var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0)// { didSet { setNeedsRender() } }
 
-    public override var vertecies: [Pixels.Vertex] { return makeGridLines() }
+    public override var vertecies: [Pixels.Vertex] { return gridLines }
     public override var instanceCount: Int { return gridRes.count }
     public override var primativeType: MTLPrimitiveType { return .line }
+    
+    var gridLines: [Pixels.Vertex] = []
     
 //    var gridLines: [Pixels.Vertex]!
     
@@ -38,15 +40,17 @@ public class LineGrid3DPIX: Grid3DPIX {
 //        self.gridLines = makeGridLines()
     }
     
-    func makeGridLines() -> [Pixels.Vertex] {
-        return [Pixels.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), Pixels.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
+    public func makeGridLines() {
+        self.gridLines = []
+//        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", Pixels.main.frame)
+//        return [Pixels.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), Pixels.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
         guard customDelegate != nil else {
             Pixels3D.log(.warning, nil, "`customDelegate` not implemented.")
-            return []
+            return
         }
         guard let pixelPack = gridPixIn?.renderedPixels else {
             Pixels3D.log(.warning, nil, "`gridPixIn`'s `renderedPixels` not found.")
-            return []
+            return
         }
         let grid = vecGrid()
         var gridLines: [Pixels.Vertex] = []
@@ -63,7 +67,7 @@ public class LineGrid3DPIX: Grid3DPIX {
                 gridLines.append(vtxB)
             }
         }
-        return gridLines
+        self.gridLines = gridLines
     }
     
     required convenience init(from decoder: Decoder) throws {

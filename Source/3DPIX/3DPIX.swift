@@ -38,13 +38,17 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     public func customVertecies() -> Pixels.Vertecies? {
         
-        guard !vertecies.isEmpty else {
+        if vertecies.isEmpty {
             Pixels3D.log(pix: self, .warning, nil, "No vertecies found.")
-            return nil
         }
         
-        let scaledVertecies = vertecies.map { vtx -> Pixels.Vertex in
+        var scaledVertecies = vertecies.map { vtx -> Pixels.Vertex in
             return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z, s: vtx.s, t: vtx.t)
+        }
+        if vertecies.isEmpty {
+            for _ in 0..<6 {
+                scaledVertecies.append(Pixels.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
+            }
         }
         
         var vertexBuffers: [Float] = []
@@ -55,7 +59,8 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
         let verteciesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
-        return Pixels.Vertecies(buffer: verteciesBuffer, vertexCount: vertecies.count, instanceCount: instanceCount, type: primativeType, wireframe: wireframe)
+        let count = !vertecies.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
+        return Pixels.Vertecies(buffer: verteciesBuffer, vertexCount: vertecies.count, instanceCount: count, type: primativeType, wireframe: wireframe)
     }
     
 }

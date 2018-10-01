@@ -24,29 +24,29 @@ struct VertexOut{
 
 struct Uniforms {
 //    float time;
-//    float size;
-    float aspect;
+    float size;
+//    float aspect;
 };
 
 vertex VertexOut particle3DVTX(const device VertexIn* vertecies [[ buffer(0) ]],
                                unsigned int vid [[ vertex_id ]],
-                               const device Uniforms& in [[ buffer(1) ]],
-                               texture2d<float> inTex [[ texture(0) ]],
-                               sampler s [[ sampler(0) ]]) {
+                               const device Uniforms& in [[ buffer(1) ]]) {
+//                               texture2d<float> inTex [[ texture(0) ]],
+//                               sampler s [[ sampler(0) ]]) {
     
     // vertecies unused
     
     VertexIn vtxIn = vertecies[vid];
-    float u = vtxIn.position[0];
-    float v = vtxIn.position[1];
-    float2 uv = float2(u, v);
-    float4 c = inTex.sample(s, uv);
+    float x = vtxIn.position[0];
+    float y = vtxIn.position[1];
+//    float2 uv = float2(u, v);
+//    float4 c = inTex.sample(s, uv);
+//
+//    float x = (c.r / in.aspect) * 0.001;
+//    float y = c.g * 0.001;
+    float z = 0.0;//c.b * 0.001;
     
-    float x = (c.r / in.aspect) * 2;
-    float y = c.g * 2;
-    float z = c.b * 2;
-    
-    float p = 1;//c.a;
+    float p = in.size;//c.a;
     
 //    float t = in.time * 4;
 //
