@@ -36,6 +36,8 @@ public class Pixels3D {
         return Signature(id: kBundleId, version: Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleShortVersionString"] as! String, build: Int(Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleVersion"] as! String) ?? -1)
     }
     
+    public var overrideWithMetalLibFromApp: Bool = true
+    
     // MARK: Metal
     
     var metalLibrary: MTLLibrary!
@@ -70,7 +72,9 @@ public class Pixels3D {
     }
     
     func loadMetalShaderLibrary() throws -> MTLLibrary {
-        guard let libraryFile = Bundle(identifier: kBundleId)!.path(forResource: kMetalLibName, ofType: "metallib") else {
+        let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
+        Pixels.main.log(prefix: "Pixels 3D", .info, .metal, "Metal Lib from Bundle: \(bundle.description) \(overrideWithMetalLibFromApp ? "[OVERRIDE]" : "")")
+        guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("Pixels 3D Shaders: Metal Library not found.")
         }
         return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
