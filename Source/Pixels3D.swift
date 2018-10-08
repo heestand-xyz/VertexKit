@@ -73,7 +73,9 @@ public class Pixels3D {
     
     func loadMetalShaderLibrary() throws -> MTLLibrary {
         let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
-        Pixels.main.log(prefix: "Pixels 3D", .info, .metal, "Metal Lib from Bundle: \(bundle.description) \(overrideWithMetalLibFromApp ? "[OVERRIDE]" : "")")
+        if overrideWithMetalLibFromApp {
+            Pixels.main.log(prefix: "Pixels 3D", .info, .metal, "Metal Lib from Bundle: \(bundle.description) [OVERRIDE]")
+        }
         guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("Pixels 3D Shaders: Metal Library not found.")
         }
