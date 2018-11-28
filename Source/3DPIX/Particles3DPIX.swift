@@ -30,7 +30,7 @@ public class Particles3DPIX: _3DPIX {
 //        }
 //    }
     
-    public override var vertecies: [Pixels.Vertex] {
+    public override var vertices: [Pixels.Vertex] {
         return particles.map({ particle -> Pixels.Vertex in
             return Pixels.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
         })
@@ -40,7 +40,7 @@ public class Particles3DPIX: _3DPIX {
     }
     public override var primativeType: MTLPrimitiveType { return .point }
     
-    var cachedVertecies: Pixels.Vertecies?
+    var cachedVertices: Pixels.Vertices?
     
     struct Particle {
         var pos: _3DVec
@@ -112,12 +112,12 @@ public class Particles3DPIX: _3DPIX {
         }
     }
     
-//    public override func customVertecies() -> Pixels.Vertecies? {
+//    public override func customVertices() -> Pixels.Vertices? {
 //        guard !particles.isEmpty else { return nil }
-//        if cachedVertecies == nil {
-//            cachedVertecies = super.customVertecies()
+//        if cachedVertices == nil {
+//            cachedVertices = super.customVertices()
 //        }
-//        return cachedVertecies!
+//        return cachedVertices!
 //    }
     
     required convenience init(from decoder: Decoder) throws {

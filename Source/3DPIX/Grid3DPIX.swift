@@ -17,7 +17,7 @@ public class Grid3DPIX: _3DPIX {
     public override var instanceCount: Int {
         return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
     }
-    public override var vertecies: [Pixels.Vertex] {
+    public override var vertices: [Pixels.Vertex] {
         return mapGrid(vtxGrid(vecGrid(plusOne: true)))
     }
     public override var wireframe: Bool { return true }
@@ -60,23 +60,23 @@ public class Grid3DPIX: _3DPIX {
         })
     }
     
-    func mapGrid(_ vertecies: [[Pixels.Vertex]]) -> [Pixels.Vertex] {
-        var verteciesMap: [Pixels.Vertex] = []
+    func mapGrid(_ vertices: [[Pixels.Vertex]]) -> [Pixels.Vertex] {
+        var verticesMap: [Pixels.Vertex] = []
         for y in 0..<gridRes.h {
             for x in 0..<gridRes.w {
-                let vertexBottomLeft = vertecies[y][x]
-                let vertexTopLeft = vertecies[y][x + 1]
-                let vertexBottomRight = vertecies[y + 1][x]
-                let vertexTopRight = vertecies[y + 1][x + 1]
-                verteciesMap.append(vertexTopLeft)
-                verteciesMap.append(vertexTopRight)
-                verteciesMap.append(vertexBottomLeft)
-                verteciesMap.append(vertexBottomRight)
-                verteciesMap.append(vertexBottomLeft)
-                verteciesMap.append(vertexTopRight)
+                let vertexBottomLeft = vertices[y][x]
+                let vertexTopLeft = vertices[y][x + 1]
+                let vertexBottomRight = vertices[y + 1][x]
+                let vertexTopRight = vertices[y + 1][x + 1]
+                verticesMap.append(vertexTopLeft)
+                verticesMap.append(vertexTopRight)
+                verticesMap.append(vertexBottomLeft)
+                verticesMap.append(vertexBottomRight)
+                verticesMap.append(vertexBottomLeft)
+                verticesMap.append(vertexTopRight)
             }
         }
-        return verteciesMap
+        return verticesMap
     }
     
 //    func offset(grid: [[_3DVec]], by offest: _3DVec) -> [[_3DVec]] {

@@ -18,7 +18,7 @@ public class Circle3DPIX: _3DPIX {
     public override var instanceCount: Int {
         return (circRes.w * circRes.h) / 2
     }
-    public override var vertecies: [Pixels.Vertex] {
+    public override var vertices: [Pixels.Vertex] {
         return circ()
     }
     public override var primativeType: MTLPrimitiveType {

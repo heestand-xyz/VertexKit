@@ -17,14 +17,15 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
 //    var root: _3DRoot
     
-    public var vertecies: [Pixels.Vertex] { return [] }
+    public var vertices: [Pixels.Vertex] { return [] }
     public var instanceCount: Int { return 0 }
+    public var triangleIndices: [Int] { return [] }
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
     public var color: UIColor = .white { didSet { setNeedsRender() } }
     public override var uniforms: [CGFloat] {
-        return PIX.Color(color).list
+        return LiveColor(color).list
     }
 
     override init(res: PIX.Res) {
@@ -36,31 +37,31 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     // MAKR: Custom Geometry
     
-    public func customVertecies() -> Pixels.Vertecies? {
+    public func customVertices() -> Pixels.Vertices? {
         
-        if vertecies.isEmpty {
-            Pixels3D.log(pix: self, .warning, nil, "No vertecies found.")
+        if vertices.isEmpty {
+            Pixels3D.log(pix: self, .warning, nil, "No vertices found.")
         }
         
-        var scaledVertecies = vertecies.map { vtx -> Pixels.Vertex in
+        var scaledVertices = vertices.map { vtx -> Pixels.Vertex in
             return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z, s: vtx.s, t: vtx.t)
         }
-        if vertecies.isEmpty {
+        if vertices.isEmpty {
             for _ in 0..<6 {
-                scaledVertecies.append(Pixels.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
+                scaledVertices.append(Pixels.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
             }
         }
         
         var vertexBuffers: [Float] = []
-        for vertex in scaledVertecies {
+        for vertex in scaledVertices {
             vertexBuffers += vertex.buffer
         }
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-        let verteciesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+        let verticesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
-        let count = !vertecies.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
-        return Pixels.Vertecies(buffer: verteciesBuffer, vertexCount: vertecies.count, instanceCount: count, type: primativeType, wireframe: wireframe)
+        let count = !vertices.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
+        return Pixels.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, instanceCount: count, type: primativeType, wireframe: wireframe)
     }
     
 }

@@ -19,10 +19,10 @@ struct VertexOut{
     float2 texCoord;
 };
 
-vertex VertexOut nil3DVTX(const device VertexIn* vertecies [[ buffer(0) ]],
+vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
                           unsigned int vid [[ vertex_id ]]) {
     
-    VertexIn vtxIn = vertecies[vid];
+    VertexIn vtxIn = vertices[vid];
     float x = vtxIn.position[0];
     float y = vtxIn.position[1];
     

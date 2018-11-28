@@ -28,15 +28,15 @@ struct Uniforms {
 //    float aspect;
 };
 
-vertex VertexOut particle3DVTX(const device VertexIn* vertecies [[ buffer(0) ]],
+vertex VertexOut particle3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
                                unsigned int vid [[ vertex_id ]],
                                const device Uniforms& in [[ buffer(1) ]]) {
 //                               texture2d<float> inTex [[ texture(0) ]],
 //                               sampler s [[ sampler(0) ]]) {
     
-    // vertecies unused
+    // vertices unused
     
-    VertexIn vtxIn = vertecies[vid];
+    VertexIn vtxIn = vertices[vid];
     float x = vtxIn.position[0];
     float y = vtxIn.position[1];
 //    float2 uv = float2(u, v);

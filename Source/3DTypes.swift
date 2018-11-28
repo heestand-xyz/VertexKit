@@ -68,6 +68,11 @@ public struct _3DVec {
     }
 }
 
+public struct _3DUV {
+    public var u: CGFloat
+    public var v: CGFloat
+}
+
 infix operator +*=
 public struct _3DTrans {
     public var pos: _3DVec
