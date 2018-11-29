@@ -27,6 +27,8 @@ vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     float y = vtxIn.position[1];
     float z = vtxIn.position[2];
     
+    // FIXME: Perspective
+    
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
     vtxOut.texCoord = vtxIn.texCoord;

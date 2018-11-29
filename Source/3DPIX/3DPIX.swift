@@ -19,7 +19,6 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
     public var vertices: [Pixels.Vertex] { return [] }
     public var instanceCount: Int { return 0 }
-    public var triangleIndices: [Int] { return [] }
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
@@ -44,7 +43,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         }
         
         var scaledVertices = vertices.map { vtx -> Pixels.Vertex in
-            return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z, s: vtx.s, t: vtx.t)
+            return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z * 2, s: vtx.s, t: vtx.t)
         }
         if vertices.isEmpty {
             for _ in 0..<6 {
@@ -54,7 +53,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         
         var vertexBuffers: [Float] = []
         for vertex in scaledVertices {
-            vertexBuffers += vertex.buffer
+            vertexBuffers += vertex.buffer3d
         }
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
