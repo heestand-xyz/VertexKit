@@ -71,6 +71,9 @@ public struct _3DVec {
 public struct _3DUV {
     public var u: CGFloat
     public var v: CGFloat
+    public init(u: CGFloat, v: CGFloat) {
+        self.u = u; self.v = v
+    }
 }
 
 infix operator +*=

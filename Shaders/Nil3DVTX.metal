@@ -10,7 +10,7 @@
 using namespace metal;
 
 struct VertexIn{
-    packed_float2 position;
+    packed_float3 position;
     packed_float2 texCoord;
 };
 
@@ -25,9 +25,10 @@ vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexIn vtxIn = vertices[vid];
     float x = vtxIn.position[0];
     float y = vtxIn.position[1];
+    float z = vtxIn.position[2];
     
     VertexOut vtxOut;
-    vtxOut.position = float4(x, y, 0, 1);
+    vtxOut.position = float4(x, y, z, 1);
     vtxOut.texCoord = vtxIn.texCoord;
     
     return vtxOut;
