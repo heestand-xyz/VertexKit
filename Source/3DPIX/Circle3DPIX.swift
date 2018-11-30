@@ -15,9 +15,9 @@ public class Circle3DPIX: _3DPIX {
     public var circRes: Res = .custom(w: 64, h: 16) { didSet { setNeedsRender() } }
     public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
 
-    public override var instanceCount: Int {
-        return (circRes.w * circRes.h) / 2
-    }
+//    public override var instanceCount: Int {
+//        return (circRes.w * circRes.h) / 2
+//    }
     public override var vertices: [Pixels.Vertex] {
         return circ()
     }

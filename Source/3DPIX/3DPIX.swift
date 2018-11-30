@@ -18,7 +18,6 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
 //    var root: _3DRoot
     
     public var vertices: [Pixels.Vertex] { return [] }
-    public var instanceCount: Int { return 0 }
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
@@ -59,8 +58,8 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
         let verticesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
-        let count = !vertices.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
-        return Pixels.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, instanceCount: count, type: primativeType, wireframe: wireframe)
+//        let count = !vertices.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
+        return Pixels.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, type: primativeType, wireframe: wireframe)
     }
     
 }

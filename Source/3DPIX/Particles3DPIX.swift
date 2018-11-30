@@ -35,9 +35,9 @@ public class Particles3DPIX: _3DPIX {
             return Pixels.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
         })
     }
-    public override var instanceCount: Int {
-        return particles.count //sourcePixIn?.resolution?.count ?? 0
-    }
+//    public override var instanceCount: Int {
+//        return particles.count //sourcePixIn?.resolution?.count ?? 0
+//    }
     public override var primativeType: MTLPrimitiveType { return .point }
     
     var cachedVertices: Pixels.Vertices?

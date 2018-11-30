@@ -14,9 +14,9 @@ public class Grid3DPIX: _3DPIX {
     public var gridRes: Res { didSet { setNeedsRender() } }
     public var gridSize: CGSize { didSet { setNeedsRender() } }
     
-    public override var instanceCount: Int {
-        return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
-    }
+//    public override var instanceCount: Int {
+//        return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
+//    }
     public override var vertices: [Pixels.Vertex] {
         return mapGrid(vtxGrid(vecGrid(plusOne: true)))
     }

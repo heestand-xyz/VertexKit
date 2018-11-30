@@ -28,7 +28,7 @@ public class LineGrid3DPIX: Grid3DPIX {
 //    /*public*/ var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0)// { didSet { setNeedsRender() } }
 
     public override var vertices: [Pixels.Vertex] { return gridLines }
-    public override var instanceCount: Int { return gridRes.count }
+//    public override var instanceCount: Int { return gridRes.count }
     public override var primativeType: MTLPrimitiveType { return .line }
     
     var gridLines: [Pixels.Vertex] = []

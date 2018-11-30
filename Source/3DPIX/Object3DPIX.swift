@@ -17,13 +17,13 @@ public class Object3DPIX: _3DPIX {
     
     public var triangleVertices: [_3DVec] = [] { didSet { setNeedsRender() } }
     public var triangleUVs: [_3DUV] = [] { didSet { setNeedsRender() } }
-    public var triangleCount: Int = 0 { didSet { setNeedsRender() } }
+//    public var triangleCount: Int = 0 { didSet { setNeedsRender() } }
     public var triangleIndices: [Int] = [] { didSet { setNeedsRender() } }
     
     public override var wireframe: Bool { return true }
-    public override var instanceCount: Int {
-        return triangleCount
-    }
+//    public override var instanceCount: Int {
+//        return triangleCount
+//    }
     public override var vertices: [Pixels.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
             Pixels3D.log(.error, nil, "UVs count dose not match Verts count.")
