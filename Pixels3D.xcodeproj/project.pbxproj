@@ -12,8 +12,8 @@
 		3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
 		3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */; };
 		741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
-		74540AFC21AF53FD004452E3 /* Pixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74540AEB21AF4A2A004452E3 /* Pixels.framework */; };
 		74540AFE21AF542E004452E3 /* PixelsShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74540AFD21AF542E004452E3 /* PixelsShaders.metallib */; };
+		747720EE21B5E159007E3C33 /* Pixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 747720D921B5E060007E3C33 /* Pixels.framework */; };
 		747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
 		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
@@ -25,16 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		74540AEA21AF4A2A004452E3 /* PBXContainerItemProxy */ = {
+		747720D821B5E060007E3C33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 74540AE421AF4A2A004452E3 /* Pixels.xcodeproj */;
+			containerPortal = 747720D221B5E05F007E3C33 /* Pixels.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 74BC39D721011E3A004E9AA0;
 			remoteInfo = Pixels;
 		};
-		74540AEC21AF4A2A004452E3 /* PBXContainerItemProxy */ = {
+		747720DA21B5E060007E3C33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 74540AE421AF4A2A004452E3 /* Pixels.xcodeproj */;
+			containerPortal = 747720D221B5E05F007E3C33 /* Pixels.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3AF28BCC219312900079FC7A;
 			remoteInfo = "Pixels-macOS";
@@ -48,8 +48,8 @@
 		3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGrid3DPIX.swift; sourceTree = "<group>"; };
 		3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = Pixels3DShaders.metallib; sourceTree = "<group>"; };
 		741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DRawEngine.swift; sourceTree = "<group>"; };
-		74540AE421AF4A2A004452E3 /* Pixels.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels.xcodeproj; path = "../../··framework/Pixels.xcodeproj"; sourceTree = "<group>"; };
 		74540AFD21AF542E004452E3 /* PixelsShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = PixelsShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		747720D221B5E05F007E3C33 /* Pixels.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels.xcodeproj; path = ../../pixels/Pixels.xcodeproj; sourceTree = "<group>"; };
 		747C90C221AF5EEA00280D29 /* Object3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object3DPIX.swift; sourceTree = "<group>"; };
 		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
 		749ACA6F21138DFF00737173 /* Pixels3D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixels3D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +68,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */,
-				74540AFC21AF53FD004452E3 /* Pixels.framework in Frameworks */,
 				74540AFE21AF542E004452E3 /* PixelsShaders.metallib in Frameworks */,
+				747720EE21B5E159007E3C33 /* Pixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,11 +94,11 @@
 			path = 3DPIX;
 			sourceTree = "<group>";
 		};
-		74540AE521AF4A2A004452E3 /* Products */ = {
+		747720D321B5E05F007E3C33 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74540AEB21AF4A2A004452E3 /* Pixels.framework */,
-				74540AED21AF4A2A004452E3 /* Pixels_macOS.framework */,
+				747720D921B5E060007E3C33 /* Pixels.framework */,
+				747720DB21B5E060007E3C33 /* Pixels_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 				749ACA7021138DFF00737173 /* Products */,
 				74B00252214D503F00A9281D /* Frameworks */,
 				3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */,
-				74540AE421AF4A2A004452E3 /* Pixels.xcodeproj */,
+				747720D221B5E05F007E3C33 /* Pixels.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,8 +205,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 74540AE521AF4A2A004452E3 /* Products */;
-					ProjectRef = 74540AE421AF4A2A004452E3 /* Pixels.xcodeproj */;
+					ProductGroup = 747720D321B5E05F007E3C33 /* Products */;
+					ProjectRef = 747720D221B5E05F007E3C33 /* Pixels.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A3D4CE721567C210071FAC7 /* Products */;
@@ -221,18 +221,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		74540AEB21AF4A2A004452E3 /* Pixels.framework */ = {
+		747720D921B5E060007E3C33 /* Pixels.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pixels.framework;
-			remoteRef = 74540AEA21AF4A2A004452E3 /* PBXContainerItemProxy */;
+			remoteRef = 747720D821B5E060007E3C33 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		74540AED21AF4A2A004452E3 /* Pixels_macOS.framework */ = {
+		747720DB21B5E060007E3C33 /* Pixels_macOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pixels_macOS.framework;
-			remoteRef = 74540AEC21AF4A2A004452E3 /* PBXContainerItemProxy */;
+			remoteRef = 747720DA21B5E060007E3C33 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

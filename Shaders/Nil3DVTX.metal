@@ -27,7 +27,14 @@ vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     float y = vtxIn.position[1];
     float z = vtxIn.position[2];
     
-    // FIXME: Perspective
+//    World-Space Transformation - Model-World Transformation
+    
+    
+
+
+//    Camera-Space Transformation - Model-View Transformation
+
+//    Projective-Perspective Space Transformation - Model-View-Projective transformation
     
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
