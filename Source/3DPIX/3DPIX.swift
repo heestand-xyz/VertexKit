@@ -8,6 +8,7 @@
 
 import UIKit
 import Pixels
+import simd
 
 public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
@@ -34,7 +35,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     }
     
     // MAKR: Custom Geometry
-    public func customVertecies() -> Pixels.Vertecies? {
+    public func customVertices() -> Pixels.Vertices? {
         
         if vertices.isEmpty {
             Pixels3D.log(pix: self, .warning, nil, "No vertices found.")

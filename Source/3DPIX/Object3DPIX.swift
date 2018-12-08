@@ -26,7 +26,7 @@ public class Object3DPIX: _3DPIX {
 //    }
     public override var vertices: [Pixels.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
-            Pixels3D.log(.error, nil, "UVs count dose not match Verts count.")
+            Pixels3D.log(.error, nil, "UVs count dose not match the vertice cout.")
             return []
         }
         var vertices: [Pixels.Vertex] = []
@@ -41,6 +41,8 @@ public class Object3DPIX: _3DPIX {
     public override var primativeType: MTLPrimitiveType {
         return .triangle
     }
+    
+    // MARK: Life Cycle
     
     public override init(res: PIX.Res) {
         super.init(res: res)

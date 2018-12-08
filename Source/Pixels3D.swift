@@ -9,6 +9,7 @@
 import CoreGraphics
 import Metal
 import Pixels
+import simd
 
 public class Pixels3D {
     
@@ -96,6 +97,12 @@ public class Pixels3D {
             }
         }
         return map
+    }
+    
+    // MARK: Matrix
+    
+    func update(projectionMatrix: simd_float4x4) {
+        
     }
     
 }
