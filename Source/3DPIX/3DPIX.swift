@@ -10,7 +10,7 @@ import UIKit
 import Pixels
 
 public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
-
+    
     open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
     open override var customVertexShaderName: String? { return "nil3DVTX" }
     open override var shader: String { return "color3DPIX" }
@@ -34,8 +34,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     }
     
     // MAKR: Custom Geometry
-    
-    public func customVertices() -> Pixels.Vertices? {
+    public func customVertecies() -> Pixels.Vertecies? {
         
         if vertices.isEmpty {
             Pixels3D.log(pix: self, .warning, nil, "No vertices found.")
