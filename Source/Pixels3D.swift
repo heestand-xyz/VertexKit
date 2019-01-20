@@ -101,8 +101,8 @@ public class Pixels3D {
     
     // MARK: Matrix
     
-    func update(projectionMatrix: simd_float4x4) {
-        
+    public func update(cameraTransform: simd_float4x4, projectionMatrix: simd_float4x4) {
+        print("update......................")
     }
     
 }
