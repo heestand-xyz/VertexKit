@@ -99,10 +99,4 @@ public class Pixels3D {
         return map
     }
     
-    // MARK: Matrix
-    
-    public func update(cameraTransform: simd_float4x4, projectionMatrix: simd_float4x4) {
-        print("update......................")
-    }
-    
 }

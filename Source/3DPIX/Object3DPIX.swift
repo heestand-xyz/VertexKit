@@ -9,8 +9,9 @@
 import CoreGraphics
 import Pixels
 import Metal
+import simd
 
-public class Object3DPIX: _3DPIX {
+public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
     
 //    public var circRes: Res = .custom(w: 64, h: 16) { didSet { setNeedsRender() } }
 //    public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
@@ -46,6 +47,14 @@ public class Object3DPIX: _3DPIX {
     
     public override init(res: PIX.Res) {
         super.init(res: res)
+    }
+    
+    // MARK: Matrix
+    
+    public func update(cameraTransform: simd_float4x4, projectionMatrix: simd_float4x4) {
+        
+        
+        
     }
     
 }
