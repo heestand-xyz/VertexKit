@@ -61,8 +61,8 @@ public class LineGrid3DPIX: Grid3DPIX {
                 let vec = grid[y][x]
                 let pixel = pixelPack.pixel(uv: CGVector(dx: u, dy: v))
                 let (vecA, vecB) = customDelegate!.lineGrid3dPixLine(vec, pixel)
-                let vtxA = Pixels.Vertex(x: vecA.x / res.aspect, y: vecA.y, s: 0.0, t: 0.0)
-                let vtxB = Pixels.Vertex(x: vecB.x / res.aspect, y: vecB.y, s: 0.0, t: 0.0)
+                let vtxA = Pixels.Vertex(x: vecA.x / LiveFloat(res.aspect), y: vecA.y, s: 0.0, t: 0.0)
+                let vtxB = Pixels.Vertex(x: vecB.x / LiveFloat(res.aspect), y: vecB.y, s: 0.0, t: 0.0)
                 gridLines.append(vtxA)
                 gridLines.append(vtxB)
             }

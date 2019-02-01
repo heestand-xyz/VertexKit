@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pixels
 
 // MARK: Obj
 
@@ -43,8 +44,8 @@ class _3DRawObj: _3DObj {
     func scale(to _3dCoord: _3DVec) {}
     func scale(by _3dCoord: _3DVec) {}
     
-    func scale(to val: CGFloat) {}
-    func scale(by val: CGFloat) {}
+    func scale(to val: LiveFloat) {}
+    func scale(by val: LiveFloat) {}
     
     func transform(to _3dTrans: _3DTrans) {}
     func transform(by _3dTrans: _3DTrans) {}
@@ -61,7 +62,7 @@ class _3DRawRoot: _3DRawObj, _3DRoot {
         return UIImage(named: "")!
     }
     
-    var worldScale: CGFloat = 1.0
+    var worldScale: LiveFloat = 1.0
     
     override init() {
         view = UIView()
@@ -77,11 +78,11 @@ class _3DRawRoot: _3DRawObj, _3DRoot {
 
 // MARK: Engine
 
-class _3DRawEngine: _3DEngine {
+class _3DRawEngine: _3DEngine {  
     
     var debugMode: Bool = false
 
-    var globalWorldScale: CGFloat = 1.0
+    var globalWorldScale: LiveFloat = 1.0
 
     var roots: [_3DRoot] = []
     

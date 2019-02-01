@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pixels
 
 public protocol _3DObj {
     
@@ -27,8 +28,8 @@ public protocol _3DObj {
     
     func scale(to _3dCoord: _3DVec)
     func scale(by _3dCoord: _3DVec)
-    func scale(to val: CGFloat)
-    func scale(by val: CGFloat)
+    func scale(to val: LiveFloat)
+    func scale(by val: LiveFloat)
     
     func transform(to _3dTrans: _3DTrans)
     func transform(by _3dTrans: _3DTrans)
@@ -42,7 +43,7 @@ public protocol _3DRoot: _3DObj {
     var view: UIView { get }
     var snapshot: UIImage { get }
     
-    var worldScale: CGFloat { get set }
+    var worldScale: LiveFloat { get set }
 
     func add(_ obj: _3DObj)
     func add(_ obj: _3DObj, to objParent: _3DObj)
@@ -67,7 +68,7 @@ public enum _3DObjKind {
 public protocol _3DEngine {
     
     var debugMode: Bool { get set }
-    var globalWorldScale: CGFloat { get set }
+    var globalWorldScale: LiveFloat { get set }
     
     var roots: [_3DRoot] { get set }
 

@@ -7,15 +7,24 @@
 //
 
 import SceneKit
+import Pixels
 
 // MARK: Obj
 
 extension _3DVec {
-    var scnVec: SCNVector3 { get { return SCNVector3(x, y, z) } }
+    var scnVec: SCNVector3 {
+        get {
+            #if os(iOS)
+            return SCNVector3(Float(x.cg), Float(y.cg), Float(z.cg))
+            #elseif os(macOS)
+            return SCNVector3(CGFloat(x), CGFloat(y), CGFloat(z))
+            #endif
+        }
+    }
 }
 
 private extension SCNVector3 {
-    var vec: _3DVec { get { return _3DVec(x: CGFloat(x), y: CGFloat(y), z: CGFloat(z)) } }
+    var vec: _3DVec { get { return _3DVec(x: LiveFloat(x), y: LiveFloat(y), z: LiveFloat(z)) } }
 }
 
 class _3DScnObj: _3DObj {
@@ -55,8 +64,8 @@ class _3DScnObj: _3DObj {
     
     func scale(to _3dCoord: _3DVec) { scl = _3dCoord }
     func scale(by _3dCoord: _3DVec) { scl *= _3dCoord }
-    func scale(to val: CGFloat) { scl = _3DVec(x: val, y: val, z: val) }
-    func scale(by val: CGFloat) { scl *= _3DVec(x: val, y: val, z: val) }
+    func scale(to val: LiveFloat) { scl = _3DVec(x: val, y: val, z: val) }
+    func scale(by val: LiveFloat) { scl *= _3DVec(x: val, y: val, z: val) }
     
 }
 
@@ -64,9 +73,9 @@ class _3DScnObj: _3DObj {
 
 class _3DScnRoot: _3DScnObj, _3DRoot {
     
-    var worldScale: CGFloat {
+    var worldScale: LiveFloat {
         get { return scn.rootNode.scale.vec.x }
-        set { scn.rootNode.scale = SCNVector3(x: Float(newValue), y: Float(newValue), z: Float(newValue)) }
+        set { scn.rootNode.scale = SCNVector3(x: Float(newValue.cg), y: Float(newValue.cg), z: Float(newValue.cg)) }
     }
     
     let view: UIView
@@ -147,7 +156,7 @@ class _3DScnEngine: _3DEngine {
         
     var roots: [_3DRoot] = []
     
-    var globalWorldScale: CGFloat = 1 {
+    var globalWorldScale: LiveFloat = 1 {
         didSet {
             for root in roots as! [_3DScnRoot] {
                 root.worldScale = globalWorldScale
@@ -268,14 +277,14 @@ class _3DScnEngine: _3DEngine {
         }
         let floatVerts = verts.map { vert -> FloatVert in
             return FloatVert(
-                px: Float(vert.pos.x),
-                py: Float(vert.pos.y),
-                pz: Float(vert.pos.z),
-                nx: Float(vert.norm.x),
-                ny: Float(vert.norm.y),
-                nz: Float(vert.norm.z),
-                u: Float(vert.uv.u),
-                v: Float(vert.uv.v)
+                px: Float(vert.pos.x.cg),
+                py: Float(vert.pos.y.cg),
+                pz: Float(vert.pos.z.cg),
+                nx: Float(vert.norm.x.cg),
+                ny: Float(vert.norm.y.cg),
+                nz: Float(vert.norm.z.cg),
+                u: Float(vert.uv.u.cg),
+                v: Float(vert.uv.v.cg)
             )
         }
 

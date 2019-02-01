@@ -34,7 +34,7 @@ public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
         for index in triangleIndices {
             let vert = triangleVertices[index]
             let uv = triangleUVs[index]
-            let vertex = Pixels.Vertex(x: (vert.x / res.aspect) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
+            let vertex = Pixels.Vertex(x: (vert.x / LiveFloat(res.aspect)) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
             vertices.append(vertex)
         }
         return vertices

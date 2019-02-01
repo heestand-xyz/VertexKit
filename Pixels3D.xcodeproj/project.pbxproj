@@ -15,6 +15,7 @@
 		74540AFE21AF542E004452E3 /* PixelsShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74540AFD21AF542E004452E3 /* PixelsShaders.metallib */; };
 		745D091321F64BE80096B917 /* Pixel3DProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* Pixel3DProtocol.swift */; };
 		747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
+		7489CBF121FA2083009BBBE1 /* Pixels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74742DC021F641B300ADEEA9 /* Pixels.framework */; };
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
 		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
 		74B00257214D56F600A9281D /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
@@ -70,6 +71,7 @@
 			files = (
 				3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */,
 				74540AFE21AF542E004452E3 /* PixelsShaders.metallib in Frameworks */,
+				7489CBF121FA2083009BBBE1 /* Pixels.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

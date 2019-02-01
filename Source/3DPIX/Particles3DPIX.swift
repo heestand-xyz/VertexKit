@@ -32,7 +32,7 @@ public class Particles3DPIX: _3DPIX {
     
     public override var vertices: [Pixels.Vertex] {
         return particles.map({ particle -> Pixels.Vertex in
-            return Pixels.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
+            return Pixels.Vertex(x: particle.pos.x / LiveFloat(res.aspect), y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
         })
     }
 //    public override var instanceCount: Int {
@@ -92,7 +92,7 @@ public class Particles3DPIX: _3DPIX {
             let pi: CGFloat = .pi
             let ang = CGFloat.random(in: -pi...pi)
             let amp = CGFloat.random(in: 0.5...1.0)
-            let dir = _3DVec(x: cos(ang) * amp, y: sin(ang) * amp, z: 0.0)
+            let dir = _3DVec(x: LiveFloat(cos(ang) * amp), y: LiveFloat(sin(ang) * amp), z: 0.0)
             particles.append(Particle(pos: emittor, dir: dir, life: 1.0))
         }
     }
@@ -107,7 +107,7 @@ public class Particles3DPIX: _3DPIX {
                 particles.remove(at: ir)
                 continue
             }
-            particle.pos += particle.dir * speed
+            particle.pos += particle.dir * LiveFloat(speed)
             particles[ir] = particle
         }
     }

@@ -39,8 +39,8 @@ public class Grid3DPIX: _3DPIX {
             for x in 0..<gridRes.w + plus {
                 let u = CGFloat(x) / gridRes.width
                 let vec = _3DVec(
-                    x: (u - 0.5) * gridSize.width,
-                    y: (v - 0.5) * gridSize.height,
+                    x: LiveFloat((u - 0.5) * gridSize.width),
+                    y: LiveFloat((v - 0.5) * gridSize.height),
                     z: 0.0
                 )
                 vecRow.append(vec)
@@ -55,7 +55,7 @@ public class Grid3DPIX: _3DPIX {
     func vtxGrid(_ vecGrid: [[_3DVec]]) -> [[Pixels.Vertex]] {
         return vecGrid.map({ vecRow -> [Pixels.Vertex] in
             return vecRow.map({ vec -> Pixels.Vertex in
-                return Pixels.Vertex(x: vec.x / res.aspect, y: vec.y, s: 0.0, t: 0.0)
+                return Pixels.Vertex(x: vec.x / LiveFloat(res.aspect), y: vec.y, s: 0.0, t: 0.0)
             })
         })
     }
