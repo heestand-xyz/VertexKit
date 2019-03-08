@@ -13,6 +13,8 @@ import simd
 
 public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
     
+    open override var customVertexShaderName: String? { return "obj3DVTX" }
+    
 //    public var circRes: Res = .custom(w: 64, h: 16) { didSet { setNeedsRender() } }
 //    public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
     
@@ -25,6 +27,14 @@ public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
 //    public override var instanceCount: Int {
 //        return triangleCount
 //    }
+    
+    public var cameraMatrix: matrix_float4x4 = matrix_identity_float4x4
+    public var projectionMatrix: matrix_float4x4 = matrix_identity_float4x4
+    
+    public override var customMatrices: [matrix_float4x4] {
+        return [cameraMatrix, projectionMatrix]
+    }
+    
     public override var vertices: [Pixels.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
             Pixels3D.log(.error, nil, "UVs count dose not match the vertice cout.")
@@ -51,10 +61,9 @@ public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
     
     // MARK: Matrix
     
-    public func update(cameraTransform: simd_float4x4, projectionMatrix: simd_float4x4) {
-        
-        
-        
+    public func update(cameraMatrix: simd_float4x4, projectionMatrix: simd_float4x4) {
+        self.cameraMatrix = cameraMatrix
+        self.projectionMatrix = projectionMatrix
     }
     
 }
