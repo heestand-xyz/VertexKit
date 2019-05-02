@@ -8,7 +8,11 @@
 
 import CoreGraphics
 import Metal
+#if os(iOS)
 import Pixels
+#elseif os(macOS)
+import Pixels_macOS
+#endif
 import simd
 
 public class Pixels3D {

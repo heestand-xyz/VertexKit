@@ -6,8 +6,12 @@
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
+#if os(iOS)
 import Pixels
+#elseif os(macOS)
+import Pixels_macOS
+#endif
 
 // MARK: Obj
 
@@ -29,7 +33,7 @@ class _3DRawObj: _3DObj {
         set {}
     }
     
-    var color: UIColor? = .clear
+    var color: _Color? = .clear
     
     init() {
         id = UUID()
@@ -56,16 +60,16 @@ class _3DRawObj: _3DObj {
 
 class _3DRawRoot: _3DRawObj, _3DRoot {
     
-    var view: UIView
+    var view: _View
     
-    var snapshot: UIImage {
-        return UIImage(named: "")!
+    var snapshot: _Image {
+        return _Image(named: "")!
     }
     
     var worldScale: LiveFloat = 1.0
     
     override init() {
-        view = UIView()
+        view = _View()
         super.init()
     }
     

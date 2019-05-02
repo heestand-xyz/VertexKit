@@ -6,8 +6,24 @@
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 import Pixels
+#elseif os(macOS)
+import AppKit
+import Pixels_macOS
+#endif
+
+#if os(iOS)
+public typealias _Color = UIColor
+public typealias _View = UIView
+public typealias _Image = UIImage
+#elseif os(macOS)
+public typealias _Color = NSColor
+public typealias _View = NSView
+public typealias _Image = NSImage
+#endif
+
 
 public protocol _3DObj {
     
@@ -18,7 +34,7 @@ public protocol _3DObj {
     var scl: _3DVec { get set }
     var trans: _3DTrans { get set }
     
-    var color: UIColor? { get set }
+    var color: _Color? { get set }
     
     func position(to _3dCoord: _3DVec)
     func position(by _3dCoord: _3DVec)
@@ -40,8 +56,8 @@ public protocol _3DRoot: _3DObj {
     
     var id: UUID { get }
     
-    var view: UIView { get }
-    var snapshot: UIImage { get }
+    var view: _View { get }
+    var snapshot: _Image { get }
     
     var worldScale: LiveFloat { get set }
 

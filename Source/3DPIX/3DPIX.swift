@@ -6,8 +6,13 @@
 //  Copyright © 2018 Hexagons. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 import Pixels
+#elseif os(macOS)
+import AppKit
+import Pixels_macOS
+#endif
 import simd
 
 public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {

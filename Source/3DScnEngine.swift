@@ -7,7 +7,12 @@
 //
 
 import SceneKit
+import CoreGraphics
+#if os(iOS)
 import Pixels
+#elseif os(macOS)
+import Pixels_macOS
+#endif
 
 // MARK: Obj
 
@@ -17,7 +22,7 @@ extension _3DVec {
             #if os(iOS)
             return SCNVector3(Float(x.cg), Float(y.cg), Float(z.cg))
             #elseif os(macOS)
-            return SCNVector3(CGFloat(x), CGFloat(y), CGFloat(z))
+            return SCNVector3(x: x.cg, y: y.cg, z: z.cg)
             #endif
         }
     }
@@ -41,8 +46,8 @@ class _3DScnObj: _3DObj {
         set { pos = newValue.pos; rot = newValue.rot; scl = newValue.scl }
     }
     
-    var color: UIColor? {
-        get { return node.geometry?.firstMaterial?.diffuse.contents as? UIColor }
+    var color: _Color? {
+        get { return node.geometry?.firstMaterial?.diffuse.contents as? _Color }
         set { node.geometry?.firstMaterial?.diffuse.contents = newValue }
     }
     
@@ -75,13 +80,13 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
     
     var worldScale: LiveFloat {
         get { return scn.rootNode.scale.vec.x }
-        set { scn.rootNode.scale = SCNVector3(x: Float(newValue.cg), y: Float(newValue.cg), z: Float(newValue.cg)) }
+        set { scn.rootNode.scale = SCNVector3(x: newValue.cg, y: newValue.cg, z: newValue.cg) }
     }
     
-    let view: UIView
+    let view: _View
     let scn = SCNScene()
     
-    var snapshot: UIImage {
+    var snapshot: _Image {
         return (view as! SCNView).snapshot()
     }
     

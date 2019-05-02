@@ -7,7 +7,11 @@
 //
 
 import CoreGraphics
+#if os(iOS)
 import Pixels
+#elseif os(macOS)
+import Pixels_macOS
+#endif
 
 public struct _3DVec {
     public var x: LiveFloat

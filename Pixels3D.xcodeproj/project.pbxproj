@@ -22,6 +22,22 @@
 		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
 		74B00257214D56F600A9281D /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
 		74B40E99215D51F200518DFD /* Particles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E98215D51F200518DFD /* Particles3DPIX.swift */; };
+		74DD8E72227B1A3F00B1C5B2 /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
+		74DD8E73227B1A3F00B1C5B2 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
+		74DD8E74227B1A3F00B1C5B2 /* Circle3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334821565D3000F29DF6 /* Circle3DPIX.swift */; };
+		74DD8E75227B1A3F00B1C5B2 /* Grid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4933462156574800F29DF6 /* Grid3DPIX.swift */; };
+		74DD8E76227B1A3F00B1C5B2 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
+		74DD8E77227B1A3F00B1C5B2 /* RawParticles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */; };
+		74DD8E78227B1A3F00B1C5B2 /* Particles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E98215D51F200518DFD /* Particles3DPIX.swift */; };
+		74DD8E79227B1A3F00B1C5B2 /* ParticlesUV3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */; };
+		74DD8E7A227B1A4300B1C5B2 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
+		74DD8E7B227B1A4300B1C5B2 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
+		74DD8E7C227B1A4300B1C5B2 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
+		74DD8E7D227B1A4300B1C5B2 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
+		74DD8E7E227B1A4300B1C5B2 /* Pixel3DProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* Pixel3DProtocol.swift */; };
+		74DD8E7F227B1A4300B1C5B2 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
+		74DD8EAF227B1D2700B1C5B2 /* Pixels_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEED6C1227AE5A8000B018A /* Pixels_macOS.framework */; };
+		74DD8EB1227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
 		74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
@@ -63,6 +79,8 @@
 		74B00254214D509700A9281D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74B00256214D56F600A9281D /* 3DPIX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DPIX.swift; sourceTree = "<group>"; };
 		74B40E98215D51F200518DFD /* Particles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles3DPIX.swift; sourceTree = "<group>"; };
+		74DD8E6A227B1A2200B1C5B2 /* Pixels3D_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixels3D_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "PixelsShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
 		74FA7B15211392BF00E9C112 /* Pixels3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels3D.swift; sourceTree = "<group>"; };
@@ -76,6 +94,15 @@
 				3AEED6CC227AE632000B018A /* Pixels.framework in Frameworks */,
 				3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */,
 				74540AFE21AF542E004452E3 /* PixelsShaders.metallib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74DD8E67227B1A2200B1C5B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74DD8EAF227B1D2700B1C5B2 /* Pixels_macOS.framework in Frameworks */,
+				74DD8EB1227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				749ACA6F21138DFF00737173 /* Pixels3D.framework */,
+				74DD8E6A227B1A2200B1C5B2 /* Pixels3D_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */,
+				74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */,
 				74540AFD21AF542E004452E3 /* PixelsShaders.metallib */,
 			);
 			name = Frameworks;
@@ -159,6 +188,13 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		749ACA6A21138DFF00737173 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74DD8E65227B1A2200B1C5B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,6 +222,24 @@
 			productReference = 749ACA6F21138DFF00737173 /* Pixels3D.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		74DD8E69227B1A2200B1C5B2 /* Pixels3D-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "Pixels3D-macOS" */;
+			buildPhases = (
+				74DD8E65227B1A2200B1C5B2 /* Headers */,
+				74DD8E66227B1A2200B1C5B2 /* Sources */,
+				74DD8E67227B1A2200B1C5B2 /* Frameworks */,
+				74DD8E68227B1A2200B1C5B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pixels3D-macOS";
+			productName = "Pixels3D-macOS";
+			productReference = 74DD8E6A227B1A2200B1C5B2 /* Pixels3D_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +253,9 @@
 					749ACA6E21138DFF00737173 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+					};
+					74DD8E69227B1A2200B1C5B2 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -225,6 +282,7 @@
 			projectRoot = "";
 			targets = (
 				749ACA6E21138DFF00737173 /* Pixels3D */,
+				74DD8E69227B1A2200B1C5B2 /* Pixels3D-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +313,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74DD8E68227B1A2200B1C5B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,6 +341,27 @@
 				3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */,
 				741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */,
 				3AEED6DF227B032B000B018A /* ParticlesUV3DPIX.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74DD8E66227B1A2200B1C5B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74DD8E75227B1A3F00B1C5B2 /* Grid3DPIX.swift in Sources */,
+				74DD8E78227B1A3F00B1C5B2 /* Particles3DPIX.swift in Sources */,
+				74DD8E7C227B1A4300B1C5B2 /* 3DScnEngine.swift in Sources */,
+				74DD8E77227B1A3F00B1C5B2 /* RawParticles3DPIX.swift in Sources */,
+				74DD8E79227B1A3F00B1C5B2 /* ParticlesUV3DPIX.swift in Sources */,
+				74DD8E72227B1A3F00B1C5B2 /* 3DPIX.swift in Sources */,
+				74DD8E73227B1A3F00B1C5B2 /* Object3DPIX.swift in Sources */,
+				74DD8E7B227B1A4300B1C5B2 /* 3DEngine.swift in Sources */,
+				74DD8E76227B1A3F00B1C5B2 /* LineGrid3DPIX.swift in Sources */,
+				74DD8E7A227B1A4300B1C5B2 /* Pixels3D.swift in Sources */,
+				74DD8E74227B1A3F00B1C5B2 /* Circle3DPIX.swift in Sources */,
+				74DD8E7E227B1A4300B1C5B2 /* Pixel3DProtocol.swift in Sources */,
+				74DD8E7F227B1A4300B1C5B2 /* 3DTypes.swift in Sources */,
+				74DD8E7D227B1A4300B1C5B2 /* 3DRawEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +547,64 @@
 			};
 			name = Release;
 		};
+		74DD8E70227B1A2200B1C5B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2QHTY6FMW2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.hexagons.Pixels3D-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		74DD8E71227B1A2200B1C5B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 2QHTY6FMW2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.hexagons.Pixels3D-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -478,6 +622,15 @@
 			buildConfigurations = (
 				749ACA8421138DFF00737173 /* Debug */,
 				749ACA8521138DFF00737173 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "Pixels3D-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74DD8E70227B1A2200B1C5B2 /* Debug */,
+				74DD8E71227B1A2200B1C5B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

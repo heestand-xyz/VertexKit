@@ -7,7 +7,11 @@
 //
 
 import CoreGraphics
+#if os(iOS)
 import Pixels
+#elseif os(macOS)
+import Pixels_macOS
+#endif
 import Metal
 
 public class Circle3DPIX: _3DPIX {
