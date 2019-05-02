@@ -40,6 +40,10 @@ public class LineGrid3DPIX: Grid3DPIX {
 //        self.gridLines = makeGridLines()
     }
     
+    required init(res: PIX.Res) {
+        super.init(res: res, gridRes: .custom(w: 10, h: 10))
+    }
+    
     public func makeGridLines() {
         self.gridLines = []
 //        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", Pixels.main.frame)

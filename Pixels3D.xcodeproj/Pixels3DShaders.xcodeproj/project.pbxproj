@@ -10,6 +10,7 @@
 		3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */; };
 		3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */; };
 		3A3D4CED21567C7C0071FAC7 /* Color3DPIX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */; };
+		3AEED6DD227B0154000B018A /* ParticleUV3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DC227B0154000B018A /* ParticleUV3DVTX.metal */; };
 		74A3DE772230123100FC9B54 /* Obj3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74A3DE762230123000FC9B54 /* Obj3DVTX.metal */; };
 		74B40E9C215D565600518DFD /* Particle3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E9B215D565600518DFD /* Particle3DVTX.metal */; };
 		74B40EA1215D5B2000518DFD /* noise_header.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E9F215D5B2000518DFD /* noise_header.metal */; };
@@ -23,6 +24,7 @@
 		3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Distort3DVTX.metal; sourceTree = "<group>"; };
 		3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = Pixels3DShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Color3DPIX.metal; sourceTree = "<group>"; };
+		3AEED6DC227B0154000B018A /* ParticleUV3DVTX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ParticleUV3DVTX.metal; sourceTree = "<group>"; };
 		74A3DE762230123000FC9B54 /* Obj3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Obj3DVTX.metal; sourceTree = "<group>"; };
 		74B40E9B215D565600518DFD /* Particle3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Particle3DVTX.metal; sourceTree = "<group>"; };
 		74B40E9F215D5B2000518DFD /* noise_header.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = noise_header.metal; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				74A3DE762230123000FC9B54 /* Obj3DVTX.metal */,
 				3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */,
 				74B40E9B215D565600518DFD /* Particle3DVTX.metal */,
+				3AEED6DC227B0154000B018A /* ParticleUV3DVTX.metal */,
 				74B40E9F215D5B2000518DFD /* noise_header.metal */,
 				74B40EA0215D5B2000518DFD /* random_header.metal */,
 				74B40EA4215D5DA600518DFD /* noise.metal */,
@@ -121,6 +124,7 @@
 			files = (
 				74B40EA1215D5B2000518DFD /* noise_header.metal in Sources */,
 				3A1D22F9215687AF00D0BADD /* Distort3DVTX.metal in Sources */,
+				3AEED6DD227B0154000B018A /* ParticleUV3DVTX.metal in Sources */,
 				74B40EA6215D5DA600518DFD /* noise.metal in Sources */,
 				3A1D22F72156839E00D0BADD /* Nil3DVTX.metal in Sources */,
 				74B40EA2215D5B2000518DFD /* random_header.metal in Sources */,

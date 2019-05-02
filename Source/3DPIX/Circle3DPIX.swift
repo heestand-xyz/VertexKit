@@ -25,7 +25,7 @@ public class Circle3DPIX: _3DPIX {
         return .line
     }
     
-    public override init(res: PIX.Res) {
+    public required init(res: PIX.Res) {
         super.init(res: res)
     }
     

@@ -13,7 +13,7 @@ using namespace metal;
 //#import "noise_header.metal"
 
 struct VertexIn{
-    packed_float2 position;
+    packed_float3 position;
     packed_float2 texCoord;
 };
 
@@ -39,14 +39,14 @@ vertex VertexOut particle3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexIn vtxIn = vertices[vid];
     float x = vtxIn.position[0];
     float y = vtxIn.position[1];
+    float z = vtxIn.position[2];
+    
 //    float2 uv = float2(u, v);
 //    float4 c = inTex.sample(s, uv);
 //
 //    float x = (c.r / in.aspect) * 0.001;
 //    float y = c.g * 0.001;
-    float z = 0.0;//c.b * 0.001;
-    
-    float p = in.size;//c.a;
+    //c.b * 0.001;
     
 //    float t = in.time * 4;
 //
@@ -81,7 +81,7 @@ vertex VertexOut particle3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
-    vtxOut.pointSize = p;
+    vtxOut.pointSize = in.size;
     
     return vtxOut;
 }

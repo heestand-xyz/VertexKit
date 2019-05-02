@@ -28,6 +28,12 @@ public class Grid3DPIX: _3DPIX {
         super.init(res: res)
     }
     
+    required init(res: PIX.Res) {
+        gridRes = .custom(w: 10, h: 10)
+        gridSize = CGSize(width: 1.0, height: 1.0)
+        super.init(res: res)
+    }
+    
     func vecGrid(plusOne: Bool = false) -> [[_3DVec]] {
         
         let plus = plusOne ? 1 : 0

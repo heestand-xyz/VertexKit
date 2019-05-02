@@ -51,9 +51,9 @@ public class Particles3DPIX: _3DPIX {
 //    public var count: Int = 1024// { didSet { setNeedsRender() } }
     var particles: [Particle] = []// { didSet { setNeedsRender() } }
     public var speed: CGFloat = 1.0
-    public var lifeDecay: CGFloat = 0.1
+    public var lifeDecay: CGFloat = 0.01
     public var emittors:  [_3DVec] = []// { didSet { setNeedsRender() } }
-    public var size: CGFloat = 1.0
+    public var size: CGFloat = 1.0 { didSet { setNeedsRender() } }
     
 //    var aspect: CGFloat {
 //        return res.aspect
@@ -66,9 +66,8 @@ public class Particles3DPIX: _3DPIX {
     open override var vertexUniforms: [CGFloat] {
         return [size]
     }
-    
-    
-    public override init(res: Res) {
+
+    public required init(res: Res) {
         super.init(res: res)
     }
     
@@ -98,6 +97,7 @@ public class Particles3DPIX: _3DPIX {
     }
     
     public func move() {
+        print("particles:", particles)
         let count = particles.count
         for i in 0..<count {
             let ir = count - i - 1

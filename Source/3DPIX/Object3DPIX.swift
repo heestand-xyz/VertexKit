@@ -55,7 +55,7 @@ public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
     
     // MARK: Life Cycle
     
-    public override init(res: PIX.Res) {
+    public required init(res: PIX.Res) {
         super.init(res: res)
     }
     
