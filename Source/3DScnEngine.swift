@@ -108,7 +108,9 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
         scnView.scene = scn
         if debug {
             scnView.showsStatistics = true
-            if #available(iOS 11.0, *) { scnView.debugOptions.insert(.renderAsWireframe) }
+            if #available(iOS 11.0, *) { if #available(OSX 10.13, *) {
+                scnView.debugOptions.insert(.renderAsWireframe)
+            } }
 //            scnView.debugOptions.insert(.showWireframe)
 //            scnView.debugOptions.insert(.showBoundingBoxes)
 //            glLineWidth(20)

@@ -40,7 +40,7 @@ vertex VertexOut particleUV3DVTX(const device VertexIn* vertices [[ buffer(0) ]]
     float4 c = inTex.sample(s, uv);
     float x = (c.r / in.aspect) * 2;
     float y = c.g * 2;
-    float z = c.b * 2;
+    float z = 0.0;//c.b * 2;
 
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);

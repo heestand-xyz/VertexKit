@@ -17,7 +17,6 @@
 		74B40EA2215D5B2000518DFD /* random_header.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA0215D5B2000518DFD /* random_header.metal */; };
 		74B40EA5215D5DA600518DFD /* random.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA3215D5DA600518DFD /* random.metal */; };
 		74B40EA6215D5DA600518DFD /* noise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74B40EA4215D5DA600518DFD /* noise.metal */; };
-		74DD8E90227B1A9300B1C5B2 /* Pixels3DShaders_macOS.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74DD8E8F227B1A9300B1C5B2 /* Pixels3DShaders_macOS.metal */; };
 		74DD8E94227B1A9B00B1C5B2 /* Color3DPIX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */; };
 		74DD8E95227B1A9B00B1C5B2 /* Nil3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */; };
 		74DD8E96227B1A9B00B1C5B2 /* Obj3DVTX.metal in Sources */ = {isa = PBXBuildFile; fileRef = 74A3DE762230123000FC9B54 /* Obj3DVTX.metal */; };
@@ -43,7 +42,6 @@
 		74B40EA3215D5DA600518DFD /* random.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = random.metal; sourceTree = "<group>"; };
 		74B40EA4215D5DA600518DFD /* noise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = noise.metal; sourceTree = "<group>"; };
 		74DD8E8D227B1A9300B1C5B2 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "Pixels3DShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74DD8E8F227B1A9300B1C5B2 /* Pixels3DShaders_macOS.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Pixels3DShaders_macOS.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -51,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				3A3D4CEB21567C5C0071FAC7 /* Shaders */,
-				74DD8E8E227B1A9300B1C5B2 /* Pixels3DShaders-macOS */,
 				3A23E98C21567BCC005D8FD1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,14 +78,6 @@
 			);
 			name = Shaders;
 			path = ../Shaders;
-			sourceTree = "<group>";
-		};
-		74DD8E8E227B1A9300B1C5B2 /* Pixels3DShaders-macOS */ = {
-			isa = PBXGroup;
-			children = (
-				74DD8E8F227B1A9300B1C5B2 /* Pixels3DShaders_macOS.metal */,
-			);
-			path = "Pixels3DShaders-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +176,6 @@
 				74DD8E94227B1A9B00B1C5B2 /* Color3DPIX.metal in Sources */,
 				74DD8E97227B1A9B00B1C5B2 /* Distort3DVTX.metal in Sources */,
 				74DD8E9C227B1A9B00B1C5B2 /* noise.metal in Sources */,
-				74DD8E90227B1A9300B1C5B2 /* Pixels3DShaders_macOS.metal in Sources */,
 				74DD8E96227B1A9B00B1C5B2 /* Obj3DVTX.metal in Sources */,
 				74DD8E9B227B1A9B00B1C5B2 /* random_header.metal in Sources */,
 				74DD8E98227B1A9B00B1C5B2 /* Particle3DVTX.metal in Sources */,
@@ -202,11 +190,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -214,11 +202,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -254,10 +242,11 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QHTY6FMW2;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -267,9 +256,10 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2QHTY6FMW2;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

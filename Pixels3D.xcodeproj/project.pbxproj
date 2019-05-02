@@ -19,7 +19,6 @@
 		745D091321F64BE80096B917 /* Pixel3DProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* Pixel3DProtocol.swift */; };
 		747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
-		74B00255214D509700A9281D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 74B00254214D509700A9281D /* README.md */; };
 		74B00257214D56F600A9281D /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
 		74B40E99215D51F200518DFD /* Particles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E98215D51F200518DFD /* Particles3DPIX.swift */; };
 		74DD8E72227B1A3F00B1C5B2 /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
@@ -38,6 +37,7 @@
 		74DD8E7F227B1A4300B1C5B2 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
 		74DD8EAF227B1D2700B1C5B2 /* Pixels_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEED6C1227AE5A8000B018A /* Pixels_macOS.framework */; };
 		74DD8EB1227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */; };
+		74DD8EB6227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
 		74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
@@ -81,6 +81,7 @@
 		74B40E98215D51F200518DFD /* Particles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles3DPIX.swift; sourceTree = "<group>"; };
 		74DD8E6A227B1A2200B1C5B2 /* Pixels3D_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixels3D_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "PixelsShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "Pixels3DShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
 		74FA7B15211392BF00E9C112 /* Pixels3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels3D.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74DD8EAF227B1D2700B1C5B2 /* Pixels_macOS.framework in Frameworks */,
+				74DD8EB6227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib in Frameworks */,
 				74DD8EB1227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +181,7 @@
 			children = (
 				3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */,
 				74DD8EB0227B1D2A00B1C5B2 /* PixelsShaders-macOS.metallib */,
+				74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */,
 				74540AFD21AF542E004452E3 /* PixelsShaders.metallib */,
 			);
 			name = Frameworks;
@@ -309,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B00255214D509700A9281D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,9 +568,9 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "se.hexagons.Pixels3D-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixels.3d.macos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -595,9 +597,9 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "se.hexagons.Pixels3D-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixels.3d.macos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

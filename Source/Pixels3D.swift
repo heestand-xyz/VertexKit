@@ -25,8 +25,13 @@ public class Pixels3D {
     
     // MARK: Signature
     
+    #if os(iOS)
     let kBundleId = "se.hexagons.pixels.3d"
     let kMetalLibName = "Pixels3DShaders"
+    #elseif os(macOS)
+    let kBundleId = "se.hexagons.pixels.3d.macos"
+    let kMetalLibName = "Pixels3DShaders-macOS"
+    #endif
     
     struct Signature: Encodable {
         let id: String
