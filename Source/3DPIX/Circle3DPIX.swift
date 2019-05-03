@@ -40,7 +40,7 @@ public class Circle3DPIX: _3DPIX {
             for i in 0..<circRes.w {
                 let fi = CGFloat(i) / CGFloat(circRes.w - 1)
                 let pi = fi * .pi * 2
-                let vert = Pixels.Vertex(x: LiveFloat((cos(pi) / res.aspect) * radius * 2 * fj), y: LiveFloat(sin(pi) * radius * 2 * fj), z: 0.0, s: 0.0, t: 0.0)
+                let vert = Pixels.Vertex(x: LiveFloat((cos(pi) / res.aspect.cg) * radius * 2 * fj), y: LiveFloat(sin(pi) * radius * 2 * fj), z: 0.0, s: 0.0, t: 0.0)
                 verts.append(vert)
             }
         }

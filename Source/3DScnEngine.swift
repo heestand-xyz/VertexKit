@@ -80,7 +80,13 @@ class _3DScnRoot: _3DScnObj, _3DRoot {
     
     var worldScale: LiveFloat {
         get { return scn.rootNode.scale.vec.x }
-        set { scn.rootNode.scale = SCNVector3(x: newValue.cg, y: newValue.cg, z: newValue.cg) }
+        set {
+            #if os(iOS)
+            scn.rootNode.scale = SCNVector3(x: Float(newValue.cg), y: Float(newValue.cg), z: Float(newValue.cg))
+            #elseif os(macOS)
+            scn.rootNode.scale = SCNVector3(x: newValue.cg, y: newValue.cg, z: newValue.cg)
+            #endif
+        }
     }
     
     let view: _View

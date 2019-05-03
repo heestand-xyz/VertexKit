@@ -20,7 +20,7 @@ public class RawParticles3DPIX: _3DPIX {
     
     public override var vertices: [Pixels.Vertex] {
         return rawParticles.map({ rawParticle -> Pixels.Vertex in
-            return Pixels.Vertex(x: rawParticle.x / LiveFloat(res.aspect), y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
+            return Pixels.Vertex(x: rawParticle.x / res.aspect, y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
         })
     }
     
