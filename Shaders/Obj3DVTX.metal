@@ -17,6 +17,7 @@ struct VertexIn{
 struct VertexOut {
     float4 position [[position]];
     float2 texCoord;
+    float4 color;
 };
 
 struct Matrices {
@@ -38,6 +39,7 @@ vertex VertexOut obj3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexOut vtxOut;
     vtxOut.position = relPos;
     vtxOut.texCoord = vtxIn.texCoord;
+    vtxOut.color = 1;
     
     return vtxOut;
 }

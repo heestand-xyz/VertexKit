@@ -17,6 +17,7 @@ struct VertexIn{
 struct VertexOut{
     float4 position [[position]];
     float2 texCoord;
+    float4 color;
 };
 
 //constexpr sampler s(coord::pixel,
@@ -40,6 +41,7 @@ vertex VertexOut distort3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexOut vtxOut;
     vtxOut.position = float4(x + (c.r - 0.5), y + (c.g - 0.5), 0, 1);
     vtxOut.texCoord = vtxIn.texCoord;
+    vtxOut.color = 1;
     
     return vtxOut;
 }

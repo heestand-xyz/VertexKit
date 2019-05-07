@@ -24,6 +24,7 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     public override var customVertexPixIn: (PIX & PIXOut)? {
         return vtxPixIn
     }
+    public override var additiveVertexBlending: Bool { return true }
     
     public var size: LiveFloat = 1.0
     

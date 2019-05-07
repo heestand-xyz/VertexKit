@@ -55,8 +55,6 @@ public class Pixels3D {
     // MARK: - Life Cycle
     
     init() {
-        
-        print("Pixels 3D", "-", signature.version)
 //        pixels.log(.none, .pixels, signature.version, clean: true)
         
         do {
@@ -65,12 +63,14 @@ public class Pixels3D {
             Pixels3D.log(.fatal, .pixels, "Metal Library failed to load.", e: error)
         }
         
+        print("Pixels3D", "ready to render.")
+        
     }
     
     // MARK: - Log
     
     public static func log(pix: PIX? = nil, _ level: Pixels.LogLevel, _ category: Pixels.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        Pixels.main.log(prefix: "Pixels 3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
+        Pixels.main.log(prefix: "Pixels3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
     }
     
     // MARK: - Setup
@@ -85,10 +85,10 @@ public class Pixels3D {
         let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
         let bundleId = bundle.bundleIdentifier ?? "unknown-bundle-id"
         if overrideWithMetalLibFromApp {
-            Pixels.main.log(prefix: "Pixels 3D", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
+            Pixels.main.log(prefix: "Pixels3D", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
         }
         guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
-            throw MetalLibraryError.runtimeERROR("Pixels 3D Shaders: Metal Library not found.")
+            throw MetalLibraryError.runtimeERROR("Pixels3D Shaders: Metal Library not found.")
         }
         return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
     }

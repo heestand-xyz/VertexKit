@@ -17,6 +17,7 @@ struct VertexIn{
 struct VertexOut{
     float4 position [[position]];
     float2 texCoord;
+    float4 color;
 };
 
 vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
@@ -39,6 +40,7 @@ vertex VertexOut nil3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
     vtxOut.texCoord = vtxIn.texCoord;
+    vtxOut.color = 1;
     
     return vtxOut;
 }

@@ -20,6 +20,7 @@ struct VertexIn{
 struct VertexOut{
     float4 position [[position]];
     float pointSize [[point_size]];
+    float4 color;
 };
 
 struct Uniforms {
@@ -82,6 +83,7 @@ vertex VertexOut particle3DVTX(const device VertexIn* vertices [[ buffer(0) ]],
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
     vtxOut.pointSize = in.size;
+    vtxOut.color = 1;
     
     return vtxOut;
 }
