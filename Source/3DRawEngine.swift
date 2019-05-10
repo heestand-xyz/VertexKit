@@ -9,9 +9,9 @@
 import Foundation
 import CoreGraphics
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 // MARK: Obj

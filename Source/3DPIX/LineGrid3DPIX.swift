@@ -9,14 +9,14 @@
 import CoreGraphics
 import Metal
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 public protocol LineGrid3DPIXDelegate {
     
-    func lineGrid3dPixLine(_ vec: _3DVec, _ pixel: Pixels.Pixel) -> (a: _3DVec, b: _3DVec)
+    func lineGrid3dPixLine(_ vec: _3DVec, _ pixel: PixelKit.Pixel) -> (a: _3DVec, b: _3DVec)
     
 }
 
@@ -31,13 +31,13 @@ public class LineGrid3DPIX: Grid3DPIX {
     public var gridPixIn: (PIX & PIXOut)? = nil { didSet { setNeedsRender() } }
 //    /*public*/ var offset: _3DVec = _3DVec(x: 0.125, y: 0.125, z: 0.0)// { didSet { setNeedsRender() } }
 
-    public override var vertices: [Pixels.Vertex] { return gridLines }
+    public override var vertices: [PixelKit.Vertex] { return gridLines }
 //    public override var instanceCount: Int { return gridRes.count }
     public override var primativeType: MTLPrimitiveType { return .line }
     
-    var gridLines: [Pixels.Vertex] = []
+    var gridLines: [PixelKit.Vertex] = []
     
-//    var gridLines: [Pixels.Vertex]!
+//    var gridLines: [PixelKit.Vertex]!
     
     public override init(res: Res, gridRes: Res) {
         super.init(res: res, gridRes: gridRes)
@@ -50,8 +50,8 @@ public class LineGrid3DPIX: Grid3DPIX {
     
     public func makeGridLines() {
         self.gridLines = []
-//        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", Pixels.main.frame)
-//        return [Pixels.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), Pixels.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
+//        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", PixelKit.main.frame)
+//        return [PixelKit.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), PixelKit.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
         guard customDelegate != nil else {
             Pixels3D.log(.warning, nil, "`customDelegate` not implemented.")
             return
@@ -61,7 +61,7 @@ public class LineGrid3DPIX: Grid3DPIX {
             return
         }
         let grid = vecGrid()
-        var gridLines: [Pixels.Vertex] = []
+        var gridLines: [PixelKit.Vertex] = []
         for y in 0..<gridRes.h {
             let v = (CGFloat(y) + 0.5) / CGFloat(gridRes.h)
             for x in 0..<gridRes.w {
@@ -69,8 +69,8 @@ public class LineGrid3DPIX: Grid3DPIX {
                 let vec = grid[y][x]
                 let pixel = pixelPack.pixel(uv: CGVector(dx: u, dy: v))
                 let (vecA, vecB) = customDelegate!.lineGrid3dPixLine(vec, pixel)
-                let vtxA = Pixels.Vertex(x: vecA.x / res.aspect, y: vecA.y, s: 0.0, t: 0.0)
-                let vtxB = Pixels.Vertex(x: vecB.x / res.aspect, y: vecB.y, s: 0.0, t: 0.0)
+                let vtxA = PixelKit.Vertex(x: vecA.x / res.aspect, y: vecA.y, s: 0.0, t: 0.0)
+                let vtxB = PixelKit.Vertex(x: vecB.x / res.aspect, y: vecB.y, s: 0.0, t: 0.0)
                 gridLines.append(vtxA)
                 gridLines.append(vtxB)
             }

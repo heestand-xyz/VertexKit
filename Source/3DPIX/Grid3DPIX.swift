@@ -8,9 +8,9 @@
 
 import CoreGraphics
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 public class Grid3DPIX: _3DPIX {
@@ -21,7 +21,7 @@ public class Grid3DPIX: _3DPIX {
 //    public override var instanceCount: Int {
 //        return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
 //    }
-    public override var vertices: [Pixels.Vertex] {
+    public override var vertices: [PixelKit.Vertex] {
         return mapGrid(vtxGrid(vecGrid(plusOne: true)))
     }
     public override var wireframe: Bool { return true }
@@ -62,16 +62,16 @@ public class Grid3DPIX: _3DPIX {
         
     }
     
-    func vtxGrid(_ vecGrid: [[_3DVec]]) -> [[Pixels.Vertex]] {
-        return vecGrid.map({ vecRow -> [Pixels.Vertex] in
-            return vecRow.map({ vec -> Pixels.Vertex in
-                return Pixels.Vertex(x: vec.x / res.aspect, y: vec.y, s: 0.0, t: 0.0)
+    func vtxGrid(_ vecGrid: [[_3DVec]]) -> [[PixelKit.Vertex]] {
+        return vecGrid.map({ vecRow -> [PixelKit.Vertex] in
+            return vecRow.map({ vec -> PixelKit.Vertex in
+                return PixelKit.Vertex(x: vec.x / res.aspect, y: vec.y, s: 0.0, t: 0.0)
             })
         })
     }
     
-    func mapGrid(_ vertices: [[Pixels.Vertex]]) -> [Pixels.Vertex] {
-        var verticesMap: [Pixels.Vertex] = []
+    func mapGrid(_ vertices: [[PixelKit.Vertex]]) -> [PixelKit.Vertex] {
+        var verticesMap: [PixelKit.Vertex] = []
         for y in 0..<gridRes.h {
             for x in 0..<gridRes.w {
                 let vertexBottomLeft = vertices[y][x]

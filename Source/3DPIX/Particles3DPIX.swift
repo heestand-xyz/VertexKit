@@ -9,9 +9,9 @@
 import CoreGraphics
 import Metal
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 public class Particles3DPIX: _3DPIX {
@@ -34,9 +34,9 @@ public class Particles3DPIX: _3DPIX {
 //        }
 //    }
     
-    public override var vertices: [Pixels.Vertex] {
-        return particles.map({ particle -> Pixels.Vertex in
-            return Pixels.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
+    public override var vertices: [PixelKit.Vertex] {
+        return particles.map({ particle -> PixelKit.Vertex in
+            return PixelKit.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
         })
     }
 //    public override var instanceCount: Int {
@@ -44,7 +44,7 @@ public class Particles3DPIX: _3DPIX {
 //    }
     public override var primativeType: MTLPrimitiveType { return .point }
     
-    var cachedVertices: Pixels.Vertices?
+    var cachedVertices: PixelKit.Vertices?
     
     struct Particle {
         var pos: _3DVec
@@ -116,7 +116,7 @@ public class Particles3DPIX: _3DPIX {
         }
     }
     
-//    public override func customVertices() -> Pixels.Vertices? {
+//    public override func customVertices() -> PixelKit.Vertices? {
 //        guard !particles.isEmpty else { return nil }
 //        if cachedVertices == nil {
 //            cachedVertices = super.customVertices()

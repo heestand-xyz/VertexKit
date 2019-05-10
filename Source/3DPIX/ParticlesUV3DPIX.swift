@@ -9,12 +9,12 @@
 import CoreGraphics
 import Metal
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
-public class ParticlesUV3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
+public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         
     open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
     open override var customVertexShaderName: String? { return "particleUV3DVTX" }
@@ -24,7 +24,7 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     public override var customVertexPixIn: (PIX & PIXOut)? {
         return vtxPixIn
     }
-//    public override var additiveVertexBlending: Bool { return true }
+    public override var additiveVertexBlending: Bool { return true }
     
     public var size: LiveFloat = 1.0
     
@@ -47,15 +47,15 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     }
     
     // MAKR: Custom Geometry
-    public func customVertices() -> Pixels.Vertices? {
+    public func customVertices() -> PixelKit.Vertices? {
         
         let count = (vtxPixIn?.resolution?.w ?? 1) * (vtxPixIn?.resolution?.h ?? 1)
         let vertexBuffers: [Float] = [Float](repeating: 0.0, count: count)
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-        let verticesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+        let verticesBuffer = PixelKit.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
-        return Pixels.Vertices(buffer: verticesBuffer, vertexCount: count, type: .point, wireframe: false)
+        return PixelKit.Vertices(buffer: verticesBuffer, vertexCount: count, type: .point, wireframe: false)
     }
     
 }

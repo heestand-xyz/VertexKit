@@ -9,9 +9,9 @@
 import CoreGraphics
 import Metal
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 import simd
 
@@ -21,7 +21,7 @@ public class Pixels3D {
     
     public let engine: _3DEngine = _3DScnEngine()
     
-    let pixels = Pixels.main
+    let pixels = PixelKit.main
     
     // MARK: Signature
     
@@ -60,7 +60,7 @@ public class Pixels3D {
         do {
             metalLibrary = try loadMetalShaderLibrary()
         } catch {
-            Pixels3D.log(.fatal, .pixels, "Metal Library failed to load.", e: error)
+            Pixels3D.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
         }
         
         print("Pixels3D", "ready to render.")
@@ -69,8 +69,8 @@ public class Pixels3D {
     
     // MARK: - Log
     
-    public static func log(pix: PIX? = nil, _ level: Pixels.LogLevel, _ category: Pixels.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        Pixels.main.log(prefix: "Pixels3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
+    public static func log(pix: PIX? = nil, _ level: PixelKit.LogLevel, _ category: PixelKit.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        PixelKit.main.log(prefix: "Pixels3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
     }
     
     // MARK: - Setup
@@ -85,12 +85,12 @@ public class Pixels3D {
         let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
         let bundleId = bundle.bundleIdentifier ?? "unknown-bundle-id"
         if overrideWithMetalLibFromApp {
-            Pixels.main.log(prefix: "Pixels3D", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
+            PixelKit.main.log(prefix: "Pixels3D", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
         }
         guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("Pixels3D Shaders: Metal Library not found.")
         }
-        return try Pixels.main.metalDevice.makeLibrary(filepath: libraryFile)
+        return try PixelKit.main.metalDevice.makeLibrary(filepath: libraryFile)
     }
     
     // MARK: UV

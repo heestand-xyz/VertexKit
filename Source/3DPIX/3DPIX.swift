@@ -8,14 +8,14 @@
 
 #if os(iOS)
 import UIKit
-import Pixels
+import PixelKit
 #elseif os(macOS)
 import AppKit
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 import simd
 
-public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
+public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     
     open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
     open override var customVertexShaderName: String? { return "nil3DVTX" }
@@ -23,7 +23,7 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     
 //    var root: _3DRoot
     
-    public var vertices: [Pixels.Vertex] { return [] }
+    public var vertices: [PixelKit.Vertex] { return [] }
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
@@ -39,18 +39,18 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
     }
     
     // MAKR: Custom Geometry
-    public func customVertices() -> Pixels.Vertices? {
+    public func customVertices() -> PixelKit.Vertices? {
         
         if vertices.isEmpty {
             Pixels3D.log(pix: self, .warning, nil, "No vertices found.")
         }
         
-        var scaledVertices = vertices.map { vtx -> Pixels.Vertex in
-            return Pixels.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z * 2, s: vtx.s, t: vtx.t)
+        var scaledVertices = vertices.map { vtx -> PixelKit.Vertex in
+            return PixelKit.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z * 2, s: vtx.s, t: vtx.t)
         }
         if vertices.isEmpty {
             for _ in 0..<6 {
-                scaledVertices.append(Pixels.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
+                scaledVertices.append(PixelKit.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
             }
         }
         
@@ -60,10 +60,10 @@ public class _3DPIX: PIXGenerator, PixelsCustomGeometryDelegate {
         }
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-        let verticesBuffer = Pixels.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+        let verticesBuffer = PixelKit.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
 //        let count = !vertices.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
-        return Pixels.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, type: primativeType, wireframe: wireframe)
+        return PixelKit.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, type: primativeType, wireframe: wireframe)
     }
     
 }

@@ -8,10 +8,10 @@
 
 #if os(iOS)
 import UIKit
-import Pixels
+import PixelKit
 #elseif os(macOS)
 import AppKit
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 #if os(iOS)

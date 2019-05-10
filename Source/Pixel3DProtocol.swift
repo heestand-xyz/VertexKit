@@ -9,6 +9,6 @@
 import Foundation
 import simd
 
-public protocol PixelsCustom3DRenderDelegate {
+public protocol PixelCustom3DRenderDelegate {
     func update(cameraMatrix: simd_float4x4, projectionMatrix: simd_float4x4)
 }

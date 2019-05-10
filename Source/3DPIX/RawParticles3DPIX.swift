@@ -9,18 +9,18 @@
 import CoreGraphics
 import Metal
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 
 public class RawParticles3DPIX: _3DPIX {
     
     open override var customVertexShaderName: String? { return "particle3DVTX" }
     
-    public override var vertices: [Pixels.Vertex] {
-        return rawParticles.map({ rawParticle -> Pixels.Vertex in
-            return Pixels.Vertex(x: rawParticle.x / res.aspect, y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
+    public override var vertices: [PixelKit.Vertex] {
+        return rawParticles.map({ rawParticle -> PixelKit.Vertex in
+            return PixelKit.Vertex(x: rawParticle.x / res.aspect, y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
         })
     }
     

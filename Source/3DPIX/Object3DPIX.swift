@@ -8,14 +8,14 @@
 
 import CoreGraphics
 #if os(iOS)
-import Pixels
+import PixelKit
 #elseif os(macOS)
-import Pixels_macOS
+import PixelKit_macOS
 #endif
 import Metal
 import simd
 
-public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
+public class Object3DPIX: _3DPIX, PixelCustom3DRenderDelegate {
     
     open override var customVertexShaderName: String? { return "obj3DVTX" }
     
@@ -39,16 +39,16 @@ public class Object3DPIX: _3DPIX, PixelsCustom3DRenderDelegate {
         return [cameraMatrix, projectionMatrix]
     }
     
-    public override var vertices: [Pixels.Vertex] {
+    public override var vertices: [PixelKit.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
             Pixels3D.log(.error, nil, "UVs count dose not match the vertice cout.")
             return []
         }
-        var vertices: [Pixels.Vertex] = []
+        var vertices: [PixelKit.Vertex] = []
         for index in triangleIndices {
             let vert = triangleVertices[index]
             let uv = triangleUVs[index]
-            let vertex = Pixels.Vertex(x: (vert.x / res.aspect) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
+            let vertex = PixelKit.Vertex(x: (vert.x / res.aspect) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
             vertices.append(vertex)
         }
         return vertices
