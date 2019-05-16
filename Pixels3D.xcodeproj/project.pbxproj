@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A3F69712285BF65002AB725 /* PixelKitShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3F69702285BF65002AB725 /* PixelKitShaders.metallib */; };
-		3A3F69732285BF6F002AB725 /* PixelKitShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3F69722285BF6F002AB725 /* PixelKitShaders-macOS.metallib */; };
-		3A3F69742285BF76002AB725 /* PixelKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3F696D2285BEF0002AB725 /* PixelKit_macOS.framework */; };
-		3A3F69752285BF79002AB725 /* PixelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3F696B2285BEF0002AB725 /* PixelKit.framework */; };
 		3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4933462156574800F29DF6 /* Grid3DPIX.swift */; };
 		3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334821565D3000F29DF6 /* Circle3DPIX.swift */; };
 		3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
+		3A52E9AD228D529800CCF098 /* PixelKitShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9AC228D529800CCF098 /* PixelKitShaders.metallib */; };
+		3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9A9228D528900CCF098 /* PixelKit.framework */; };
+		3A52E9B0228D52A700CCF098 /* PixelKitShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9AF228D52A700CCF098 /* PixelKitShaders-macOS.metallib */; };
+		3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */; };
+		3A52E9CF228D537200CCF098 /* Pixels3DShaders.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A52E9CE228D537200CCF098 /* Pixels3DShaders.metallib */; };
+		3A52E9D2228D537800CCF098 /* Pixels3DShaders-macOS.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A52E9D1228D537800CCF098 /* Pixels3DShaders-macOS.metallib */; };
 		3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */; };
 		3AEED6DA227AED32000B018A /* RawParticles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */; };
 		3AEED6DF227B032B000B018A /* ParticlesUV3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */; };
@@ -44,30 +46,57 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A3F696A2285BEF0002AB725 /* PBXContainerItemProxy */ = {
+		3A52E9A8228D528900CCF098 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A3F69642285BEF0002AB725 /* PixelKit.xcodeproj */;
+			containerPortal = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 74BC39D721011E3A004E9AA0;
 			remoteInfo = PixelKit;
 		};
-		3A3F696C2285BEF0002AB725 /* PBXContainerItemProxy */ = {
+		3A52E9AA228D528900CCF098 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A3F69642285BEF0002AB725 /* PixelKit.xcodeproj */;
+			containerPortal = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3AF28BCC219312900079FC7A;
 			remoteInfo = "PixelKit-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3A52E9CB228D536C00CCF098 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3A52E9CF228D537200CCF098 /* Pixels3DShaders.metallib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A52E9D0228D537600CCF098 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				3A52E9D2228D537800CCF098 /* Pixels3DShaders-macOS.metallib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels3DShaders.xcodeproj; path = Pixels3D.xcodeproj/Pixels3DShaders.xcodeproj; sourceTree = "<group>"; };
-		3A3F69642285BEF0002AB725 /* PixelKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PixelKit.xcodeproj; path = ../PixelKit/PixelKit.xcodeproj; sourceTree = "<group>"; };
 		3A3F69702285BF65002AB725 /* PixelKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = PixelKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3F69722285BF6F002AB725 /* PixelKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "PixelKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4933462156574800F29DF6 /* Grid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid3DPIX.swift; sourceTree = "<group>"; };
 		3A49334821565D3000F29DF6 /* Circle3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle3DPIX.swift; sourceTree = "<group>"; };
 		3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGrid3DPIX.swift; sourceTree = "<group>"; };
+		3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PixelKitRaw.xcodeproj; path = ../PixelKit/PixelKitRaw.xcodeproj; sourceTree = "<group>"; };
+		3A52E9AC228D529800CCF098 /* PixelKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = PixelKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A52E9AF228D52A700CCF098 /* PixelKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "PixelKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A52E9CE228D537200CCF098 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; name = Pixels3DShaders.metallib; path = "../../../../Library/Developer/Xcode/DerivedData/Mr_Agents-fhpgjbfhzsncfsfcqlnzwtyjhtqj/Build/Products/Debug-iphoneos/Pixels3DShaders.metallib"; sourceTree = "<group>"; };
+		3A52E9D1228D537800CCF098 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; name = "Pixels3DShaders-macOS.metallib"; path = "../../../../Library/Developer/Xcode/DerivedData/Mr_Agents-fhpgjbfhzsncfsfcqlnzwtyjhtqj/Build/Products/Debug/Pixels3DShaders-macOS.metallib"; sourceTree = "<group>"; };
 		3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = Pixels3DShaders.metallib; sourceTree = "<group>"; };
 		3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawParticles3DPIX.swift; sourceTree = "<group>"; };
 		3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesUV3DPIX.swift; sourceTree = "<group>"; };
@@ -92,9 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3F69752285BF79002AB725 /* PixelKit.framework in Frameworks */,
 				3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */,
-				3A3F69712285BF65002AB725 /* PixelKitShaders.metallib in Frameworks */,
+				3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */,
+				3A52E9AD228D529800CCF098 /* PixelKitShaders.metallib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +131,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A3F69742285BF76002AB725 /* PixelKit_macOS.framework in Frameworks */,
-				3A3F69732285BF6F002AB725 /* PixelKitShaders-macOS.metallib in Frameworks */,
+				3A52E9B0228D52A700CCF098 /* PixelKitShaders-macOS.metallib in Frameworks */,
 				74DD8EB6227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib in Frameworks */,
+				3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,15 +142,6 @@
 /* Begin PBXGroup section */
 		3A3D4CE721567C210071FAC7 /* Products */ = {
 			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A3F69652285BEF0002AB725 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A3F696B2285BEF0002AB725 /* PixelKit.framework */,
-				3A3F696D2285BEF0002AB725 /* PixelKit_macOS.framework */,
-			);
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -140,15 +160,26 @@
 			path = 3DPIX;
 			sourceTree = "<group>";
 		};
+		3A52E9A3228D528900CCF098 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A52E9A9228D528900CCF098 /* PixelKit.framework */,
+				3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		749ACA6521138DFF00737173 = {
 			isa = PBXGroup;
 			children = (
 				74B00254214D509700A9281D /* README.md */,
 				749ACA7121138DFF00737173 /* Source */,
+				3A52E9D1228D537800CCF098 /* Pixels3DShaders-macOS.metallib */,
+				3A52E9CE228D537200CCF098 /* Pixels3DShaders.metallib */,
 				749ACA7021138DFF00737173 /* Products */,
 				74B00252214D503F00A9281D /* Frameworks */,
 				3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */,
-				3A3F69642285BEF0002AB725 /* PixelKit.xcodeproj */,
+				3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,7 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */,
+				3A52E9AF228D52A700CCF098 /* PixelKitShaders-macOS.metallib */,
 				3A3F69722285BF6F002AB725 /* PixelKitShaders-macOS.metallib */,
+				3A52E9AC228D529800CCF098 /* PixelKitShaders.metallib */,
 				3A3F69702285BF65002AB725 /* PixelKitShaders.metallib */,
 				74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */,
 			);
@@ -215,6 +248,7 @@
 				749ACA6B21138DFF00737173 /* Sources */,
 				749ACA6C21138DFF00737173 /* Frameworks */,
 				749ACA6D21138DFF00737173 /* Resources */,
+				3A52E9CB228D536C00CCF098 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -233,6 +267,7 @@
 				74DD8E66227B1A2200B1C5B2 /* Sources */,
 				74DD8E67227B1A2200B1C5B2 /* Frameworks */,
 				74DD8E68227B1A2200B1C5B2 /* Resources */,
+				3A52E9D0228D537600CCF098 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -274,8 +309,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A3F69652285BEF0002AB725 /* Products */;
-					ProjectRef = 3A3F69642285BEF0002AB725 /* PixelKit.xcodeproj */;
+					ProductGroup = 3A52E9A3228D528900CCF098 /* Products */;
+					ProjectRef = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A3D4CE721567C210071FAC7 /* Products */;
@@ -291,18 +326,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A3F696B2285BEF0002AB725 /* PixelKit.framework */ = {
+		3A52E9A9228D528900CCF098 /* PixelKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PixelKit.framework;
-			remoteRef = 3A3F696A2285BEF0002AB725 /* PBXContainerItemProxy */;
+			remoteRef = 3A52E9A8228D528900CCF098 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A3F696D2285BEF0002AB725 /* PixelKit_macOS.framework */ = {
+		3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = PixelKit_macOS.framework;
-			remoteRef = 3A3F696C2285BEF0002AB725 /* PBXContainerItemProxy */;
+			remoteRef = 3A52E9AA228D528900CCF098 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

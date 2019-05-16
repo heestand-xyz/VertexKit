@@ -46,7 +46,7 @@ public class Pixels3D {
         return Signature(id: kBundleId, version: Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleShortVersionString"] as! String, build: Int(Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleVersion"] as! String) ?? -1)
     }
     
-    public var overrideWithMetalLibFromApp: Bool = true
+    public var overrideWithMetalLibFromApp: Bool = false
     
     // MARK: Metal
     
