@@ -38,8 +38,8 @@ let particles = ParticlesUV3DPIX(res: .cgSize(view.bounds.size) * 2)
 particles.vtxPixIn = noise - 0.5
 particles.color = LiveColor(lum: 1.0, a: 0.1)
 
-let final: PIX = particles
-final.view.frame = view.bounds
-final.view.checker = false
-view.addSubview(final.view)
+let finalPix: PIX = particles
+finalPix.view.frame = view.bounds
+finalPix.view.checker = false
+view.addSubview(finalPix.view)
 ```
