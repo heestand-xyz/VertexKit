@@ -42,8 +42,6 @@ public class VertexKit {
         return Signature(id: kBundleId, version: Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleShortVersionString"] as! String, build: Int(Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleVersion"] as! String) ?? -1)
     }
     
-    public var overrideWithMetalLibFromApp: Bool = false
-    
     // MARK: Metal
     
     var metalLibrary: MTLLibrary!
@@ -78,12 +76,7 @@ public class VertexKit {
     }
     
     func loadMetalShaderLibrary() throws -> MTLLibrary {
-        let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
-        let bundleId = bundle.bundleIdentifier ?? "unknown-bundle-id"
-        if overrideWithMetalLibFromApp {
-            pixelKit.log(prefix: "VertexKit", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
-        }
-        guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
+        guard let libraryFile = Bundle(for: type(of: self)).path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
         }
         return try pixelKit.metalDevice.makeLibrary(filepath: libraryFile)

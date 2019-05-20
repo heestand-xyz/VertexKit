@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "VertexKit"
-  spec.version      = "0.1.3"
+  spec.version      = "0.1.4"
   spec.summary      = "a Framework for iOS & macOS."
 
   # This description is used to generate tags and improve search results.
@@ -82,7 +82,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/hexagons/pixels.git", :branch => "master", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/hexagons/VertexKit.git", :branch => "master", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -140,6 +140,6 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.ios.dependency "PixelKit", "~> 0.5.5"
+  spec.dependency "PixelKit"
 
 end
