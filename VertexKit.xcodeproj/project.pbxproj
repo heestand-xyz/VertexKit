@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A368227228ED432007845E4 /* Pixels3DShaders-macOS.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */; };
-		3A368228228ED43A007845E4 /* Pixels3DShaders.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */; };
+		3A408EE62292B4310065DB97 /* VertexKitShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */; };
+		3A408EE82292B4350065DB97 /* VertexKitShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */; };
+		3A408EEB2292B4590065DB97 /* VertexKitShaders-macOS.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */; };
+		3A408EEC2292B45B0065DB97 /* VertexKitShaders.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */; };
 		3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4933462156574800F29DF6 /* Grid3DPIX.swift */; };
 		3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334821565D3000F29DF6 /* Circle3DPIX.swift */; };
 		3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
 		3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9A9228D528900CCF098 /* PixelKit.framework */; };
 		3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */; };
-		3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */; };
 		3AEED6DA227AED32000B018A /* RawParticles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */; };
 		3AEED6DF227B032B000B018A /* ParticlesUV3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */; };
 		741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
-		745D091321F64BE80096B917 /* Pixel3DProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* Pixel3DProtocol.swift */; };
+		745D091321F64BE80096B917 /* VertexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* VertexProtocol.swift */; };
 		747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
 		749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
 		74B00257214D56F600A9281D /* 3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B00256214D56F600A9281D /* 3DPIX.swift */; };
@@ -31,16 +32,15 @@
 		74DD8E77227B1A3F00B1C5B2 /* RawParticles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */; };
 		74DD8E78227B1A3F00B1C5B2 /* Particles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B40E98215D51F200518DFD /* Particles3DPIX.swift */; };
 		74DD8E79227B1A3F00B1C5B2 /* ParticlesUV3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */; };
-		74DD8E7A227B1A4300B1C5B2 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
+		74DD8E7A227B1A4300B1C5B2 /* VertexKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* VertexKit.swift */; };
 		74DD8E7B227B1A4300B1C5B2 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74DD8E7C227B1A4300B1C5B2 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
 		74DD8E7D227B1A4300B1C5B2 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
-		74DD8E7E227B1A4300B1C5B2 /* Pixel3DProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* Pixel3DProtocol.swift */; };
+		74DD8E7E227B1A4300B1C5B2 /* VertexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* VertexProtocol.swift */; };
 		74DD8E7F227B1A4300B1C5B2 /* 3DTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749256522121A2FC003A27B1 /* 3DTypes.swift */; };
-		74DD8EB6227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */; };
 		74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0E2113903D00E9C112 /* 3DEngine.swift */; };
 		74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */; };
-		74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* Pixels3D.swift */; };
+		74FA7B16211392BF00E9C112 /* VertexKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA7B15211392BF00E9C112 /* VertexKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				3A368228228ED43A007845E4 /* Pixels3DShaders.metallib in CopyFiles */,
+				3A408EEC2292B45B0065DB97 /* VertexKitShaders.metallib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,39 +77,35 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				3A368227228ED432007845E4 /* Pixels3DShaders-macOS.metallib in CopyFiles */,
+				3A408EEB2292B4590065DB97 /* VertexKitShaders-macOS.metallib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pixels3DShaders.xcodeproj; path = Pixels3D.xcodeproj/Pixels3DShaders.xcodeproj; sourceTree = "<group>"; };
-		3A3F69702285BF65002AB725 /* PixelKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = PixelKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A3F69722285BF6F002AB725 /* PixelKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "PixelKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VertexKitShaders.xcodeproj; path = Resources/VertexKitShaders.xcodeproj; sourceTree = "<group>"; };
+		3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "VertexKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = VertexKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4933462156574800F29DF6 /* Grid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid3DPIX.swift; sourceTree = "<group>"; };
 		3A49334821565D3000F29DF6 /* Circle3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle3DPIX.swift; sourceTree = "<group>"; };
 		3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGrid3DPIX.swift; sourceTree = "<group>"; };
 		3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PixelKitRaw.xcodeproj; path = ../PixelKit/PixelKitRaw.xcodeproj; sourceTree = "<group>"; };
-		3A52E9CE228D537200CCF098 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; name = Pixels3DShaders.metallib; path = "../../../../Library/Developer/Xcode/DerivedData/Mr_Agents-fhpgjbfhzsncfsfcqlnzwtyjhtqj/Build/Products/Debug-iphoneos/Pixels3DShaders.metallib"; sourceTree = "<group>"; };
-		3A52E9D1228D537800CCF098 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; name = "Pixels3DShaders-macOS.metallib"; path = "../../../../Library/Developer/Xcode/DerivedData/Mr_Agents-fhpgjbfhzsncfsfcqlnzwtyjhtqj/Build/Products/Debug/Pixels3DShaders-macOS.metallib"; sourceTree = "<group>"; };
-		3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = Pixels3DShaders.metallib; sourceTree = "<group>"; };
 		3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawParticles3DPIX.swift; sourceTree = "<group>"; };
 		3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesUV3DPIX.swift; sourceTree = "<group>"; };
 		741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DRawEngine.swift; sourceTree = "<group>"; };
-		745D091221F64BE80096B917 /* Pixel3DProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel3DProtocol.swift; sourceTree = "<group>"; };
+		745D091221F64BE80096B917 /* VertexProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexProtocol.swift; sourceTree = "<group>"; };
 		747C90C221AF5EEA00280D29 /* Object3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object3DPIX.swift; sourceTree = "<group>"; };
 		749256522121A2FC003A27B1 /* 3DTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTypes.swift; sourceTree = "<group>"; };
-		749ACA6F21138DFF00737173 /* Pixel3DKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixel3DKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		749ACA6F21138DFF00737173 /* VertexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VertexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		749ACA7321138DFF00737173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74B00254214D509700A9281D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74B00256214D56F600A9281D /* 3DPIX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DPIX.swift; sourceTree = "<group>"; };
 		74B40E98215D51F200518DFD /* Particles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles3DPIX.swift; sourceTree = "<group>"; };
-		74DD8E6A227B1A2200B1C5B2 /* Pixel3DKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pixel3DKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "Pixels3DShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DD8E6A227B1A2200B1C5B2 /* VertexKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VertexKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
-		74FA7B15211392BF00E9C112 /* Pixels3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixels3D.swift; sourceTree = "<group>"; };
+		74FA7B15211392BF00E9C112 /* VertexKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6E366D21650BD0001A285D /* Pixels3DShaders.metallib in Frameworks */,
+				3A408EE82292B4350065DB97 /* VertexKitShaders.metallib in Frameworks */,
 				3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74DD8EB6227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib in Frameworks */,
+				3A408EE62292B4310065DB97 /* VertexKitShaders-macOS.metallib in Frameworks */,
 				3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,11 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A3D4CE721567C210071FAC7 /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3A4933442156571D00F29DF6 /* 3DPIX */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,11 +159,9 @@
 			children = (
 				74B00254214D509700A9281D /* README.md */,
 				749ACA7121138DFF00737173 /* Source */,
-				3A52E9D1228D537800CCF098 /* Pixels3DShaders-macOS.metallib */,
-				3A52E9CE228D537200CCF098 /* Pixels3DShaders.metallib */,
 				749ACA7021138DFF00737173 /* Products */,
 				74B00252214D503F00A9281D /* Frameworks */,
-				3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */,
+				3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */,
 				3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -180,8 +169,8 @@
 		749ACA7021138DFF00737173 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				749ACA6F21138DFF00737173 /* Pixel3DKit.framework */,
-				74DD8E6A227B1A2200B1C5B2 /* Pixel3DKit_macOS.framework */,
+				749ACA6F21138DFF00737173 /* VertexKit.framework */,
+				74DD8E6A227B1A2200B1C5B2 /* VertexKit_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,11 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				749ACA7321138DFF00737173 /* Info.plist */,
-				74FA7B15211392BF00E9C112 /* Pixels3D.swift */,
+				74FA7B15211392BF00E9C112 /* VertexKit.swift */,
+				745D091221F64BE80096B917 /* VertexProtocol.swift */,
 				74FA7B0E2113903D00E9C112 /* 3DEngine.swift */,
 				74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */,
 				741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */,
-				745D091221F64BE80096B917 /* Pixel3DProtocol.swift */,
 				749256522121A2FC003A27B1 /* 3DTypes.swift */,
 				3A4933442156571D00F29DF6 /* 3DPIX */,
 			);
@@ -204,10 +193,8 @@
 		74B00252214D503F00A9281D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A6E366C21650BCB001A285D /* Pixels3DShaders.metallib */,
-				3A3F69722285BF6F002AB725 /* PixelKitShaders-macOS.metallib */,
-				3A3F69702285BF65002AB725 /* PixelKitShaders.metallib */,
-				74DD8EB5227B1DFD00B1C5B2 /* Pixels3DShaders-macOS.metallib */,
+				3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */,
+				3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,9 +219,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		749ACA6E21138DFF00737173 /* Pixel3DKit */ = {
+		749ACA6E21138DFF00737173 /* VertexKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Pixel3DKit" */;
+			buildConfigurationList = 749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "VertexKit" */;
 			buildPhases = (
 				749ACA6A21138DFF00737173 /* Headers */,
 				749ACA6B21138DFF00737173 /* Sources */,
@@ -246,14 +233,14 @@
 			);
 			dependencies = (
 			);
-			name = Pixel3DKit;
+			name = VertexKit;
 			productName = Hx3dE;
-			productReference = 749ACA6F21138DFF00737173 /* Pixel3DKit.framework */;
+			productReference = 749ACA6F21138DFF00737173 /* VertexKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		74DD8E69227B1A2200B1C5B2 /* Pixel3DKit-macOS */ = {
+		74DD8E69227B1A2200B1C5B2 /* VertexKit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "Pixel3DKit-macOS" */;
+			buildConfigurationList = 74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "VertexKit-macOS" */;
 			buildPhases = (
 				74DD8E65227B1A2200B1C5B2 /* Headers */,
 				74DD8E66227B1A2200B1C5B2 /* Sources */,
@@ -265,9 +252,9 @@
 			);
 			dependencies = (
 			);
-			name = "Pixel3DKit-macOS";
+			name = "VertexKit-macOS";
 			productName = "Pixels3D-macOS";
-			productReference = 74DD8E6A227B1A2200B1C5B2 /* Pixel3DKit_macOS.framework */;
+			productReference = 74DD8E6A227B1A2200B1C5B2 /* VertexKit_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -289,7 +276,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Pixel3DKit" */;
+			buildConfigurationList = 749ACA6921138DFF00737173 /* Build configuration list for PBXProject "VertexKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -304,15 +291,11 @@
 					ProductGroup = 3A52E9A3228D528900CCF098 /* Products */;
 					ProjectRef = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
 				},
-				{
-					ProductGroup = 3A3D4CE721567C210071FAC7 /* Products */;
-					ProjectRef = 3A3D4CE621567C210071FAC7 /* Pixels3DShaders.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
-				749ACA6E21138DFF00737173 /* Pixel3DKit */,
-				74DD8E69227B1A2200B1C5B2 /* Pixel3DKit-macOS */,
+				749ACA6E21138DFF00737173 /* VertexKit */,
+				74DD8E69227B1A2200B1C5B2 /* VertexKit-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -359,14 +342,14 @@
 				74FA7B112113903D00E9C112 /* 3DEngine.swift in Sources */,
 				3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */,
 				74B00257214D56F600A9281D /* 3DPIX.swift in Sources */,
-				745D091321F64BE80096B917 /* Pixel3DProtocol.swift in Sources */,
+				745D091321F64BE80096B917 /* VertexProtocol.swift in Sources */,
 				747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */,
 				74FA7B122113903D00E9C112 /* 3DScnEngine.swift in Sources */,
 				3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */,
 				3AEED6DA227AED32000B018A /* RawParticles3DPIX.swift in Sources */,
 				749256532121A2FC003A27B1 /* 3DTypes.swift in Sources */,
 				74B40E99215D51F200518DFD /* Particles3DPIX.swift in Sources */,
-				74FA7B16211392BF00E9C112 /* Pixels3D.swift in Sources */,
+				74FA7B16211392BF00E9C112 /* VertexKit.swift in Sources */,
 				3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */,
 				741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */,
 				3AEED6DF227B032B000B018A /* ParticlesUV3DPIX.swift in Sources */,
@@ -386,9 +369,9 @@
 				74DD8E73227B1A3F00B1C5B2 /* Object3DPIX.swift in Sources */,
 				74DD8E7B227B1A4300B1C5B2 /* 3DEngine.swift in Sources */,
 				74DD8E76227B1A3F00B1C5B2 /* LineGrid3DPIX.swift in Sources */,
-				74DD8E7A227B1A4300B1C5B2 /* Pixels3D.swift in Sources */,
+				74DD8E7A227B1A4300B1C5B2 /* VertexKit.swift in Sources */,
 				74DD8E74227B1A3F00B1C5B2 /* Circle3DPIX.swift in Sources */,
-				74DD8E7E227B1A4300B1C5B2 /* Pixel3DProtocol.swift in Sources */,
+				74DD8E7E227B1A4300B1C5B2 /* VertexProtocol.swift in Sources */,
 				74DD8E7F227B1A4300B1C5B2 /* 3DTypes.swift in Sources */,
 				74DD8E7D227B1A4300B1C5B2 /* 3DRawEngine.swift in Sources */,
 			);
@@ -536,7 +519,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixelkit.3d;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.vertexkit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
@@ -566,7 +549,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixelkit.3d;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.vertexkit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
@@ -597,7 +580,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixelkit.3d.macos;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.vertexkit.macos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -626,7 +609,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.pixelkit.3d.macos;
+				PRODUCT_BUNDLE_IDENTIFIER = se.hexagons.vertexkit.macos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -637,7 +620,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		749ACA6921138DFF00737173 /* Build configuration list for PBXProject "Pixel3DKit" */ = {
+		749ACA6921138DFF00737173 /* Build configuration list for PBXProject "VertexKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				749ACA8121138DFF00737173 /* Debug */,
@@ -646,7 +629,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "Pixel3DKit" */ = {
+		749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "VertexKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				749ACA8421138DFF00737173 /* Debug */,
@@ -655,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "Pixel3DKit-macOS" */ = {
+		74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "VertexKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74DD8E70227B1A2200B1C5B2 /* Debug */,

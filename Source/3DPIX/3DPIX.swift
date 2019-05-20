@@ -17,7 +17,7 @@ import simd
 
 public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     
-    open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
+    open override var customMetalLibrary: MTLLibrary { return VertexKit.main.metalLibrary }
     open override var customVertexShaderName: String? { return "nil3DVTX" }
     open override var shader: String { return "color3DPIX" }
     
@@ -32,7 +32,7 @@ public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     }
 
     required init(res: PIX.Res) {
-//        root = Pixels3D.main.engine.createRoot(at: res.size)
+//        root = VertexKit.main.engine.createRoot(at: res.size)
         super.init(res: res)
         customGeometryActive = true
         customGeometryDelegate = self
@@ -42,7 +42,7 @@ public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     public func customVertices() -> PixelKit.Vertices? {
         
         if vertices.isEmpty {
-            Pixels3D.log(pix: self, .warning, nil, "No vertices found.")
+            VertexKit.log(pix: self, .warning, nil, "No vertices found.")
         }
         
         var scaledVertices = vertices.map { vtx -> PixelKit.Vertex in

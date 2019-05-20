@@ -1,6 +1,6 @@
 //
 //  3DCoord.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Hexagons on 2018-08-13.
 //  Copyright © 2018 Hexagons. All rights reserved.

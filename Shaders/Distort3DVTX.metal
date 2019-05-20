@@ -1,6 +1,6 @@
 //
 //  Distort3DVTX.metal
-//  Pixels3DShaders
+//  VertexKitShaders
 //
 //  Created by Hexagons on 2018-09-22.
 //  Copyright © 2018 Hexagons. All rights reserved.

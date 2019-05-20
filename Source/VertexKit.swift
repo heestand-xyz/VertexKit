@@ -1,6 +1,6 @@
 //
-//  Pixels3D.swift
-//  Pixels3D
+//  VertexKit.swift
+//  VertexKit
 //
 //  Created by Hexagons on 2018-08-02.
 //  Copyright © 2018 Hexagons. All rights reserved.
@@ -15,22 +15,22 @@ import PixelKit_macOS
 #endif
 import simd
 
-public class Pixels3D {
+public class VertexKit {
     
-    public static let main = Pixels3D()
+    public static let main = VertexKit()
     
     public let engine: _3DEngine = _3DScnEngine()
     
-    let pixels = PixelKit.main
+    let pixelKit = PixelKit.main
     
     // MARK: Signature
     
     #if os(iOS)
     let kBundleId = "se.hexagons.pixels.3d"
-    let kMetalLibName = "Pixels3DShaders"
+    let kMetalLibName = "VertexKitShaders"
     #elseif os(macOS)
     let kBundleId = "se.hexagons.pixels.3d.macos"
-    let kMetalLibName = "Pixels3DShaders-macOS"
+    let kMetalLibName = "VertexKitShaders-macOS"
     #endif
     
     struct Signature: Encodable {
@@ -60,17 +60,17 @@ public class Pixels3D {
         do {
             metalLibrary = try loadMetalShaderLibrary()
         } catch {
-            Pixels3D.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
+            VertexKit.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
         }
         
-        print("Pixels3D", "ready to render.")
+        print("VertexKit", "ready to render.")
         
     }
     
     // MARK: - Log
     
     public static func log(pix: PIX? = nil, _ level: PixelKit.LogLevel, _ category: PixelKit.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        PixelKit.main.log(prefix: "Pixels3D", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
+        PixelKit.main.log(prefix: "VertexKit", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
     }
     
     // MARK: - Setup
@@ -85,12 +85,12 @@ public class Pixels3D {
         let bundle = overrideWithMetalLibFromApp ? Bundle.main : Bundle(identifier: kBundleId)!
         let bundleId = bundle.bundleIdentifier ?? "unknown-bundle-id"
         if overrideWithMetalLibFromApp {
-            PixelKit.main.log(prefix: "Pixels3D", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
+            pixelKit.log(prefix: "VertexKit", .info, .metal, "Metal Lib from Bundle: \(bundleId) [OVERRIDE]")
         }
         guard let libraryFile = bundle.path(forResource: kMetalLibName, ofType: "metallib") else {
-            throw MetalLibraryError.runtimeERROR("Pixels3D Shaders: Metal Library not found.")
+            throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
         }
-        return try PixelKit.main.metalDevice.makeLibrary(filepath: libraryFile)
+        return try pixelKit.metalDevice.makeLibrary(filepath: libraryFile)
     }
     
     // MARK: UV

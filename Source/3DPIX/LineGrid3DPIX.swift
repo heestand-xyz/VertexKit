@@ -1,6 +1,6 @@
 //
 //  LineGrid3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Anton Heestand on 2018-09-22.
 //  Copyright © 2018 Hexagons. All rights reserved.
@@ -53,11 +53,11 @@ public class LineGrid3DPIX: Grid3DPIX {
 //        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", PixelKit.main.frame)
 //        return [PixelKit.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), PixelKit.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
         guard customDelegate != nil else {
-            Pixels3D.log(.warning, nil, "`customDelegate` not implemented.")
+            VertexKit.log(.warning, nil, "`customDelegate` not implemented.")
             return
         }
         guard let pixelPack = gridPixIn?.renderedPixels else {
-            Pixels3D.log(.warning, nil, "`gridPixIn`'s `renderedPixels` not found.")
+            VertexKit.log(.warning, nil, "`gridPixIn`'s `renderedPixels` not found.")
             return
         }
         let grid = vecGrid()

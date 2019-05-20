@@ -1,6 +1,6 @@
 //
 //  Color3DPIX.metal
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Hexagons on 2018-09-22.
 //  Copyright © 2018 Hexagons. All rights reserved.

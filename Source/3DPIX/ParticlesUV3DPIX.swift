@@ -1,6 +1,6 @@
 //
 //  ParticlesUV3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Anton Heestand on 2019-05-02.
 //  Copyright © 2019 Hexagons. All rights reserved.
@@ -16,7 +16,7 @@ import PixelKit_macOS
 
 public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         
-    open override var customMetalLibrary: MTLLibrary { return Pixels3D.main.metalLibrary }
+    open override var customMetalLibrary: MTLLibrary { return VertexKit.main.metalLibrary }
     open override var customVertexShaderName: String? { return "particleUV3DVTX" }
     open override var shader: String { return "color3DPIX" }
     

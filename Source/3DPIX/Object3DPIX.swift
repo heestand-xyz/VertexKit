@@ -1,6 +1,6 @@
 //
 //  Object3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Hexagons on 2018-11-29.
 //  Copyright © 2018 Hexagons. All rights reserved.
@@ -15,7 +15,7 @@ import PixelKit_macOS
 import Metal
 import simd
 
-public class Object3DPIX: _3DPIX, PixelCustom3DRenderDelegate {
+public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
     
     open override var customVertexShaderName: String? { return "obj3DVTX" }
     
@@ -41,7 +41,7 @@ public class Object3DPIX: _3DPIX, PixelCustom3DRenderDelegate {
     
     public override var vertices: [PixelKit.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
-            Pixels3D.log(.error, nil, "UVs count dose not match the vertice cout.")
+            VertexKit.log(.error, nil, "UVs count dose not match the vertice cout.")
             return []
         }
         var vertices: [PixelKit.Vertex] = []

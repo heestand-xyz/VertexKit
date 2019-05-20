@@ -1,6 +1,6 @@
 //
 //  RawParticles3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Anton Heestand on 2019-05-02.
 //  Copyright © 2019 Hexagons. All rights reserved.

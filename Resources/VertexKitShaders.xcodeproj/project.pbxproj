@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		3A1D22F62156839E00D0BADD /* Nil3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Nil3DVTX.metal; sourceTree = "<group>"; };
 		3A1D22F8215687AF00D0BADD /* Distort3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Distort3DVTX.metal; sourceTree = "<group>"; };
-		3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = Pixels3DShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A23E98B21567BCC005D8FD1 /* VertexKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = VertexKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3D4CEC21567C5C0071FAC7 /* Color3DPIX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Color3DPIX.metal; sourceTree = "<group>"; };
 		3AEED6DC227B0154000B018A /* ParticleUV3DVTX.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ParticleUV3DVTX.metal; sourceTree = "<group>"; };
 		74A3DE762230123000FC9B54 /* Obj3DVTX.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Obj3DVTX.metal; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		74B40EA0215D5B2000518DFD /* random_header.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = random_header.metal; sourceTree = "<group>"; };
 		74B40EA3215D5DA600518DFD /* random.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = random.metal; sourceTree = "<group>"; };
 		74B40EA4215D5DA600518DFD /* noise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = noise.metal; sourceTree = "<group>"; };
-		74DD8E8D227B1A9300B1C5B2 /* Pixels3DShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "Pixels3DShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DD8E8D227B1A9300B1C5B2 /* VertexKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = "VertexKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -56,8 +56,8 @@
 		3A23E98C21567BCC005D8FD1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */,
-				74DD8E8D227B1A9300B1C5B2 /* Pixels3DShaders-macOS.metallib */,
+				3A23E98B21567BCC005D8FD1 /* VertexKitShaders.metallib */,
+				74DD8E8D227B1A9300B1C5B2 /* VertexKitShaders-macOS.metallib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,9 +83,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A23E98A21567BCC005D8FD1 /* Pixels3DShaders */ = {
+		3A23E98A21567BCC005D8FD1 /* VertexKitShaders */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A23E99221567BCC005D8FD1 /* Build configuration list for PBXNativeTarget "Pixels3DShaders" */;
+			buildConfigurationList = 3A23E99221567BCC005D8FD1 /* Build configuration list for PBXNativeTarget "VertexKitShaders" */;
 			buildPhases = (
 				3A23E98921567BCC005D8FD1 /* Sources */,
 			);
@@ -93,14 +93,14 @@
 			);
 			dependencies = (
 			);
-			name = Pixels3DShaders;
+			name = VertexKitShaders;
 			productName = Pixels3DShaders;
-			productReference = 3A23E98B21567BCC005D8FD1 /* Pixels3DShaders.metallib */;
+			productReference = 3A23E98B21567BCC005D8FD1 /* VertexKitShaders.metallib */;
 			productType = "com.apple.product-type.metal-library";
 		};
-		74DD8E8C227B1A9300B1C5B2 /* Pixels3DShaders-macOS */ = {
+		74DD8E8C227B1A9300B1C5B2 /* VertexKitShaders-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74DD8E93227B1A9300B1C5B2 /* Build configuration list for PBXNativeTarget "Pixels3DShaders-macOS" */;
+			buildConfigurationList = 74DD8E93227B1A9300B1C5B2 /* Build configuration list for PBXNativeTarget "VertexKitShaders-macOS" */;
 			buildPhases = (
 				74DD8E8B227B1A9300B1C5B2 /* Sources */,
 			);
@@ -108,9 +108,9 @@
 			);
 			dependencies = (
 			);
-			name = "Pixels3DShaders-macOS";
+			name = "VertexKitShaders-macOS";
 			productName = "Pixels3DShaders-macOS";
-			productReference = 74DD8E8D227B1A9300B1C5B2 /* Pixels3DShaders-macOS.metallib */;
+			productReference = 74DD8E8D227B1A9300B1C5B2 /* VertexKitShaders-macOS.metallib */;
 			productType = "com.apple.product-type.metal-library";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A23E98821567BCC005D8FD1 /* Build configuration list for PBXProject "Pixels3DShaders" */;
+			buildConfigurationList = 3A23E98821567BCC005D8FD1 /* Build configuration list for PBXProject "VertexKitShaders" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -142,8 +142,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A23E98A21567BCC005D8FD1 /* Pixels3DShaders */,
-				74DD8E8C227B1A9300B1C5B2 /* Pixels3DShaders-macOS */,
+				3A23E98A21567BCC005D8FD1 /* VertexKitShaders */,
+				74DD8E8C227B1A9300B1C5B2 /* VertexKitShaders-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -266,7 +266,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A23E98821567BCC005D8FD1 /* Build configuration list for PBXProject "Pixels3DShaders" */ = {
+		3A23E98821567BCC005D8FD1 /* Build configuration list for PBXProject "VertexKitShaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A23E99021567BCC005D8FD1 /* Debug */,
@@ -275,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A23E99221567BCC005D8FD1 /* Build configuration list for PBXNativeTarget "Pixels3DShaders" */ = {
+		3A23E99221567BCC005D8FD1 /* Build configuration list for PBXNativeTarget "VertexKitShaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A23E99321567BCC005D8FD1 /* Debug */,
@@ -284,7 +284,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74DD8E93227B1A9300B1C5B2 /* Build configuration list for PBXNativeTarget "Pixels3DShaders-macOS" */ = {
+		74DD8E93227B1A9300B1C5B2 /* Build configuration list for PBXNativeTarget "VertexKitShaders-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74DD8E91227B1A9300B1C5B2 /* Debug */,

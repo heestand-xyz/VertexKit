@@ -1,6 +1,6 @@
 //
 //  Particles3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Hexagons on 2018-09-27.
 //  Copyright © 2018 Hexagons. All rights reserved.
@@ -79,7 +79,7 @@ public class Particles3DPIX: _3DPIX {
 //        guard let src = sourcePixIn else { return }
 //        guard let res = src.resolution else { return }
 //        guard particles.count != res.count else { return }
-//        particles = Pixels3D.uvVecMap(res: res)
+//        particles = VertexKit.uvVecMap(res: res)
 ////        setNeedsRender()
 //    }
     

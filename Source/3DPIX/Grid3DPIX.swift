@@ -1,6 +1,6 @@
 //
 //  Grid3DPIX.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Anton Heestand on 2018-09-22.
 //  Copyright © 2018 Hexagons. All rights reserved.

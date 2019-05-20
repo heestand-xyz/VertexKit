@@ -1,6 +1,6 @@
 //
 //  3DScnEngine.swift
-//  Pixels3D
+//  VertexKit
 //
 //  Created by Hexagons on 2018-06-30.
 //  Copyright © 2018 Hexagons. All rights reserved.
