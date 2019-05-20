@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "74DD8E69227B1A2200B1C5B2"
-               BuildableName = "Pixels3D_macOS.framework"
-               BlueprintName = "Pixels3D-macOS"
-               ReferencedContainer = "container:Pixels3D.xcodeproj">
+               BuildableName = "Pixel3DKit_macOS.framework"
+               BlueprintName = "Pixel3DKit-macOS"
+               ReferencedContainer = "container:Pixel3DKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74DD8E69227B1A2200B1C5B2"
-            BuildableName = "Pixels3D_macOS.framework"
-            BlueprintName = "Pixels3D-macOS"
-            ReferencedContainer = "container:Pixels3D.xcodeproj">
+            BuildableName = "Pixel3DKit_macOS.framework"
+            BlueprintName = "Pixel3DKit-macOS"
+            ReferencedContainer = "container:Pixel3DKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "74DD8E69227B1A2200B1C5B2"
-            BuildableName = "Pixels3D_macOS.framework"
-            BlueprintName = "Pixels3D-macOS"
-            ReferencedContainer = "container:Pixels3D.xcodeproj">
+            BuildableName = "Pixel3DKit_macOS.framework"
+            BlueprintName = "Pixel3DKit-macOS"
+            ReferencedContainer = "container:Pixel3DKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
