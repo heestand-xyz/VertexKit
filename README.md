@@ -1,6 +1,12 @@
 <img src="https://github.com/hexagons/pixels-3d/raw/master/Assets/Pixels-3D_logo_1k_bg.png" width="128"/>
 
 # VertexKit
+
+[![License](https://img.shields.io/cocoapods/l/VertexKit.svg)](https://github.com/hexagons/VertexKit/blob/master/LICENSE)
+[![Cocoapods](https://img.shields.io/cocoapods/v/VertexKit.svg)](http://cocoapods.org/pods/VertexKit)
+[![Platform](https://img.shields.io/cocoapods/p/VertexKit.svg)](http://cocoapods.org/pods/VertexKit)
+<img src="https://img.shields.io/badge/in-swift5.0-orange.svg">
+
 a Framework for iOS & macOS<br>
 written in Swift & Metal<br>
 an extension of [PixelKit](https://github.com/hexagons/pixelkit)<br>
