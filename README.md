@@ -35,3 +35,5 @@ final.view.frame = view.bounds
 final.view.checker = false
 view.addSubview(final.view)
 ```
+
+![Particle Noise](https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true)
