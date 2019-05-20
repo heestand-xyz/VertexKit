@@ -21,7 +21,7 @@ an extension of [PixelKit](https://github.com/hexagons/pixelkit)<br>
 
 <img src="https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true" width="256"/>
 
-```
+```swift
 view.wantsLayer = true
 view.layer!.backgroundColor = .black
 
