@@ -13,6 +13,8 @@ an extension of [PixelKit](https://github.com/hexagons/pixelkit)<br>
 
 ## Particle Example
 
+<img src="https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true" width="256"/>
+
 ```
 view.wantsLayer = true
 view.layer!.backgroundColor = .black
@@ -35,5 +37,3 @@ final.view.frame = view.bounds
 final.view.checker = false
 view.addSubview(final.view)
 ```
-
-![Particle Noise](https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true)
