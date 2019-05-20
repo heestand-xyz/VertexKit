@@ -8,16 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3A408EE62292B4310065DB97 /* VertexKitShaders-macOS.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */; };
-		3A408EE82292B4350065DB97 /* VertexKitShaders.metallib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */; };
 		3A408EEB2292B4590065DB97 /* VertexKitShaders-macOS.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */; };
-		3A408EEC2292B45B0065DB97 /* VertexKitShaders.metallib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */; };
 		3A4933472156574800F29DF6 /* Grid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4933462156574800F29DF6 /* Grid3DPIX.swift */; };
 		3A49334921565D3000F29DF6 /* Circle3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334821565D3000F29DF6 /* Circle3DPIX.swift */; };
 		3A49334C2156661E00F29DF6 /* LineGrid3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */; };
-		3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9A9228D528900CCF098 /* PixelKit.framework */; };
-		3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */; };
 		3AEED6DA227AED32000B018A /* RawParticles3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */; };
 		3AEED6DF227B032B000B018A /* ParticlesUV3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */; };
+		5733A2A95E1FBA4EB3908EE2 /* Pods_VertexKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194B5EFDFD44F31EF900E2B7 /* Pods_VertexKit_macOS.framework */; };
+		671E139CD5AC048DE6607C73 /* Pods_VertexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A2252D6EE886379249A8B6 /* Pods_VertexKit.framework */; };
 		741E7C39214DEA2B00C3EEA9 /* 3DRawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */; };
 		745D091321F64BE80096B917 /* VertexProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D091221F64BE80096B917 /* VertexProtocol.swift */; };
 		747C90C321AF5EEA00280D29 /* Object3DPIX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747C90C221AF5EEA00280D29 /* Object3DPIX.swift */; };
@@ -44,19 +42,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A52E9A8228D528900CCF098 /* PBXContainerItemProxy */ = {
+		3A408EF22292B5A70065DB97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
+			containerPortal = 3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 74BC39D721011E3A004E9AA0;
-			remoteInfo = PixelKit;
+			remoteGlobalIDString = 3A23E98B21567BCC005D8FD1;
+			remoteInfo = VertexKitShaders;
 		};
-		3A52E9AA228D528900CCF098 /* PBXContainerItemProxy */ = {
+		3A408EF42292B5A70065DB97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
+			containerPortal = 3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3AF28BCC219312900079FC7A;
-			remoteInfo = "PixelKit-macOS";
+			remoteGlobalIDString = 74DD8E8D227B1A9300B1C5B2;
+			remoteInfo = "VertexKitShaders-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,7 +65,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				3A408EEC2292B45B0065DB97 /* VertexKitShaders.metallib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,15 +81,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		194B5EFDFD44F31EF900E2B7 /* Pods_VertexKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VertexKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23A2252D6EE886379249A8B6 /* Pods_VertexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VertexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VertexKitShaders.xcodeproj; path = Resources/VertexKitShaders.xcodeproj; sourceTree = "<group>"; };
 		3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = "VertexKitShaders-macOS.metallib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; path = VertexKitShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4933462156574800F29DF6 /* Grid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid3DPIX.swift; sourceTree = "<group>"; };
 		3A49334821565D3000F29DF6 /* Circle3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle3DPIX.swift; sourceTree = "<group>"; };
 		3A49334B2156661E00F29DF6 /* LineGrid3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGrid3DPIX.swift; sourceTree = "<group>"; };
-		3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PixelKitRaw.xcodeproj; path = ../PixelKit/PixelKitRaw.xcodeproj; sourceTree = "<group>"; };
 		3AEED6D9227AED32000B018A /* RawParticles3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawParticles3DPIX.swift; sourceTree = "<group>"; };
 		3AEED6DE227B032B000B018A /* ParticlesUV3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesUV3DPIX.swift; sourceTree = "<group>"; };
+		408666462D61EF429A5228B7 /* Pods-VertexKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertexKit.release.xcconfig"; path = "Target Support Files/Pods-VertexKit/Pods-VertexKit.release.xcconfig"; sourceTree = "<group>"; };
+		5FBB442F1D6A754C8A4FFEAF /* Pods-VertexKit-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertexKit-macOS.release.xcconfig"; path = "Target Support Files/Pods-VertexKit-macOS/Pods-VertexKit-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		741E7C38214DEA2B00C3EEA9 /* 3DRawEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DRawEngine.swift; sourceTree = "<group>"; };
 		745D091221F64BE80096B917 /* VertexProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexProtocol.swift; sourceTree = "<group>"; };
 		747C90C221AF5EEA00280D29 /* Object3DPIX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object3DPIX.swift; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		74FA7B0E2113903D00E9C112 /* 3DEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DEngine.swift; sourceTree = "<group>"; };
 		74FA7B0F2113903D00E9C112 /* 3DScnEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = 3DScnEngine.swift; sourceTree = "<group>"; };
 		74FA7B15211392BF00E9C112 /* VertexKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexKit.swift; sourceTree = "<group>"; };
+		B20B98CF7B6EB745676B9738 /* Pods-VertexKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertexKit.debug.xcconfig"; path = "Target Support Files/Pods-VertexKit/Pods-VertexKit.debug.xcconfig"; sourceTree = "<group>"; };
+		FC6276FD435E12B92D8BD0F1 /* Pods-VertexKit-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VertexKit-macOS.debug.xcconfig"; path = "Target Support Files/Pods-VertexKit-macOS/Pods-VertexKit-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A408EE82292B4350065DB97 /* VertexKitShaders.metallib in Frameworks */,
-				3A52E9AE228D529E00CCF098 /* PixelKit.framework in Frameworks */,
+				671E139CD5AC048DE6607C73 /* Pods_VertexKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,13 +124,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A408EE62292B4310065DB97 /* VertexKitShaders-macOS.metallib in Frameworks */,
-				3A52E9B1228D52A800CCF098 /* PixelKit_macOS.framework in Frameworks */,
+				5733A2A95E1FBA4EB3908EE2 /* Pods_VertexKit_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A408EEE2292B5A70065DB97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A408EF32292B5A70065DB97 /* VertexKitShaders.metallib */,
+				3A408EF52292B5A70065DB97 /* VertexKitShaders-macOS.metallib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3A4933442156571D00F29DF6 /* 3DPIX */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,15 +155,6 @@
 			path = 3DPIX;
 			sourceTree = "<group>";
 		};
-		3A52E9A3228D528900CCF098 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A52E9A9228D528900CCF098 /* PixelKit.framework */,
-				3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		749ACA6521138DFF00737173 = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +163,7 @@
 				749ACA7021138DFF00737173 /* Products */,
 				74B00252214D503F00A9281D /* Frameworks */,
 				3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */,
-				3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */,
+				780D177490656C5F2E8BC67A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,8 +196,21 @@
 			children = (
 				3A408EE72292B4350065DB97 /* VertexKitShaders.metallib */,
 				3A408EE52292B4310065DB97 /* VertexKitShaders-macOS.metallib */,
+				23A2252D6EE886379249A8B6 /* Pods_VertexKit.framework */,
+				194B5EFDFD44F31EF900E2B7 /* Pods_VertexKit_macOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		780D177490656C5F2E8BC67A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B20B98CF7B6EB745676B9738 /* Pods-VertexKit.debug.xcconfig */,
+				408666462D61EF429A5228B7 /* Pods-VertexKit.release.xcconfig */,
+				FC6276FD435E12B92D8BD0F1 /* Pods-VertexKit-macOS.debug.xcconfig */,
+				5FBB442F1D6A754C8A4FFEAF /* Pods-VertexKit-macOS.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 749ACA8321138DFF00737173 /* Build configuration list for PBXNativeTarget "VertexKit" */;
 			buildPhases = (
+				EBC8F48CF6A062E931BB602E /* [CP] Check Pods Manifest.lock */,
 				749ACA6A21138DFF00737173 /* Headers */,
 				749ACA6B21138DFF00737173 /* Sources */,
 				749ACA6C21138DFF00737173 /* Frameworks */,
@@ -242,6 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74DD8E6F227B1A2200B1C5B2 /* Build configuration list for PBXNativeTarget "VertexKit-macOS" */;
 			buildPhases = (
+				54457C461BAC04C814D8593E /* [CP] Check Pods Manifest.lock */,
 				74DD8E65227B1A2200B1C5B2 /* Headers */,
 				74DD8E66227B1A2200B1C5B2 /* Sources */,
 				74DD8E67227B1A2200B1C5B2 /* Frameworks */,
@@ -288,8 +304,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A52E9A3228D528900CCF098 /* Products */;
-					ProjectRef = 3A52E9A2228D528900CCF098 /* PixelKitRaw.xcodeproj */;
+					ProductGroup = 3A408EEE2292B5A70065DB97 /* Products */;
+					ProjectRef = 3A408EDC2292B4110065DB97 /* VertexKitShaders.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -301,18 +317,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A52E9A9228D528900CCF098 /* PixelKit.framework */ = {
+		3A408EF32292B5A70065DB97 /* VertexKitShaders.metallib */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PixelKit.framework;
-			remoteRef = 3A52E9A8228D528900CCF098 /* PBXContainerItemProxy */;
+			fileType = "archive.metal-library";
+			path = VertexKitShaders.metallib;
+			remoteRef = 3A408EF22292B5A70065DB97 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A52E9AB228D528900CCF098 /* PixelKit_macOS.framework */ = {
+		3A408EF52292B5A70065DB97 /* VertexKitShaders-macOS.metallib */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PixelKit_macOS.framework;
-			remoteRef = 3A52E9AA228D528900CCF098 /* PBXContainerItemProxy */;
+			fileType = "archive.metal-library";
+			path = "VertexKitShaders-macOS.metallib";
+			remoteRef = 3A408EF42292B5A70065DB97 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -333,6 +349,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54457C461BAC04C814D8593E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VertexKit-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBC8F48CF6A062E931BB602E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VertexKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		749ACA6B21138DFF00737173 /* Sources */ = {
@@ -502,6 +565,7 @@
 		};
 		749ACA8421138DFF00737173 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B20B98CF7B6EB745676B9738 /* Pods-VertexKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -524,7 +588,7 @@
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
 			};
@@ -532,6 +596,7 @@
 		};
 		749ACA8521138DFF00737173 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408666462D61EF429A5228B7 /* Pods-VertexKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -553,7 +618,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = arm64;
 			};
@@ -561,6 +626,7 @@
 		};
 		74DD8E70227B1A2200B1C5B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC6276FD435E12B92D8BD0F1 /* Pods-VertexKit-macOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -590,6 +656,7 @@
 		};
 		74DD8E71227B1A2200B1C5B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FBB442F1D6A754C8A4FFEAF /* Pods-VertexKit-macOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;

@@ -8,11 +8,10 @@
 
 #if os(iOS)
 import UIKit
-import PixelKit
 #elseif os(macOS)
 import AppKit
-import PixelKit_macOS
 #endif
+import PixelKit
 import simd
 
 public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {

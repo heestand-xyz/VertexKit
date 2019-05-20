@@ -8,11 +8,7 @@
 
 import SceneKit
 import CoreGraphics
-#if os(iOS)
 import PixelKit
-#elseif os(macOS)
-import PixelKit_macOS
-#endif
 
 // MARK: Obj
 

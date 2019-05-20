@@ -7,11 +7,7 @@
 //
 
 import CoreGraphics
-#if os(iOS)
 import PixelKit
-#elseif os(macOS)
-import PixelKit_macOS
-#endif
 
 public struct _3DVec {
     public var x: LiveFloat

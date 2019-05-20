@@ -8,11 +8,7 @@
 
 import CoreGraphics
 import Metal
-#if os(iOS)
 import PixelKit
-#elseif os(macOS)
-import PixelKit_macOS
-#endif
 import simd
 
 public class VertexKit {

@@ -1,0 +1,22 @@
+PODS:
+  - MetalPerformanceShadersProxy (0.3.0):
+    - MetalPerformanceShadersProxy/Proxy (= 0.3.0)
+  - MetalPerformanceShadersProxy/Proxy (0.3.0)
+  - PixelKit (0.5.4):
+    - MetalPerformanceShadersProxy (~> 0.3)
+
+DEPENDENCIES:
+  - PixelKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MetalPerformanceShadersProxy
+    - PixelKit
+
+SPEC CHECKSUMS:
+  MetalPerformanceShadersProxy: a279966a6a22449d3e32a8cd5ca246d625aa7d43
+  PixelKit: db7013e6d4baf8e6c45b706f0983384789f65c24
+
+PODFILE CHECKSUM: 8a3295c9fe3e6923a2503a5766ae4e2d9d53de27
+
+COCOAPODS: 1.6.1
