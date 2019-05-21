@@ -17,6 +17,10 @@ an extension of [PixelKit](https://github.com/hexagons/pixelkit)<br>
 
 `import VertexKit`
 
+## Tutorial
+
+[Particles in VertexKit & PixelKit](http://blog.hexagons.se/blog/particles-in-vertexkit-pixelkit/)
+
 ## Particle Example
 
 <img src="https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true" width="256"/>
