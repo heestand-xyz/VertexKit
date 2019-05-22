@@ -23,17 +23,21 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     public override var additiveVertexBlending: Bool { return true }
     
     public var size: LiveFloat = 1.0
-    
+    /// Map Size of each particle from the blue channel
+    public var mapSize: LiveBool = false
+    /// Map Alpha of each particle from the alpha channel
+    public var mapAlpha: LiveBool = false
+
     public var vtxPixIn: (PIX & PIXOut)? { didSet { setNeedsRender() } }
     
     public override var liveValues: [LiveValue] {
-        return [size]
+        return [size, mapSize, mapAlpha]
     }
     public override var uniforms: [CGFloat] {
         return color.list
     }
     open override var vertexUniforms: [CGFloat] {
-        return [size.uniform, vtxPixIn?.resolution?.width.cg ?? 1, vtxPixIn?.resolution?.height.cg ?? 1, resolution?.aspect.cg ?? 1]
+        return [size.uniform, vtxPixIn?.resolution?.width.cg ?? 1, vtxPixIn?.resolution?.height.cg ?? 1, resolution?.aspect.cg ?? 1, mapSize.val ? 1 : 0, mapAlpha.val ? 1 : 0]
     }
     
     public required init(res: PIX.Res) {

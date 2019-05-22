@@ -24,6 +24,8 @@ struct Uniforms {
     float size;
     float resx;
     float resy;
+    float mapSize;
+    float mapAlpha;
     float aspect;
 };
 
@@ -41,12 +43,12 @@ vertex VertexOut particleUV3DVTX(const device VertexIn* vertices [[ buffer(0) ]]
     float4 c = inTex.sample(s, uv);
     float x = (c.r / in.aspect) * 2;
     float y = c.g * 2;
-    float z = 0.0;//c.b * 2;
+    float z = 0.0;
 
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
-    vtxOut.pointSize = in.size;
-    vtxOut.color = 1;//float4(1,1,1,c.b);
+    vtxOut.pointSize = in.mapSize ? in.size * c.b : in.size;
+    vtxOut.color = in.mapAlpha ? float4(1, 1, 1, c.a) : 1;
     
     return vtxOut;
 }
