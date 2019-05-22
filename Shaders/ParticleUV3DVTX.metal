@@ -47,8 +47,8 @@ vertex VertexOut particleUV3DVTX(const device VertexIn* vertices [[ buffer(0) ]]
 
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
-    vtxOut.pointSize = in.mapSize ? in.size * c.b : in.size;
-    vtxOut.color = in.mapAlpha ? float4(1, 1, 1, c.a) : 1;
+    vtxOut.pointSize = in.mapSize > 1 ? in.size * c.b : in.size;
+    vtxOut.color = in.mapAlpha > 1 ? float4(1, 1, 1, c.a) : float4(1, 1, 1, 1);
     
     return vtxOut;
 }
