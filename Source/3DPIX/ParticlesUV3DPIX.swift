@@ -37,7 +37,7 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         return color.list
     }
     open override var vertexUniforms: [CGFloat] {
-        return [size.uniform, vtxPixIn?.resolution?.width.cg ?? 1, vtxPixIn?.resolution?.height.cg ?? 1, resolution?.aspect.cg ?? 1, mapSize.val ? 1 : 0, mapAlpha.val ? 1 : 0]
+        return [size.uniform, vtxPixIn?.resolution?.width.cg ?? 1, vtxPixIn?.resolution?.height.cg ?? 1, mapSize.uniform ? 1 : 0, mapAlpha.uniform ? 1 : 0, resolution?.aspect.cg ?? 1]
     }
     
     public required init(res: PIX.Res) {
