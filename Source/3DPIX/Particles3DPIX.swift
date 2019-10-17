@@ -8,6 +8,8 @@
 
 import CoreGraphics
 import Metal
+import LiveValues
+import RenderKit
 import PixelKit
 
 public class Particles3DPIX: _3DPIX {
@@ -30,9 +32,9 @@ public class Particles3DPIX: _3DPIX {
 //        }
 //    }
     
-    public override var vertices: [PixelKit.Vertex] {
-        return particles.map({ particle -> PixelKit.Vertex in
-            return PixelKit.Vertex(x: particle.pos.x / res.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
+    public override var vertices: [RenderKit.Vertex] {
+        return particles.map({ particle -> RenderKit.Vertex in
+            return RenderKit.Vertex(x: particle.pos.x / resolution.aspect, y: particle.pos.y, z: particle.pos.z, s: 0.0, t: 0.0)
         })
     }
 //    public override var instanceCount: Int {
@@ -40,7 +42,7 @@ public class Particles3DPIX: _3DPIX {
 //    }
     public override var primativeType: MTLPrimitiveType { return .point }
     
-    var cachedVertices: PixelKit.Vertices?
+    var cachedVertices: RenderKit.Vertices?
     
     struct Particle {
         var pos: _3DVec
@@ -67,8 +69,8 @@ public class Particles3DPIX: _3DPIX {
         return [size]
     }
 
-    public required init(res: Res) {
-        super.init(res: res)
+    public required init(at resolution: Resolution) {
+        super.init(at: resolution)
     }
     
 //    func prep() {

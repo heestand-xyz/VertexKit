@@ -7,31 +7,33 @@
 //
 
 import CoreGraphics
+import LiveValues
+import RenderKit
 import PixelKit
 
 public class Grid3DPIX: _3DPIX {
     
-    public var gridRes: Res { didSet { setNeedsRender() } }
+    public var gridRes: Resolution { didSet { setNeedsRender() } }
     public var gridSize: CGSize { didSet { setNeedsRender() } }
     
 //    public override var instanceCount: Int {
 //        return ((gridRes.w + 1) * (gridRes.h + 1)) / 3
 //    }
-    public override var vertices: [PixelKit.Vertex] {
+    public override var vertices: [RenderKit.Vertex] {
         return mapGrid(vtxGrid(vecGrid(plusOne: true)))
     }
     public override var wireframe: Bool { return true }
     
-    public init(res: Res, gridRes: Res) {
+    public init(at resolution: Resolution, gridRes: Resolution) {
         self.gridRes = gridRes
-        gridSize = CGSize(width: res.aspect.cg, height: 1.0)
-        super.init(res: res)
+        gridSize = CGSize(width: resolution.aspect.cg, height: 1.0)
+        super.init(at: resolution)
     }
     
-    required init(res: PIX.Res) {
+    required init(at resolution: Resolution) {
         gridRes = .custom(w: 10, h: 10)
         gridSize = CGSize(width: 1.0, height: 1.0)
-        super.init(res: res)
+        super.init(at: resolution)
     }
     
     func vecGrid(plusOne: Bool = false) -> [[_3DVec]] {
@@ -58,16 +60,16 @@ public class Grid3DPIX: _3DPIX {
         
     }
     
-    func vtxGrid(_ vecGrid: [[_3DVec]]) -> [[PixelKit.Vertex]] {
-        return vecGrid.map({ vecRow -> [PixelKit.Vertex] in
-            return vecRow.map({ vec -> PixelKit.Vertex in
-                return PixelKit.Vertex(x: vec.x / res.aspect, y: vec.y, s: 0.0, t: 0.0)
+    func vtxGrid(_ vecGrid: [[_3DVec]]) -> [[RenderKit.Vertex]] {
+        return vecGrid.map({ vecRow -> [RenderKit.Vertex] in
+            return vecRow.map({ vec -> RenderKit.Vertex in
+                return RenderKit.Vertex(x: vec.x / resolution.aspect, y: vec.y, s: 0.0, t: 0.0)
             })
         })
     }
     
-    func mapGrid(_ vertices: [[PixelKit.Vertex]]) -> [PixelKit.Vertex] {
-        var verticesMap: [PixelKit.Vertex] = []
+    func mapGrid(_ vertices: [[RenderKit.Vertex]]) -> [RenderKit.Vertex] {
+        var verticesMap: [RenderKit.Vertex] = []
         for y in 0..<gridRes.h {
             for x in 0..<gridRes.w {
                 let vertexBottomLeft = vertices[y][x]

@@ -1,22 +1,44 @@
 PODS:
-  - MetalPerformanceShadersProxy (0.3.0):
-    - MetalPerformanceShadersProxy/Proxy (= 0.3.0)
-  - MetalPerformanceShadersProxy/Proxy (0.3.0)
-  - PixelKit (0.5.4):
-    - MetalPerformanceShadersProxy (~> 0.3)
+  - CocoaAsyncSocket (7.6.3)
+  - LiveValues (1.1.0):
+    - OSCKit
+  - OSCKit (0.3.5):
+    - CocoaAsyncSocket (~> 7.3)
+  - PixelKit (0.7.4):
+    - LiveValues
+    - RenderKit
+    - SwiftSVG (~> 2.0)
+  - RenderKit (0.1.2):
+    - LiveValues
+  - SwiftSVG (2.3.0)
 
 DEPENDENCIES:
-  - PixelKit
+  - LiveValues (from `~/Documents/Code/Frameworks/Production/LiveValues`)
+  - PixelKit (from `~/Documents/Code/Frameworks/Production/PixelKit`)
+  - RenderKit (from `~/Documents/Code/Frameworks/Production/RenderKit`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - MetalPerformanceShadersProxy
-    - PixelKit
+  trunk:
+    - CocoaAsyncSocket
+    - OSCKit
+    - SwiftSVG
+
+EXTERNAL SOURCES:
+  LiveValues:
+    :path: "~/Documents/Code/Frameworks/Production/LiveValues"
+  PixelKit:
+    :path: "~/Documents/Code/Frameworks/Production/PixelKit"
+  RenderKit:
+    :path: "~/Documents/Code/Frameworks/Production/RenderKit"
 
 SPEC CHECKSUMS:
-  MetalPerformanceShadersProxy: a279966a6a22449d3e32a8cd5ca246d625aa7d43
-  PixelKit: db7013e6d4baf8e6c45b706f0983384789f65c24
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  LiveValues: 5c0c06e6c8accbc7e05210d1272e76aa14b88c1d
+  OSCKit: 4470dbd30bc792dcf66dc4e7b5d1ec7174add33c
+  PixelKit: d17a1c7050eed5ee591082fed77cec95b9ed8472
+  RenderKit: 6a8ba8198c4cbd6b71577e21a1f56c8c0e2c4ede
+  SwiftSVG: a864db6198fbddfd377f8169849580df18512e67
 
-PODFILE CHECKSUM: 8a3295c9fe3e6923a2503a5766ae4e2d9d53de27
+PODFILE CHECKSUM: ba5114c5b6a495ecf30097ec5cf8071e1858da7e
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.3

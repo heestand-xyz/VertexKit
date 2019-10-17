@@ -11,18 +11,20 @@ import UIKit
 #elseif os(macOS)
 import AppKit
 #endif
+import LiveValues
+import RenderKit
 import PixelKit
 import simd
 
-public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
+public class _3DPIX: PIXGenerator, CustomGeometryDelegate {
     
     open override var customMetalLibrary: MTLLibrary { return VertexKit.main.metalLibrary }
     open override var customVertexShaderName: String? { return "nil3DVTX" }
-    open override var shader: String { return "color3DPIX" }
+    open override var shaderName: String { return "color3DPIX" }
     
 //    var root: _3DRoot
     
-    public var vertices: [PixelKit.Vertex] { return [] }
+    public var vertices: [RenderKit.Vertex] { return [] }
     public var primativeType: MTLPrimitiveType { return .triangle }
     public var wireframe: Bool { return false }
 
@@ -30,26 +32,26 @@ public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         return color.list
     }
 
-    required init(res: PIX.Res) {
+    required init(at resolution: Resolution) {
 //        root = VertexKit.main.engine.createRoot(at: res.size)
-        super.init(res: res)
+        super.init(at: resolution)
         customGeometryActive = true
         customGeometryDelegate = self
     }
     
     // MAKR: Custom Geometry
-    public func customVertices() -> PixelKit.Vertices? {
+    public func customVertices() -> RenderKit.Vertices? {
         
         if vertices.isEmpty {
             VertexKit.log(pix: self, .warning, nil, "No vertices found.")
         }
         
-        var scaledVertices = vertices.map { vtx -> PixelKit.Vertex in
-            return PixelKit.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z * 2, s: vtx.s, t: vtx.t)
+        var scaledVertices = vertices.map { vtx -> RenderKit.Vertex in
+            return RenderKit.Vertex(x: vtx.x * 2, y: vtx.y * 2, z: vtx.z * 2, s: vtx.s, t: vtx.t)
         }
         if vertices.isEmpty {
             for _ in 0..<6 {
-                scaledVertices.append(PixelKit.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
+                scaledVertices.append(RenderKit.Vertex(x: -2, y: -2, z: 0, s: 0, t: 0))
             }
         }
         
@@ -59,10 +61,10 @@ public class _3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         }
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-        let verticesBuffer = PixelKit.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+        let verticesBuffer = PixelKit.main.render.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
 //        let count = !vertices.isEmpty ? instanceCount : (primativeType == .triangle ? 2 : primativeType == .line ? 3 : 6)
-        return PixelKit.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, type: primativeType, wireframe: wireframe)
+        return RenderKit.Vertices(buffer: verticesBuffer, vertexCount: vertices.count, type: primativeType, wireframe: wireframe)
     }
     
 }

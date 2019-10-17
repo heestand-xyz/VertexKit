@@ -8,15 +8,17 @@
 
 import CoreGraphics
 import Metal
+import LiveValues
+import RenderKit
 import PixelKit
 
 public class RawParticles3DPIX: _3DPIX {
     
     open override var customVertexShaderName: String? { return "particle3DVTX" }
     
-    public override var vertices: [PixelKit.Vertex] {
-        return rawParticles.map({ rawParticle -> PixelKit.Vertex in
-            return PixelKit.Vertex(x: rawParticle.x / res.aspect, y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
+    public override var vertices: [RenderKit.Vertex] {
+        return rawParticles.map({ rawParticle -> RenderKit.Vertex in
+            return RenderKit.Vertex(x: rawParticle.x / resolution.aspect, y: rawParticle.y, z: rawParticle.z, s: 0.0, t: 0.0)
         })
     }
     
@@ -36,8 +38,8 @@ public class RawParticles3DPIX: _3DPIX {
         return [size]
     }
     
-    public required init(res: Res) {
-        super.init(res: res)
+    public required init(at resolution: Resolution) {
+        super.init(at: resolution)
     }
     
     required convenience init(from decoder: Decoder) throws {

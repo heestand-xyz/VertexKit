@@ -7,6 +7,8 @@
 //
 
 import CoreGraphics
+import LiveValues
+import RenderKit
 import PixelKit
 import Metal
 import simd
@@ -35,16 +37,16 @@ public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
         return [cameraMatrix, projectionMatrix]
     }
     
-    public override var vertices: [PixelKit.Vertex] {
+    public override var vertices: [RenderKit.Vertex] {
         guard triangleUVs.count == triangleVertices.count else {
             VertexKit.log(.error, nil, "UVs count dose not match the vertice cout.")
             return []
         }
-        var vertices: [PixelKit.Vertex] = []
+        var vertices: [RenderKit.Vertex] = []
         for index in triangleIndices {
             let vert = triangleVertices[index]
             let uv = triangleUVs[index]
-            let vertex = PixelKit.Vertex(x: (vert.x / res.aspect) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
+            let vertex = RenderKit.Vertex(x: (vert.x / resolution.aspect) * 3, y: vert.y * 3, z: vert.z, s: uv.u, t: uv.v)
             vertices.append(vertex)
         }
         return vertices
@@ -55,8 +57,8 @@ public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
     
     // MARK: Life Cycle
     
-    public required init(res: PIX.Res) {
-        super.init(res: res)
+    public required init(at resolution: Resolution) {
+        super.init(at: resolution)
     }
     
     // MARK: Matrix

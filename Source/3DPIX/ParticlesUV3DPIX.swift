@@ -8,16 +8,18 @@
 
 import CoreGraphics
 import Metal
+import LiveValues
+import RenderKit
 import PixelKit
 
-public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
+public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
         
     open override var customMetalLibrary: MTLLibrary { return VertexKit.main.metalLibrary }
     open override var customVertexShaderName: String? { return "particleUV3DVTX" }
-    open override var shader: String { return "color3DPIX" }
+    open override var shaderName: String { return "color3DPIX" }
     
     public override var customVertexTextureActive: Bool { return true }
-    public override var customVertexPixIn: (PIX & PIXOut)? {
+    public override var customVertexNodeIn: (NODE & NODEOut)? {
         return vtxPixIn
     }
     public override var additiveVertexBlending: Bool { return true }
@@ -28,7 +30,7 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
     /// Map Alpha of each particle from the alpha channel
     public var mapAlpha: LiveBool = false
 
-    public var vtxPixIn: (PIX & PIXOut)? { didSet { setNeedsRender() } }
+    public var vtxPixIn: (PIX & NODEOut)? { didSet { setNeedsRender() } }
     
     public override var liveValues: [LiveValue] {
         return [size, mapSize, mapAlpha]
@@ -37,25 +39,25 @@ public class ParticlesUV3DPIX: PIXGenerator, PixelCustomGeometryDelegate {
         return color.list
     }
     open override var vertexUniforms: [CGFloat] {
-        return [size.uniform, vtxPixIn?.resolution?.width.cg ?? 1, vtxPixIn?.resolution?.height.cg ?? 1, mapSize.uniform ? 1 : 0, mapAlpha.uniform ? 1 : 0, resolution?.aspect.cg ?? 1]
+        return [size.uniform, vtxPixIn?.realResolution?.width.cg ?? 1, vtxPixIn?.realResolution?.height.cg ?? 1, mapSize.uniform ? 1 : 0, mapAlpha.uniform ? 1 : 0, resolution.aspect.cg]
     }
     
-    public required init(res: PIX.Res) {
-        super.init(res: res)
+    public required init(at resolution: Resolution) {
+        super.init(at: resolution)
         customGeometryActive = true
         customGeometryDelegate = self
     }
     
     // MAKR: Custom Geometry
-    public func customVertices() -> PixelKit.Vertices? {
+    public func customVertices() -> RenderKit.Vertices? {
         
-        let count = (vtxPixIn?.resolution?.w ?? 1) * (vtxPixIn?.resolution?.h ?? 1)
+        let count = (vtxPixIn?.realResolution?.w ?? 1) * (vtxPixIn?.realResolution?.h ?? 1)
         let vertexBuffers: [Float] = [Float](repeating: 0.0, count: count)
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
-        let verticesBuffer = PixelKit.main.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
+        let verticesBuffer = PixelKit.main.render.metalDevice.makeBuffer(bytes: vertexBuffers, length: vertexBuffersSize, options: [])!
         
-        return PixelKit.Vertices(buffer: verticesBuffer, vertexCount: count, type: .point, wireframe: false)
+        return RenderKit.Vertices(buffer: verticesBuffer, vertexCount: count, type: .point, wireframe: false)
     }
     
 }

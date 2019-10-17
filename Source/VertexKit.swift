@@ -8,6 +8,8 @@
 
 import CoreGraphics
 import Metal
+import LiveValues
+import RenderKit
 import PixelKit
 import simd
 
@@ -63,8 +65,8 @@ public class VertexKit {
     
     // MARK: - Log
     
-    public static func log(pix: PIX? = nil, _ level: PixelKit.LogLevel, _ category: PixelKit.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
-        PixelKit.main.log(prefix: "VertexKit", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
+    public static func log(pix: PIX? = nil, _ level: Logger.LogLevel, _ category: Logger.LogCategory?, _ message: String, loop: Bool = false, clean: Bool = false, e error: Error? = nil, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        PixelKit.main.logger.log(prefix: "VertexKit", level, category, message, loop: loop, clean: clean, e: error, file, function, line)
     }
     
     // MARK: - Setup
@@ -79,12 +81,12 @@ public class VertexKit {
         guard let libraryFile = Bundle(for: type(of: self)).path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
         }
-        return try pixelKit.metalDevice.makeLibrary(filepath: libraryFile)
+        return try pixelKit.render.metalDevice.makeLibrary(filepath: libraryFile)
     }
     
     // MARK: UV
     
-    static func uvVecMap(res: PIX.Res) -> [_3DVec] {
+    static func uvVecMap(res: Resolution) -> [_3DVec] {
         var map: [_3DVec] = []
         for y in 0..<res.h {
             let v = (CGFloat(y) + 0.5) / CGFloat(res.h)
