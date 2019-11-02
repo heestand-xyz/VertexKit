@@ -21,6 +21,14 @@ pod 'VertexKit'
 import VertexKit
 ~~~~
 
+To get access to the dependencies:
+
+~~~~swift
+import LiveValues
+import RenderKit
+import PixelKit
+~~~~
+
 ## Tutorials
 
 | <img src="http://blog.hexagons.se/wp-content/uploads/2019/05/vertexkit-particle-noise.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-noise-plane/pixelkit--particle-noise-plane.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-noise-flow/pixelkit--particle-noise-flow.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-field-flow/pixelkit--particle-field-flow.png" width="64"/> |
