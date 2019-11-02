@@ -2,4 +2,7 @@
 
 xcuserdata/
 
+build/*
+docs/*
+
 Pods/*
