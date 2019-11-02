@@ -43,16 +43,16 @@ import PixelKit
 view.wantsLayer = true
 view.layer!.backgroundColor = .black
 
-PixelKit.main.bits = ._16
+PixelKit.main.render.bits = ._16
 
-let pres: PIX.Res = .square(Int(sqrt(1_000_000)))
+let pres: Resolution = .square(Int(sqrt(1_000_000)))
 
-let noise = NoisePIX(res: pres)
+let noise = NoisePIX(at: pres)
 noise.colored = true
 noise.octaves = 5
 noise.zPosition = .live * 0.1
 
-let particles = ParticlesUV3DPIX(res: .cgSize(view.bounds.size) * 2)
+let particles = ParticlesUV3DPIX(at: .cgSize(view.bounds.size) * 2)
 particles.vtxPixIn = noise - 0.5
 particles.color = LiveColor(lum: 1.0, a: 0.1)
 
