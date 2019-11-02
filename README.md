@@ -13,15 +13,29 @@ an extension of [PixelKit](https://github.com/hexagons/pixelkit)<br>
 
 ## Install
 
-`pod 'VertexKit'`
+~~~~swift
+pod 'VertexKit'
+~~~~
 
-`import VertexKit`
+~~~~swift
+import VertexKit
+~~~~
 
-## Tutorial
+To get access to the dependencies:
 
-[Particles in VertexKit & PixelKit](http://blog.hexagons.se/blog/particles-in-vertexkit-pixelkit/)
+~~~~swift
+import LiveValues
+import RenderKit
+import PixelKit
+~~~~
 
-## Particle Example
+## Tutorials
+
+| <img src="http://blog.hexagons.se/wp-content/uploads/2019/05/vertexkit-particle-noise.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-noise-plane/pixelkit--particle-noise-plane.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-noise-flow/pixelkit--particle-noise-flow.png" width="64"/> | <img src="http://pixelkit.net/demos/particle-field-flow/pixelkit--particle-field-flow.png" width="64"/> |
+| --- | --- | --- | --- |
+| [Particles](http://blog.hexagons.se/blog/particles-in-vertexkit-pixelkit/) | [Noise Plane](http://pixelkit.net/demos/particle-noise-plane/)  | [Noise Flow](http://pixelkit.net/demos/particle-noise-flow/) | [Field Flow](http://pixelkit.net/demos/particle-field-flow/) |
+
+## Particles Example
 
 <img src="https://github.com/hexagons/VertexKit/blob/master/Assets/Images/vertexkit-particle-noise.png?raw=true" width="256"/>
 
