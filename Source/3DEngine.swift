@@ -11,7 +11,6 @@ import UIKit
 #elseif os(macOS)
 import AppKit
 #endif
-import LiveValues
 import PixelKit
 
 #if os(iOS)
@@ -44,8 +43,8 @@ public protocol _3DObj {
     
     func scale(to _3dCoord: _3DVec)
     func scale(by _3dCoord: _3DVec)
-    func scale(to val: LiveFloat)
-    func scale(by val: LiveFloat)
+    func scale(to val: CGFloat)
+    func scale(by val: CGFloat)
     
     func transform(to _3dTrans: _3DTrans)
     func transform(by _3dTrans: _3DTrans)
@@ -59,7 +58,7 @@ public protocol _3DRoot: _3DObj {
     var view: _View { get }
     var snapshot: _Image { get }
     
-    var worldScale: LiveFloat { get set }
+    var worldScale: CGFloat { get set }
 
     func add(_ obj: _3DObj)
     func add(_ obj: _3DObj, to objParent: _3DObj)
@@ -84,7 +83,7 @@ public enum _3DObjKind {
 public protocol _3DEngine {
     
     var debugMode: Bool { get set }
-    var globalWorldScale: LiveFloat { get set }
+    var globalWorldScale: CGFloat { get set }
     
     var roots: [_3DRoot] { get set }
 

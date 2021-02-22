@@ -7,7 +7,6 @@
 //
 
 import CoreGraphics
-import LiveValues
 import RenderKit
 import PixelKit
 
@@ -26,7 +25,7 @@ public class Grid3DPIX: _3DPIX {
     
     public init(at resolution: Resolution, gridRes: Resolution) {
         self.gridRes = gridRes
-        gridSize = CGSize(width: resolution.aspect.cg, height: 1.0)
+        gridSize = CGSize(width: resolution.aspect, height: 1.0)
         super.init(at: resolution)
     }
     
@@ -42,13 +41,13 @@ public class Grid3DPIX: _3DPIX {
         
         var vecs: [[_3DVec]] = []
         for y in 0..<gridRes.h + plus {
-            let v = CGFloat(y) / gridRes.height.cg
+            let v = CGFloat(y) / gridRes.height
             var vecRow: [_3DVec] = []
             for x in 0..<gridRes.w + plus {
-                let u = CGFloat(x) / gridRes.width.cg
+                let u = CGFloat(x) / gridRes.width
                 let vec = _3DVec(
-                    x: LiveFloat((u - 0.5) * gridSize.width),
-                    y: LiveFloat((v - 0.5) * gridSize.height),
+                    x: (u - 0.5) * gridSize.width,
+                    y: (v - 0.5) * gridSize.height,
                     z: 0.0
                 )
                 vecRow.append(vec)

@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import Metal
-import LiveValues
 import RenderKit
 import PixelKit
 
@@ -24,22 +23,23 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
     }
     public override var additiveVertexBlending: Bool { return true }
     
-    public var size: LiveFloat = 1.0
+    @Live public var size: CGFloat = 1.0
     /// Map Size of each particle from the blue channel
-    public var mapSize: LiveBool = false
+    @Live public var mapSize: Bool = false
     /// Map Alpha of each particle from the alpha channel
-    public var mapAlpha: LiveBool = false
+    @Live public var mapAlpha: Bool = false
 
     public var vtxPixIn: (PIX & NODEOut)? { didSet { setNeedsRender() } }
     
-    public override var liveValues: [LiveValue] {
-        return [size, mapSize, mapAlpha]
+    public override var liveList: [LiveWrap] {
+        super.liveList + [_size, _mapSize, _mapAlpha]
     }
+    
     public override var uniforms: [CGFloat] {
-        return color.list
+        color.components
     }
     open override var vertexUniforms: [CGFloat] {
-        return [size.uniform, vtxPixIn?.realResolution?.width.cg ?? 1, vtxPixIn?.realResolution?.height.cg ?? 1, mapSize.uniform ? 1 : 0, mapAlpha.uniform ? 1 : 0, resolution.aspect.cg]
+        [size, vtxPixIn?.finalResolution.width ?? 1, vtxPixIn?.finalResolution.height ?? 1, mapSize ? 1 : 0, mapAlpha ? 1 : 0, resolution.aspect]
     }
     
     public required init(at resolution: Resolution) {
@@ -51,7 +51,7 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
     // MAKR: Custom Geometry
     public func customVertices() -> RenderKit.Vertices? {
         
-        let count = (vtxPixIn?.realResolution?.w ?? 1) * (vtxPixIn?.realResolution?.h ?? 1)
+        let count = (vtxPixIn?.finalResolution.w ?? 1) * (vtxPixIn?.finalResolution.h ?? 1)
         let vertexBuffers: [Float] = [Float](repeating: 0.0, count: count)
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size

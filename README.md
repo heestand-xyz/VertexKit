@@ -24,7 +24,6 @@ import VertexKit
 To get access to the dependencies:
 
 ~~~~swift
-import LiveValues
 import RenderKit
 import PixelKit
 ~~~~

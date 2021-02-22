@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PixelColor",
+        "repositoryURL": "https://github.com/heestand-xyz/PixelColor.git",
+        "state": {
+          "branch": null,
+          "revision": "dd52d2bb6c8fd4f2c10051133600a0a620520336",
+          "version": "1.1.2"
+        }
+      },
+      {
+        "package": "RenderKit",
+        "repositoryURL": "https://github.com/heestand-xyz/RenderKit.git",
+        "state": {
+          "branch": "lite",
+          "revision": "448ac06999d00eefcf0ab5a619f32291ffeba9a7",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

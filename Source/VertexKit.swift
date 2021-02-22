@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import Metal
-import LiveValues
 import RenderKit
 import PixelKit
 import simd
@@ -92,7 +91,7 @@ public class VertexKit {
             let v = (CGFloat(y) + 0.5) / CGFloat(res.h)
             for x in 0..<res.w {
                 let u = (CGFloat(x) + 0.5) / CGFloat(res.w)
-                let vec = _3DVec(x: LiveFloat(u), y: LiveFloat(v), z: 0.0)
+                let vec = _3DVec(x: u, y: v, z: 0.0)
                 map.append(vec)
             }
         }

@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import Metal
-import LiveValues
 import RenderKit
 import PixelKit
 
@@ -93,7 +92,7 @@ public class Particles3DPIX: _3DPIX {
             let pi: CGFloat = .pi
             let ang = CGFloat.random(in: -pi...pi)
             let amp = CGFloat.random(in: 0.5...1.0)
-            let dir = _3DVec(x: LiveFloat(cos(ang) * amp), y: LiveFloat(sin(ang) * amp), z: 0.0)
+            let dir = _3DVec(x: cos(ang) * amp, y: sin(ang) * amp, z: 0.0)
             particles.append(Particle(pos: emittor, dir: dir, life: 1.0))
         }
     }
@@ -109,7 +108,7 @@ public class Particles3DPIX: _3DPIX {
                 particles.remove(at: ir)
                 continue
             }
-            particle.pos += particle.dir * LiveFloat(speed)
+            particle.pos += particle.dir * speed
             particles[ir] = particle
         }
     }

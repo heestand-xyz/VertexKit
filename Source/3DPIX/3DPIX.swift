@@ -11,7 +11,6 @@ import UIKit
 #elseif os(macOS)
 import AppKit
 #endif
-import LiveValues
 import RenderKit
 import PixelKit
 import simd
@@ -29,7 +28,7 @@ public class _3DPIX: PIXGenerator, CustomGeometryDelegate {
     public var wireframe: Bool { return false }
 
     public override var uniforms: [CGFloat] {
-        return color.list
+        color.components
     }
 
     required init(at resolution: Resolution) {

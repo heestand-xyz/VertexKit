@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreGraphics
-import LiveValues
 import PixelKit
 
 // MARK: Obj
@@ -46,8 +45,8 @@ class _3DRawObj: _3DObj {
     func scale(to _3dCoord: _3DVec) {}
     func scale(by _3dCoord: _3DVec) {}
     
-    func scale(to val: LiveFloat) {}
-    func scale(by val: LiveFloat) {}
+    func scale(to val: CGFloat) {}
+    func scale(by val: CGFloat) {}
     
     func transform(to _3dTrans: _3DTrans) {}
     func transform(by _3dTrans: _3DTrans) {}
@@ -64,7 +63,7 @@ class _3DRawRoot: _3DRawObj, _3DRoot {
         return _Image(named: "")!
     }
     
-    var worldScale: LiveFloat = 1.0
+    var worldScale: CGFloat = 1.0
     
     override init() {
         view = _View()
@@ -84,7 +83,7 @@ class _3DRawEngine: _3DEngine {
     
     var debugMode: Bool = false
 
-    var globalWorldScale: LiveFloat = 1.0
+    var globalWorldScale: CGFloat = 1.0
 
     var roots: [_3DRoot] = []
     
