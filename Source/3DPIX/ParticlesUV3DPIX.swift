@@ -42,8 +42,8 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
         [size, vtxPixIn?.finalResolution.width ?? 1, vtxPixIn?.finalResolution.height ?? 1, mapSize ? 1 : 0, mapAlpha ? 1 : 0, resolution.aspect]
     }
     
-    public required init(at resolution: Resolution) {
-        super.init(at: resolution)
+    public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
+        super.init(at: resolution, name: "Particles UV 3D", typeName: "vtx-pix-content-generator-particles-uv-3d")
         customGeometryActive = true
         customGeometryDelegate = self
     }

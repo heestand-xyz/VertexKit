@@ -70,6 +70,7 @@ public class Particles3DPIX: _3DPIX {
 
     public required init(at resolution: Resolution) {
         super.init(at: resolution)
+//        super.init(at: resolution, name: "Particles 3D", typeName: "vtx-pix-content-generator-particles-3d")
     }
     
 //    func prep() {

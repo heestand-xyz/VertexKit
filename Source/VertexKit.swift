@@ -77,7 +77,7 @@ public class VertexKit {
     }
     
     func loadMetalShaderLibrary() throws -> MTLLibrary {
-        guard let libraryFile = Bundle(for: type(of: self)).path(forResource: kMetalLibName, ofType: "metallib") else {
+        guard let libraryFile = Bundle.module.path(forResource: kMetalLibName, ofType: "metallib") else {
             throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
         }
         return try pixelKit.render.metalDevice.makeLibrary(filepath: libraryFile)

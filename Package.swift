@@ -18,7 +18,8 @@ let package = Package(
     ],
     targets: [
         .target(name: "VertexKit", dependencies: ["PixelKit", "RenderKit"], path: "Source", resources: [
-            .copy("Metal"),
+            .copy("Metal/VertexKitShaders.metallib"),
+            .copy("Metal/VertexKitShaders-macOS.metallib"),
         ]),
     ]
 )
