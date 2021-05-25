@@ -11,6 +11,7 @@ import RenderKit
 import PixelKit
 import Metal
 import simd
+import Resolution
 
 public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
     
@@ -19,10 +20,10 @@ public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
 //    public var circRes: Res = .custom(w: 64, h: 16) { didSet { setNeedsRender() } }
 //    public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
     
-    public var triangleVertices: [_3DVec] = [] { didSet { setNeedsRender() } }
-    public var triangleUVs: [_3DUV] = [] { didSet { setNeedsRender() } }
+    public var triangleVertices: [_3DVec] = [] { didSet { render() } }
+    public var triangleUVs: [_3DUV] = [] { didSet { render() } }
 //    public var triangleCount: Int = 0 { didSet { setNeedsRender() } }
-    public var triangleIndices: [Int] = [] { didSet { setNeedsRender() } }
+    public var triangleIndices: [Int] = [] { didSet { render() } }
     
     public override var wireframe: Bool { return true }
 //    public override var instanceCount: Int {
@@ -58,6 +59,10 @@ public class Object3DPIX: _3DPIX, VertexCustom3DRenderDelegate {
     
     public required init(at resolution: Resolution) {
         super.init(at: resolution)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
     
     // MARK: Matrix

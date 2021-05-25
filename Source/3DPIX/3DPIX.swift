@@ -14,6 +14,7 @@ import AppKit
 import RenderKit
 import PixelKit
 import simd
+import Resolution
 
 public class _3DPIX: PIXGenerator, CustomGeometryDelegate {
     
@@ -36,6 +37,10 @@ public class _3DPIX: PIXGenerator, CustomGeometryDelegate {
         super.init(at: resolution)
         customGeometryActive = true
         customGeometryDelegate = self
+    }
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
     
     // MAKR: Custom Geometry

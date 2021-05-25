@@ -10,6 +10,7 @@ import CoreGraphics
 import Metal
 import RenderKit
 import PixelKit
+import Resolution
 
 public class RawParticles3DPIX: _3DPIX {
     
@@ -25,7 +26,7 @@ public class RawParticles3DPIX: _3DPIX {
     
     public var rawParticles: [_3DVec] = []
     
-    public var size: CGFloat = 1.0 { didSet { setNeedsRender() } }
+    public var size: CGFloat = 1.0 { didSet { render() } }
     
 //    public override var liveValues: [LiveValue] {
 //        return rawParticles.flatMap({ vec -> [LiveValue] in

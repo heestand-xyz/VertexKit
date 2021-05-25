@@ -10,6 +10,7 @@ import CoreGraphics
 import Metal
 import RenderKit
 import PixelKit
+import Resolution
 
 public class Particles3DPIX: _3DPIX {
     
@@ -54,7 +55,7 @@ public class Particles3DPIX: _3DPIX {
     public var speed: CGFloat = 1.0
     public var lifeDecay: CGFloat = 0.01
     public var emittors:  [_3DVec] = []// { didSet { setNeedsRender() } }
-    public var size: CGFloat = 1.0 { didSet { setNeedsRender() } }
+    public var size: CGFloat = 1.0 { didSet { render() } }
     
 //    var aspect: CGFloat {
 //        return res.aspect

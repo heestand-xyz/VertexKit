@@ -10,6 +10,7 @@ import CoreGraphics
 import Metal
 import RenderKit
 import PixelKit
+import Resolution
 
 public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
         
@@ -23,29 +24,33 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
     }
     public override var additiveVertexBlending: Bool { return true }
     
-    @Live public var size: CGFloat = 1.0
+    @LiveFloat("size") public var size: CGFloat = 1.0
     /// Map Size of each particle from the blue channel
-    @Live public var mapSize: Bool = false
+    @LiveBool("hasSize") public var hasSize: Bool = false
     /// Map Alpha of each particle from the alpha channel
-    @Live public var mapAlpha: Bool = false
+    @LiveBool("hasAlpha") public var hasAlpha: Bool = false
 
-    public var vtxPixIn: (PIX & NODEOut)? { didSet { setNeedsRender() } }
+    public var vtxPixIn: (PIX & NODEOut)? { didSet { render() } }
     
     public override var liveList: [LiveWrap] {
-        super.liveList + [_size, _mapSize, _mapAlpha]
+        super.liveList + [_size, _hasSize, _hasAlpha]
     }
     
     public override var uniforms: [CGFloat] {
         color.components
     }
     open override var vertexUniforms: [CGFloat] {
-        [size, vtxPixIn?.finalResolution.width ?? 1, vtxPixIn?.finalResolution.height ?? 1, mapSize ? 1 : 0, mapAlpha ? 1 : 0, resolution.aspect]
+        [size, vtxPixIn?.finalResolution.width ?? 1, vtxPixIn?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, resolution.aspect]
     }
     
     public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
         super.init(at: resolution, name: "Particles UV 3D", typeName: "vtx-pix-content-generator-particles-uv-3d")
         customGeometryActive = true
         customGeometryDelegate = self
+    }
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
     
     // MAKR: Custom Geometry

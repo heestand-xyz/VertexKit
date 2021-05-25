@@ -10,11 +10,12 @@ import CoreGraphics
 import RenderKit
 import PixelKit
 import Metal
+import Resolution
 
 public class Circle3DPIX: _3DPIX {
     
-    public var circRes: Resolution = .custom(w: 64, h: 16) { didSet { setNeedsRender() } }
-    public var radius: CGFloat = 0.1 { didSet { setNeedsRender() } }
+    public var circRes: Resolution = .custom(w: 64, h: 16) { didSet { render() } }
+    public var radius: CGFloat = 0.1 { didSet { render() } }
 
 //    public override var instanceCount: Int {
 //        return (circRes.w * circRes.h) / 2
@@ -28,6 +29,10 @@ public class Circle3DPIX: _3DPIX {
     
     public required init(at resolution: Resolution) {
         super.init(at: resolution)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        try super.init(from: decoder)
     }
     
     func circ() -> [RenderKit.Vertex] {

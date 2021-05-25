@@ -11,6 +11,7 @@ import Metal
 import RenderKit
 import PixelKit
 import simd
+import Resolution
 
 public class VertexKit {
     
