@@ -14,7 +14,7 @@ import Resolution
 
 public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
         
-    open override var customMetalLibrary: MTLLibrary { return VertexKit.main.metalLibrary }
+    open override var customMetalLibrary: MTLLibrary { return VertexKit.metalLibrary }
     open override var customVertexShaderName: String? { return "particleUV3DVTX" }
     open override var shaderName: String { return "color3DPIX" }
     

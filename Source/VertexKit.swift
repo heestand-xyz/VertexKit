@@ -46,18 +46,18 @@ public class VertexKit {
     
     // MARK: Metal
     
-    var metalLibrary: MTLLibrary!
+//    var metalLibrary: MTLLibrary!
     
     // MARK: - Life Cycle
     
     init() {
 //        pixels.log(.none, .pixels, signature.version, clean: true)
         
-        do {
-            metalLibrary = try loadMetalShaderLibrary()
-        } catch {
-            VertexKit.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
-        }
+//        do {
+//            metalLibrary = try loadMetalShaderLibrary()
+//        } catch {
+//            VertexKit.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
+//        }
         
         print("VertexKit", "ready to render.")
         
@@ -77,12 +77,20 @@ public class VertexKit {
         case runtimeERROR(String)
     }
     
-    func loadMetalShaderLibrary() throws -> MTLLibrary {
-        guard let libraryFile = Bundle.module.path(forResource: kMetalLibName, ofType: "metallib") else {
-            throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
+    static let metalLibrary: MTLLibrary = {
+        do {
+            return try PixelKit.main.render.metalDevice.makeDefaultLibrary(bundle: Bundle.module)
+        } catch {
+            fatalError("Loading Metal Library Failed: \(error.localizedDescription)")
         }
-        return try pixelKit.render.metalDevice.makeLibrary(filepath: libraryFile)
-    }
+    }()
+    
+//    func loadMetalShaderLibrary() throws -> MTLLibrary {
+//        guard let libraryFile = Bundle.module.path(forResource: kMetalLibName, ofType: "metallib") else {
+//            throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
+//        }
+//        return try pixelKit.render.metalDevice.makeLibrary(filepath: libraryFile)
+//    }
     
     // MARK: UV
     
