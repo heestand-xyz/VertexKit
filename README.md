@@ -51,7 +51,7 @@ noise.colored = true
 noise.octaves = 5
 noise.zPosition = .live * 0.1
 
-let particles = ParticlesUV3DPIX(at: .cgSize(view.bounds.size) * 2)
+let particles = UVParticlesPIX(at: .size(view.bounds.size) * 2)
 particles.vtxPixIn = noise - 0.5
 particles.color = LiveColor(lum: 1.0, a: 0.1)
 

@@ -1,5 +1,5 @@
 //
-//  ParticlesUV3DPIX.swift
+//  UVParticlesPIX.swift
 //  VertexKit
 //
 //  Created by Anton Heestand on 2019-05-02.
@@ -12,10 +12,10 @@ import RenderKit
 import PixelKit
 import Resolution
 
-public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
+public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         
     open override var customMetalLibrary: MTLLibrary { return VertexKit.metalLibrary }
-    open override var customVertexShaderName: String? { return "particleUV3DVTX" }
+    open override var customVertexShaderName: String? { return "uvParticleVTX" }
     open override var shaderName: String { return "color3DPIX" }
     
     public override var customVertexTextureActive: Bool { return true }
@@ -33,7 +33,9 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
     public var vtxPixIn: (PIX & NODEOut)? { didSet { render() } }
     
     public override var liveList: [LiveWrap] {
-        super.liveList + [_size, _hasSize, _hasAlpha]
+        super.liveList.filter({ liveWrap in
+            liveWrap.typeName != "backgroundColor"
+        }) + [_size, _hasSize, _hasAlpha]
     }
     
     public override var uniforms: [CGFloat] {
@@ -44,7 +46,7 @@ public class ParticlesUV3DPIX: PIXGenerator, CustomGeometryDelegate {
     }
     
     public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
-        super.init(at: resolution, name: "Particles UV 3D", typeName: "vtx-pix-content-generator-particles-uv-3d")
+        super.init(at: resolution, name: "UV Particles", typeName: "vtx-pix-content-generator-uv-particles")
         customGeometryActive = true
         customGeometryDelegate = self
     }
