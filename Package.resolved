@@ -3,29 +3,38 @@
     "pins": [
       {
         "package": "PixelColor",
-        "repositoryURL": "https://github.com/heestand-xyz/PixelColor.git",
+        "repositoryURL": "https://github.com/heestand-xyz/PixelColor",
         "state": {
           "branch": null,
-          "revision": "dd52d2bb6c8fd4f2c10051133600a0a620520336",
-          "version": "1.1.2"
+          "revision": "f2408f208c541a3463ced1a288235683dcf73ca8",
+          "version": "1.2.2"
         }
       },
       {
         "package": "PixelKit",
-        "repositoryURL": "https://github.com/heestand-xyz/PixelKit.git",
+        "repositoryURL": "https://github.com/heestand-xyz/PixelKit",
         "state": {
-          "branch": "lite",
-          "revision": "007924283e913df6de481ce9accfaf8e7dbbcafa",
-          "version": null
+          "branch": null,
+          "revision": "23ec97a268fd6b95695f35b4e49913b4db220e0d",
+          "version": "2.0.0"
         }
       },
       {
         "package": "RenderKit",
-        "repositoryURL": "https://github.com/heestand-xyz/RenderKit.git",
+        "repositoryURL": "https://github.com/heestand-xyz/RenderKit",
         "state": {
-          "branch": "lite",
-          "revision": "448ac06999d00eefcf0ab5a619f32291ffeba9a7",
-          "version": null
+          "branch": null,
+          "revision": "e482aaf00752dc953c69d7fd63b8e809cdb78605",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Resolution",
+        "repositoryURL": "https://github.com/heestand-xyz/Resolution",
+        "state": {
+          "branch": null,
+          "revision": "587be77040ec27fd0eb903ae189cd3b89518eea4",
+          "version": "1.0.2"
         }
       }
     ]
