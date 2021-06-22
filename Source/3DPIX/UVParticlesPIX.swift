@@ -30,8 +30,13 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     /// Map Alpha of each particle from the alpha channel
     @LiveBool("hasAlpha") public var hasAlpha: Bool = false
 
-    public var vtxPixIn: (PIX & NODEOut)? { didSet { render() } }
-    
+    @available(*, deprecated, renamed: "particlesInput")
+    public var vtxPixIn: (PIX & NODEOut)? {
+        get { particlesInput }
+        set { particlesInput = newValue }
+    }
+    public var particlesInput: (PIX & NODEOut)? { didSet { render() } }
+
     public override var liveList: [LiveWrap] {
         super.liveList.filter({ liveWrap in
             liveWrap.typeName != "backgroundColor"
