@@ -29,11 +29,11 @@ struct Uniforms {
     float aspect;
 };
 
-vertex VertexOut uvParticleVTX(const device VertexIn* vertices [[ buffer(0) ]],
-                               unsigned int vid [[ vertex_id ]],
-                               const device Uniforms& in [[ buffer(1) ]],
-                               texture2d<float> inTex [[ texture(0) ]],
-                               sampler s [[ sampler(0) ]]) {
+vertex VertexOut uvParticlesVTX(const device VertexIn* vertices [[ buffer(0) ]],
+                                unsigned int vid [[ vertex_id ]],
+                                const device Uniforms& in [[ buffer(1) ]],
+                                texture2d<float> inTex [[ texture(0) ]],
+                                sampler s [[ sampler(0) ]]) {
     
     int ux = vid % int(in.resx);
     int vy = int(float(vid) / in.resx);

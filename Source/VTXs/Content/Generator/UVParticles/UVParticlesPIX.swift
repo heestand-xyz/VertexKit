@@ -15,12 +15,12 @@ import Resolution
 public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         
     open override var customMetalLibrary: MTLLibrary { return VertexKit.metalLibrary }
-    open override var customVertexShaderName: String? { return "uvParticleVTX" }
+    open override var customVertexShaderName: String? { return "uvParticlesVTX" }
     open override var shaderName: String { return "color3DPIX" }
     
     public override var customVertexTextureActive: Bool { return true }
     public override var customVertexNodeIn: (NODE & NODEOut)? {
-        return vtxPixIn
+        particlesInput
     }
     public override var additiveVertexBlending: Bool { return true }
     
@@ -47,7 +47,7 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         color.components
     }
     open override var vertexUniforms: [CGFloat] {
-        [size, vtxPixIn?.finalResolution.width ?? 1, vtxPixIn?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, resolution.aspect]
+        [size, particlesInput?.finalResolution.width ?? 1, particlesInput?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, resolution.aspect]
     }
     
     public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
@@ -60,10 +60,11 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         try super.init(from: decoder)
     }
     
-    // MAKR: Custom Geometry
+    // MARK: Custom Geometry
+    
     public func customVertices() -> RenderKit.Vertices? {
         
-        let count = (vtxPixIn?.finalResolution.w ?? 1) * (vtxPixIn?.finalResolution.h ?? 1)
+        let count = (particlesInput?.finalResolution.w ?? 1) * (particlesInput?.finalResolution.h ?? 1)
         let vertexBuffers: [Float] = [Float](repeating: 0.0, count: count)
         
         let vertexBuffersSize = vertexBuffers.count * MemoryLayout<Float>.size
