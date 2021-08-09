@@ -48,7 +48,6 @@ public class LineGrid3DPIX: Grid3DPIX {
     
     public func makeGridLines() {
         self.gridLines = []
-//        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", PixelKit.main.frame)
 //        return [PixelKit.Vertex(x: 0, y: -0.125, s: 0.0, t: 0.0), PixelKit.Vertex(x: 0, y: 0.125, s: 0.0, t: 0.0)]
         guard customDelegate != nil else {
             VertexKit.log(.warning, nil, "`customDelegate` not implemented.")
