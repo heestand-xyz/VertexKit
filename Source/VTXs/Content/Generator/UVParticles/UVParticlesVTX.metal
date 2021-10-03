@@ -9,12 +9,12 @@
 #include <metal_stdlib>
 using namespace metal;
 
-struct VertexIn{
+struct VertexIn {
     packed_float3 position;
     packed_float2 texCoord;
 };
 
-struct VertexOut{
+struct VertexOut {
     float4 position [[position]];
     float pointSize [[point_size]];
     float4 color;
@@ -29,8 +29,7 @@ struct Uniforms {
     float aspect;
 };
 
-vertex VertexOut uvParticlesVTX(const device VertexIn* vertices [[ buffer(0) ]],
-                                unsigned int vid [[ vertex_id ]],
+vertex VertexOut uvParticlesVTX(unsigned int vid [[ vertex_id ]],
                                 const device Uniforms& in [[ buffer(1) ]],
                                 texture2d<float> inTex [[ texture(0) ]],
                                 sampler s [[ sampler(0) ]]) {
