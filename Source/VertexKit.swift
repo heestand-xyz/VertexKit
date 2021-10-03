@@ -17,50 +17,12 @@ public class VertexKit {
     
     public static let main = VertexKit()
     
-    public let engine: _3DEngine = _3DScnEngine()
-    
     let pixelKit = PixelKit.main
-    
-    // MARK: Signature
-    
-    #if os(iOS)
-    let kBundleId = "se.hexagons.pixels.3d"
-    let kMetalLibName = "VertexKitShaders"
-    #elseif os(macOS)
-    let kBundleId = "se.hexagons.pixels.3d.macos"
-    let kMetalLibName = "VertexKitShaders-macOS"
-    #endif
-    
-    struct Signature: Encodable {
-        let id: String
-        let version: String
-        let build: Int
-        var formatted: String {
-            return "\(id) - v\(version) - b\(build)"
-        }
-    }
-    
-    var signature: Signature {
-        return Signature(id: kBundleId, version: Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleShortVersionString"] as! String, build: Int(Bundle(identifier: kBundleId)!.infoDictionary!["CFBundleVersion"] as! String) ?? -1)
-    }
-    
-    // MARK: Metal
-    
-//    var metalLibrary: MTLLibrary!
     
     // MARK: - Life Cycle
     
     init() {
-//        pixels.log(.none, .pixels, signature.version, clean: true)
-        
-//        do {
-//            metalLibrary = try loadMetalShaderLibrary()
-//        } catch {
-//            VertexKit.log(.fatal, .pixelKit, "Metal Library failed to load.", e: error)
-//        }
-        
         print("VertexKit", "ready to render.")
-        
     }
     
     // MARK: - Log
@@ -84,27 +46,5 @@ public class VertexKit {
             fatalError("Loading Metal Library Failed: \(error.localizedDescription)")
         }
     }()
-    
-//    func loadMetalShaderLibrary() throws -> MTLLibrary {
-//        guard let libraryFile = Bundle.module.path(forResource: kMetalLibName, ofType: "metallib") else {
-//            throw MetalLibraryError.runtimeERROR("VertexKit Shaders: Metal Library not found.")
-//        }
-//        return try pixelKit.render.metalDevice.makeLibrary(filepath: libraryFile)
-//    }
-    
-    // MARK: UV
-    
-    static func uvVecMap(res: Resolution) -> [_3DVec] {
-        var map: [_3DVec] = []
-        for y in 0..<res.h {
-            let v = (CGFloat(y) + 0.5) / CGFloat(res.h)
-            for x in 0..<res.w {
-                let u = (CGFloat(x) + 0.5) / CGFloat(res.w)
-                let vec = _3DVec(x: u, y: v, z: 0.0)
-                map.append(vec)
-            }
-        }
-        return map
-    }
     
 }
