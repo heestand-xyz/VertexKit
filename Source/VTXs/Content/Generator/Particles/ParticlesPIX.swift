@@ -33,21 +33,21 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     
     @LiveColor("clearBackgroundColor") public var clearBackgroundColor: PixelColor = .black
     @LiveFloat("lifeTime") public var lifeTime: CGFloat = 1.0
-    @LiveInt("emitCount", range: 0...10) public var emitCount: Int = 5
+    @LiveInt("emitCount", range: 0...10) public var emitCount: Int = 1
     @LivePoint("emitPosition") public var emitPosition: CGPoint = .zero
     @LiveSize("emitSize") public var emitSize: CGSize = .zero
     @LivePoint("direction") public var direction: CGPoint = CGPoint(x: 0.0, y: 0.0)
     @LiveFloat("randomDirection") public var randomDirection: CGFloat = 1.0
-    @LiveFloat("velocity", range: 0.0...0.01, increment: 0.001) public var velocity: CGFloat = 0.01
+    @LiveFloat("velocity", range: 0.0...0.01, increment: 0.001) public var velocity: CGFloat = 0.005
     @LiveFloat("randomVelocity", range: 0.0...0.01, increment: 0.001) public var randomVelocity: CGFloat = 0.0
-    @LiveFloat("particleSize") public var particleSize: CGFloat = 1.0
+    @LiveFloat("particleSize", range: 0.0...2.0, increment: 1.0) public var particleSize: CGFloat = 1.0
 
     // MARK: Property Helpers
     
     public override var liveList: [LiveWrap] {
         super.liveList.filter({ liveWrap in
             liveWrap.typeName != "backgroundColor"
-        }) + [_clearBackgroundColor, _particleSize]
+        }) + [_clearBackgroundColor, _lifeTime, _emitCount, _emitPosition, _emitSize, _direction, _randomDirection, _velocity, _randomVelocity, _particleSize]
     }
     
     public override var uniforms: [CGFloat] {
@@ -98,6 +98,7 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     }
     
     private func addParticles() {
+        guard emitCount > 0 else { return }
         for _ in 0..<emitCount {
             var position: CGPoint = emitPosition
             position -= emitSize / 2

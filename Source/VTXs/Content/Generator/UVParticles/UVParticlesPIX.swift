@@ -28,7 +28,7 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     
     @LiveColor("clearBackgroundColor") public var clearBackgroundColor: PixelColor = .black
     
-    @LiveFloat("particleSize") public var particleSize: CGFloat = 1.0
+    @LiveFloat("particleSize", range: 0.0...2.0, increment: 1.0) public var particleSize: CGFloat = 1.0
     /// Map Size of each particle from the blue channel
     @LiveBool("hasSize") public var hasSize: Bool = false
     /// Map Alpha of each particle from the alpha channel
