@@ -33,6 +33,8 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     @LiveBool("hasSize") public var hasSize: Bool = false
     /// Map Alpha of each particle from the alpha channel
     @LiveBool("hasAlpha") public var hasAlpha: Bool = false
+    /// `hasAlpha` needs to be `true`. The clips any alpha below 1.0.
+    @LiveBool("hasAlphaClip") public var hasAlphaClip: Bool = false
 
     @available(*, deprecated, renamed: "particlesInput")
     public var vtxPixIn: (PIX & NODEOut)? {
@@ -44,14 +46,14 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     public override var liveList: [LiveWrap] {
         super.liveList.filter({ liveWrap in
             liveWrap.typeName != "backgroundColor"
-        }) + [_particleSize, _hasSize, _hasAlpha]
+        }) + [_particleSize, _hasSize, _hasAlpha, _hasAlphaClip]
     }
     
     public override var uniforms: [CGFloat] {
         color.components
     }
     open override var vertexUniforms: [CGFloat] {
-        [particleSize, particlesInput?.finalResolution.width ?? 1, particlesInput?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, resolution.aspect]
+        [particleSize, particlesInput?.finalResolution.width ?? 1, particlesInput?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, hasAlphaClip ? 1 : 0, resolution.aspect]
     }
     
     public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {

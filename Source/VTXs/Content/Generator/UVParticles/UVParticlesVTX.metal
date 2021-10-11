@@ -26,6 +26,7 @@ struct Uniforms {
     float resy;
     float mapSize;
     float mapAlpha;
+    float mapAlphaClip;
     float aspect;
 };
 
@@ -47,7 +48,7 @@ vertex VertexOut uvParticlesVTX(unsigned int vid [[ vertex_id ]],
     VertexOut vtxOut;
     vtxOut.position = float4(x, y, z, 1);
     vtxOut.pointSize = in.mapSize > 0 ? in.size * c.b : in.size;
-    vtxOut.color = in.mapAlpha > 0 ? float4(1, 1, 1, c.a) : float4(1, 1, 1, 1);
+    vtxOut.color = in.mapAlpha > 0 ? float4(1, 1, 1, in.mapAlphaClip ? c.a == 1.0 : c.a) : float4(1, 1, 1, 1);
     
     return vtxOut;
 }
