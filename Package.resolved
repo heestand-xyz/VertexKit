@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "CoreGraphicsExtensions",
+        "repositoryURL": "https://github.com/heestand-xyz/CoreGraphicsExtensions",
+        "state": {
+          "branch": null,
+          "revision": "4f0034224a376d812253ebb10e51b34f4164fc21",
+          "version": "1.1.1"
+        }
+      },
+      {
         "package": "PixelColor",
         "repositoryURL": "https://github.com/heestand-xyz/PixelColor",
         "state": {
           "branch": null,
-          "revision": "f2408f208c541a3463ced1a288235683dcf73ca8",
-          "version": "1.2.2"
+          "revision": "8fd2aae506c3d2a548cec7fa1956bdde3d8f5c2d",
+          "version": "1.2.5"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/heestand-xyz/PixelKit",
         "state": {
           "branch": null,
-          "revision": "23ec97a268fd6b95695f35b4e49913b4db220e0d",
-          "version": "2.0.0"
+          "revision": "fbc01aeb7212753ee9391b4dc99c5812250900d3",
+          "version": "2.1.1"
         }
       },
       {
@@ -24,8 +33,8 @@
         "repositoryURL": "https://github.com/heestand-xyz/RenderKit",
         "state": {
           "branch": null,
-          "revision": "e482aaf00752dc953c69d7fd63b8e809cdb78605",
-          "version": "1.0.0"
+          "revision": "8578c1d3e55787cdf77068dd10de9a158d061c4f",
+          "version": "1.1.1"
         }
       },
       {
@@ -33,8 +42,8 @@
         "repositoryURL": "https://github.com/heestand-xyz/Resolution",
         "state": {
           "branch": null,
-          "revision": "587be77040ec27fd0eb903ae189cd3b89518eea4",
-          "version": "1.0.2"
+          "revision": "6bfdb68f12165876ec7563b931e43d3dfbb3c953",
+          "version": "1.0.3"
         }
       }
     ]
