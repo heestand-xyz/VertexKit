@@ -82,10 +82,16 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
             self?.clearColor = self?.clearBackgroundColor ?? .clear
         }
         
-        PixelKit.main.render.listenToFrames { [weak self] in
+        PixelKit.main.render.listenToFrames(id: id) { [weak self] in
             self?.particleLoop()
         }
         
+    }
+    
+    public override func destroy() {
+        super.destroy()
+        
+        PixelKit.main.render.unlistenToFrames(for: id)
     }
     
     // MARK: - Particle Loop
