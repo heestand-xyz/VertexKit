@@ -89,7 +89,7 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     
     // MARK: - Live Model
     
-    override func modelUpdateLive() {
+    public override func modelUpdateLive() {
         super.modelUpdateLive()
         
         clearBackgroundColor = model.clearBackgroundColor
@@ -101,7 +101,7 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         super.modelUpdateLiveDone()
     }
     
-    override func liveUpdateModel() {
+    public override func liveUpdateModel() {
         super.liveUpdateModel()
         
         model.clearBackgroundColor = clearBackgroundColor

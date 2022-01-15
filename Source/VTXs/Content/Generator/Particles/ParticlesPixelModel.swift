@@ -5,6 +5,7 @@
 import Foundation
 import CoreGraphics
 import RenderKit
+import PixelKit
 import Resolution
 import PixelColor
 
@@ -40,7 +41,7 @@ public struct ParticlesPixelModel: PixelGeneratorModel {
     public var randomDirection: CGFloat = 1.0
     public var velocity: CGFloat = 0.005
     public var randomVelocity: CGFloat = 0.0
-    public var particleScale: CGFloat = 0.1
+    public var particleSize: CGFloat = 0.1
 }
 
 extension ParticlesPixelModel {
@@ -55,7 +56,7 @@ extension ParticlesPixelModel {
         case randomDirection
         case velocity
         case randomVelocity
-        case particleScale
+        case particleSize
     }
     
     public init(from decoder: Decoder) throws {
@@ -97,9 +98,9 @@ extension ParticlesPixelModel {
                 case .randomVelocity:
                     guard let live = liveWrap as? LiveFloat else { continue }
                     randomVelocity = live.wrappedValue
-                case .particleScale:
+                case .particleSize:
                     guard let live = liveWrap as? LiveFloat else { continue }
-                    particleScale = live.wrappedValue
+                    particleSize = live.wrappedValue
                 }
             }
             return
@@ -114,6 +115,6 @@ extension ParticlesPixelModel {
         randomDirection = try container.decode(CGFloat.self, forKey: .randomDirection)
         velocity = try container.decode(CGFloat.self, forKey: .velocity)
         randomVelocity = try container.decode(CGFloat.self, forKey: .randomVelocity)
-        particleScale = try container.decode(CGFloat.self, forKey: .particleScale)
+        particleSize = try container.decode(CGFloat.self, forKey: .particleSize)
     }
 }

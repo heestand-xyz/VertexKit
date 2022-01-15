@@ -104,7 +104,7 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
     
     // MARK: - Live Model
     
-    override func modelUpdateLive() {
+    public override func modelUpdateLive() {
         super.modelUpdateLive()
         
         clearBackgroundColor = model.clearBackgroundColor
@@ -116,12 +116,12 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         randomDirection = model.randomDirection
         velocity = model.velocity
         randomVelocity = model.randomVelocity
-        particleScale = model.particleScale
+        particleSize = model.particleSize
 
         super.modelUpdateLiveDone()
     }
     
-    override func liveUpdateModel() {
+    public override func liveUpdateModel() {
         super.liveUpdateModel()
         
         model.clearBackgroundColor = clearBackgroundColor
@@ -133,7 +133,7 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         model.randomDirection = randomDirection
         model.velocity = velocity
         model.randomVelocity = randomVelocity
-        model.particleScale = particleScale
+        model.particleSize = particleSize
 
         super.liveUpdateModelDone()
     }
