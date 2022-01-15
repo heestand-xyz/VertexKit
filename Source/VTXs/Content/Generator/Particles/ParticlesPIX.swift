@@ -15,12 +15,19 @@ import Resolution
 import PixelColor
 
 public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
-        
-    open override var customMetalLibrary: MTLLibrary { return VertexKit.metalLibrary }
-    open override var customVertexShaderName: String? { return "particlesVTX" }
-    open override var shaderName: String { return "color3DPIX" }
     
-    public override var additiveVertexBlending: Bool { return true }
+    public typealias Model = ParticlesPixelModel
+    
+    private var model: Model {
+        get { generatorModel as! Model }
+        set { generatorModel = newValue }
+    }
+    
+    open override var customMetalLibrary: MTLLibrary { VertexKit.metalLibrary }
+    open override var customVertexShaderName: String? { "particlesVTX" }
+    open override var shaderName: String { "color3DPIX" }
+    
+    public override var additiveVertexBlending: Bool { true }
     
     struct Particle {
         var position: CGPoint
@@ -58,21 +65,22 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         [particleSize]
     }
     
-    // MARK: - Life Cycle
+    // MARK: - Life Cycle -
     
-    public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
-        super.init(at: resolution, name: "Particles", typeName: "vtx-pix-content-generator-particles")
+    public init(model: Model) {
+        super.init(model: model)
         setup()
     }
     
-    required init(from decoder: Decoder) throws {
-        try super.init(from: decoder)
+    public required init(at resolution: Resolution = .auto) {
+        let model = Model(resolution: resolution)
+        super.init(model: model)
         setup()
     }
     
     // MARK: - Setup
     
-    func setup() {
+    private func setup() {
         
         customGeometryActive = true
         customGeometryDelegate = self
@@ -92,6 +100,42 @@ public class ParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         super.destroy()
         
         PixelKit.main.render.unlistenToFrames(for: id)
+    }
+    
+    // MARK: - Live Model
+    
+    override func modelUpdateLive() {
+        super.modelUpdateLive()
+        
+        clearBackgroundColor = model.clearBackgroundColor
+        lifeTime = model.lifeTime
+        emitCount = model.emitCount
+        emitPosition = model.emitPosition
+        emitSize = model.emitSize
+        direction = model.direction
+        randomDirection = model.randomDirection
+        velocity = model.velocity
+        randomVelocity = model.randomVelocity
+        particleScale = model.particleScale
+
+        super.modelUpdateLiveDone()
+    }
+    
+    override func liveUpdateModel() {
+        super.liveUpdateModel()
+        
+        model.clearBackgroundColor = clearBackgroundColor
+        model.lifeTime = lifeTime
+        model.emitCount = emitCount
+        model.emitPosition = emitPosition
+        model.emitSize = emitSize
+        model.direction = direction
+        model.randomDirection = randomDirection
+        model.velocity = velocity
+        model.randomVelocity = randomVelocity
+        model.particleScale = particleScale
+
+        super.liveUpdateModelDone()
     }
     
     // MARK: - Particle Loop

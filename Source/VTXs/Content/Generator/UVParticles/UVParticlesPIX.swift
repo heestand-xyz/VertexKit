@@ -14,17 +14,24 @@ import Resolution
 import PixelColor
 
 public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
-        
-    open override var customMetalLibrary: MTLLibrary { return VertexKit.metalLibrary }
-    open override var customVertexShaderName: String? { return "uvParticlesVTX" }
-    open override var shaderName: String { return "color3DPIX" }
     
-    public override var customVertexTextureActive: Bool { return true }
+    public typealias Model = UVParticlesPixelModel
+    
+    private var model: Model {
+        get { generatorModel as! Model }
+        set { generatorModel = newValue }
+    }
+    
+    open override var customMetalLibrary: MTLLibrary { VertexKit.metalLibrary }
+    open override var customVertexShaderName: String? { "uvParticlesVTX" }
+    open override var shaderName: String { "color3DPIX" }
+    
+    public override var customVertexTextureActive: Bool { true }
     public override var customVertexNodeIn: (NODE & NODEOut)? {
         particlesInput
     }
     
-    public override var additiveVertexBlending: Bool { return true }
+    public override var additiveVertexBlending: Bool { true }
     
     @LiveColor("clearBackgroundColor") public var clearBackgroundColor: PixelColor = .black
     
@@ -56,23 +63,54 @@ public class UVParticlesPIX: PIXGenerator, CustomGeometryDelegate {
         [particleSize, particlesInput?.finalResolution.width ?? 1, particlesInput?.finalResolution.height ?? 1, hasSize ? 1 : 0, hasAlpha ? 1 : 0, hasAlphaClip ? 1 : 0, resolution.aspect]
     }
     
-    public required init(at resolution: Resolution = .auto(render: PixelKit.main.render)) {
-        super.init(at: resolution, name: "UV Particles", typeName: "vtx-pix-content-generator-uv-particles")
+    // MARK: - Life Cycle -
+    
+    public init(model: Model) {
+        super.init(model: model)
         setup()
     }
     
-    required init(from decoder: Decoder) throws {
-        try super.init(from: decoder)
+    public required init(at resolution: Resolution = .auto) {
+        let model = Model(resolution: resolution)
+        super.init(model: model)
         setup()
     }
     
-    func setup() {
+    // MARK: - Setup
+    
+    private func setup() {
         customGeometryActive = true
         customGeometryDelegate = self
         clearColor = clearBackgroundColor
         _clearBackgroundColor.didSetValue = { [weak self] in
             self?.clearColor = self?.clearBackgroundColor ?? .clear
         }
+    }
+    
+    // MARK: - Live Model
+    
+    override func modelUpdateLive() {
+        super.modelUpdateLive()
+        
+        clearBackgroundColor = model.clearBackgroundColor
+        particleSize = model.particleSize
+        hasSize = model.hasSize
+        hasAlpha = model.hasAlpha
+        hasAlphaClip = model.hasAlphaClip
+
+        super.modelUpdateLiveDone()
+    }
+    
+    override func liveUpdateModel() {
+        super.liveUpdateModel()
+        
+        model.clearBackgroundColor = clearBackgroundColor
+        model.particleSize = particleSize
+        model.hasSize = hasSize
+        model.hasAlpha = hasAlpha
+        model.hasAlphaClip = hasAlphaClip
+
+        super.liveUpdateModelDone()
     }
     
     // MARK: Custom Geometry
