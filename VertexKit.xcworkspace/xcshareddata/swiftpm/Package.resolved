@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "PixelKit",
-        "repositoryURL": "https://github.com/heestand-xyz/PixelKit",
-        "state": {
-          "branch": null,
-          "revision": "60aca53daf2b2901f8d33f4503ed7f123c057064",
-          "version": "3.0.0"
-        }
-      },
-      {
         "package": "RenderKit",
         "repositoryURL": "https://github.com/heestand-xyz/RenderKit",
         "state": {
