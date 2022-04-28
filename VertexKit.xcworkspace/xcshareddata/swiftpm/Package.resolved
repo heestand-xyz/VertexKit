@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "RenderKit",
-        "repositoryURL": "https://github.com/heestand-xyz/RenderKit",
-        "state": {
-          "branch": null,
-          "revision": "395328a7c069e4eceb49ee381bfa37d946290489",
-          "version": "2.0.0"
-        }
-      },
-      {
         "package": "Resolution",
         "repositoryURL": "https://github.com/heestand-xyz/Resolution",
         "state": {
@@ -42,8 +33,8 @@
         "repositoryURL": "https://github.com/heestand-xyz/TextureMap",
         "state": {
           "branch": null,
-          "revision": "92a11461c9125951ef17eb578871853cca9920a7",
-          "version": "0.1.1"
+          "revision": "34781125ed9bb07744ca7d63fc4ce75334d09aa0",
+          "version": "0.3.0"
         }
       }
     ]
