@@ -118,3 +118,22 @@ extension ParticlesPixelModel {
         particleSize = try container.decode(CGFloat.self, forKey: .particleSize)
     }
 }
+
+extension ParticlesPixelModel {
+    
+    public func isEqual(to nodeModel: NodeModel) -> Bool {
+        guard let pixelModel = nodeModel as? Self else { return false }
+        guard isPixelGeneratorEqual(to: pixelModel) else { return false }
+        guard clearBackgroundColor == pixelModel.clearBackgroundColor else { return false }
+        guard lifeTime == pixelModel.lifeTime else { return false }
+        guard emitCount == pixelModel.emitCount else { return false }
+        guard emitPosition == pixelModel.emitPosition else { return false }
+        guard emitSize == pixelModel.emitSize else { return false }
+        guard direction == pixelModel.direction else { return false }
+        guard randomDirection == pixelModel.randomDirection else { return false }
+        guard velocity == pixelModel.velocity else { return false }
+        guard randomVelocity == pixelModel.randomVelocity else { return false }
+        guard particleSize == pixelModel.particleSize else { return false }
+        return true
+    }
+}

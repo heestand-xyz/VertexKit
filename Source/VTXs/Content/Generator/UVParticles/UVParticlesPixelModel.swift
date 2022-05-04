@@ -88,3 +88,17 @@ extension UVParticlesPixelModel {
         hasAlphaClip = try container.decode(Bool.self, forKey: .hasAlphaClip)
     }
 }
+
+extension UVParticlesPixelModel {
+    
+    public func isEqual(to nodeModel: NodeModel) -> Bool {
+        guard let pixelModel = nodeModel as? Self else { return false }
+        guard isPixelGeneratorEqual(to: pixelModel) else { return false }
+        guard clearBackgroundColor == pixelModel.clearBackgroundColor else { return false }
+        guard particleSize == pixelModel.particleSize else { return false }
+        guard hasSize == pixelModel.hasSize else { return false }
+        guard hasAlpha == pixelModel.hasAlpha else { return false }
+        guard hasAlphaClip == pixelModel.hasAlphaClip else { return false }
+        return true
+    }
+}
